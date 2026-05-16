@@ -7,49 +7,49 @@
 Welcome to **Core Builds**. This repository hosts highly optimized, frictionless configuration templates and custom formatters for **AIOStreams**, specifically tuned for seamless playback on WuPlay, Stremio, and Android-based home theater setups.
 
 ## 🎯 The Philosophy
-Streaming shouldn't involve trial and error. These builds are engineered to strip out unplayable clutter, prevent network choking, and serve only the highest quality compatible files. Both builds feature aggressive deduplication, smart caching, and prioritize English/Dual-Audio tracks natively.
+Streaming shouldn't involve trial and error. These builds are engineered to strip out unplayable clutter, prevent network choking, and serve only the highest quality compatible files. Every build features aggressive deduplication, smart caching, and prioritizes English/Dual-Audio tracks natively.
 
 ---
 
 ## 🚀 The Flagship Builds
 
-### 1️⃣ Core Nexus: TorBox Exclusive (1080p SDR)
-*Built for standard hardware, Google TV, and Android projectors.*
-* **Frictionless Playback:** Aggressively filters out unsupported video formats (AV1, Dolby Vision) and heavy lossless audio (TrueHD, DTS-HD MA) to prevent black screens and audio drops on standard hardware.
-* **Network Stability:** Hard bitrate capping at 60 Mbps to guarantee stutter-free playback over standard Wi-Fi.
-* **SDR & Spatial Audio:** Prioritizes clean 1080p SDR streams paired with Dolby Digital Plus (DD+) and Atmos for flawless soundbar decoding.
+### 📦 Single Service (TorBox Exclusive)
+*Optimized for a pure, high-speed TorBox and Usenet experience.*
 
-### 2️⃣ Core Nexus: 4K Home Theater Edition
-*The leash is off. Built for high-end displays, Nvidia Shields, and dedicated audio setups.*
-* **Maximum Quality:** Prioritizes 4K Blu-ray Remuxes and actively hunts for dynamic metadata (Dolby Vision, HDR10+, and HDR). 
-* **Lossless Audio Passthrough:** Prioritizes TrueHD Atmos, DTS-HD MA, and DTS:X to feed raw spatial metadata directly to your receiver or high-end soundbar.
-* **Uncapped Bandwidth:** Removes the 60 Mbps network limit (features a 150 Mbps safety net to catch broken files), allowing massive 100GB+ files to stream flawlessly. Fully supports highly-efficient AV1 encodes.
+* **[Core Nexus 1080p SDR](./Templates/core-nexus-torbox-exclusive_rpdb.json):** Built for Android projectors and Google TV. Blocks 4K, AV1, DV, and heavy lossless audio to ensure zero-stutter playback on standard hardware. 60 Mbps cap.
+* **[Core Nexus 4K Home Theater](./Templates/core-nexus-4k-ht-torbox.json):** The unleashed edition. Hunts for 4K Remuxes, Dolby Vision, and HDR10+. Prioritizes TrueHD Atmos and DTS:X passthrough for dedicated soundbars and receivers.
+
+### ⛓️ Dual Service (Dual Core Hybrid)
+*For power users running TorBox + Real-Debrid. Features cross-service failover and massive library depth.*
+
+* **[Dual Core 1080p SDR](./Templates/core-nexus-dual-core-1080p.json):** Frictionless 1080p locking with dual-cache merging. Ensures a cached link is found for even the most obscure titles while maintaining hardware compatibility.
+* **[Dual Core 4K Unleashed](./Templates/core-nexus-dual-core-4k.json):** The ultimate master build. Combines TorBox Usenet priority with the massive Real-Debrid cache. Native 4K/DV/Atmos support with aggressive 13-point deduplication.
 
 ---
 
 ## 📂 Repository Structure
 
 ### [`/Templates`](./Templates)
-Contains the raw JSON configuration files for AIOStreams. *(Note: All personal API keys have been scrubbed. Free RPDB keys are baked in by default.)*
+Raw JSON configuration files. (Note: All personal API keys have been scrubbed. Free RPDB keys are baked in by default.)
 
 ### [`/Formatters`](./Formatters)
-Custom visual layouts for the AIOStreams UI.
-* **Core Zenith Diamond:** Hardware-specific badging (e.g., JBL Spatial, SDR Master) for quick visual confirmation of file specs.
-* **Auburn Tiger Edition:** Clean, tiger-striped alternating color scheme (Orange & Blue) using geometric diamond spacers for maximum readability.
+Custom visual layouts for the AIOStreams UI featuring the **Core Zenith Diamond** and **Auburn Tiger** badging system.
 
 ### [`/Guides`](./Guides)
-Step-by-step setup guides explaining how to import these templates, bypass requirements, and link the final manifest to WuPlay.
+Step-by-step setup guides explaining how to import these templates and link your manifest to WuPlay.
 
 ---
 
 ## ⚙️ Quick Start: How to Import
 
-1. Navigate to your preferred AIOStreams web host (e.g., [ForTheWeak](https://aiostreams.fortheweak.cloud/)).
-2. Go to the **Template Import** menu.
-3. Copy the link for the build that fits your hardware, and paste it into the AIOStreams Template Importer:
-   * **[1080p SDR Build - Raw Link](https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/main/Templates/core-nexus-torbox-exclusive_rpdb.json)**
-   * **[4K Home Theater Build - Raw Link](https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/main/Templates/core-nexus-4k-ht-torbox.json)**
-4. Follow the setup instructions in the [`/Guides`](./Guides) folder to finalize your API keys and install the manifest to your streaming app.
+1.  Navigate to your preferred AIOStreams host (e.g., [ForTheWeak](https://aiostreams.fortheweak.cloud/)).
+2.  Go to the **Template Import** menu.
+3.  Copy the **Raw Link** for your chosen build from the list below and paste it into the importer:
+    * [1080p Single - Raw Link](https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/main/Templates/core-nexus-torbox-exclusive_rpdb.json)
+    * [4K Single - Raw Link](https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/main/Templates/core-nexus-4k-ht-torbox.json)
+    * [1080p Dual Core - Raw Link](https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/main/Templates/core-nexus-dual-core-1080p.json)
+    * [4K Dual Core - Raw Link](https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/main/Templates/core-nexus-dual-core-4k.json)
+4.  Follow the setup instructions in the [`/Guides`](./Guides) folder.
 
 ---
 *Built and maintained by Brevity.*

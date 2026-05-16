@@ -1,6 +1,6 @@
-# 🐅 WuPlay Setup: Core Nexus TorBox Exclusive 
+# 🐅 WuPlay Setup: Core Nexus Builds
 
-This guide covers the necessary steps to successfully import and finalize your **Core Nexus TorBox Exclusive** configuration. Because this template relies on advanced smart logic, deduplication, and customized caching, there are a few specific API requirements to clear during the setup phase.
+This guide covers the necessary steps to successfully import and finalize your **Core Nexus** configurations. Because these templates rely on advanced smart logic, deduplication, and customized caching, there are a few specific API requirements to clear during the setup phase.
 
 ---
 
@@ -11,7 +11,21 @@ Before you can import the template, you need to open an AIOStreams web host (ins
 * **MidnightIgnite:** `https://aiostreams.midnightignite.com`
 * **ElfHosted:** `https://aiostreams.elfhosted.com`
 
-Once you load your preferred host, navigate to the **Template Import** menu. When prompted, enter your specific template ID to pull the customized configuration:
+Once you load your preferred host, navigate to the **Template Import** menu. When prompted, enter your specific template ID or raw GitHub URL to pull the customized configuration.
+
+---
+
+## 2️⃣ Secure the Poster API Keys
+To power the advanced digital release filters and ensure your library art loads correctly, the system requires API keys for **TMDB** and **TVDB**. *(Note: Your RPDB key is already baked directly into this custom template, so you can leave that field as-is!)*
+
+> 💡 **Where to find them:** You do not need to search the web for these. Look directly underneath the respective text input boxes for TMDB and TVDB in the AIOStreams setup menu. There are built-in hyperlinks sitting right beneath the fields that will take you exactly where you need to go to generate your free keys.
+
+---
+
+## 3️⃣ Save and Install to WuPlay
+Once all the mandatory fields are satisfied, click **Save** at the bottom of the screen.
+
+AIOStreams will generate a unique UUID and a final manifest URL for your build. **Copy this manifest link**, then open your WuPlay configurer, navigate to the **Add-ons** section, and paste the link to finalize your setup.
 
 `core-nexus-torbox-exclusive--2026-05-15.23-43-04-azcri48`
 

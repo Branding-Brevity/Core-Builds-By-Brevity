@@ -52,4 +52,11 @@ Step-by-step setup guides explaining how to import these templates and link your
 4.  Follow the setup instructions in the [`/Guides`](./Guides) folder.
 
 ---
+
+## ☕ Support the Project
+If these templates have leveled up your home theater or Stremio setup and saved you from buffering headaches, consider buying me a coffee. Your support fuels the late-night testing and continuous updates!
+
+[![Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/branding_brevity/?hidefeed=true&widget=true&embed=true)
+
+---
 *Built and maintained by Brevity.*

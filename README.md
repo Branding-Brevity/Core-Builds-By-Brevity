@@ -1,7 +1,6 @@
 <p align="center">
   <img src="./Assets/core_builds_banner.svg" alt="Core Builds Banner">
 </p>
-
 # 🛡️ Core Builds by Brevity
 
 Welcome to **Core Builds**. This repository hosts highly optimized, frictionless configuration templates and custom formatters for **AIOStreams**, specifically tuned for seamless playback on WuPlay, Stremio, and Android-based home theater setups.

@@ -1,0 +1,163 @@
+html_content = """
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  @page {
+    size: A4;
+    margin: 20mm;
+    background-color: #ffffff;
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+  .banner {
+    background-color: #0C2340;
+    color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border-bottom: 6px solid #E87722;
+  }
+  .banner h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 5px 0;
+    font-size: 26pt;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .banner p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    margin: 0;
+    font-size: 12pt;
+    opacity: 0.9;
+  }
+  .intro {
+    font-size: 11pt;
+    margin-bottom: 25px;
+  }
+  .step-box {
+    background-color: #f8f9fa;
+    border-left: 5px solid #E87722;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+  .step-number {
+    color: #E87722;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 10pt;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+  }
+  .step-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #0C2340;
+    font-size: 14pt;
+    margin-bottom: 12px;
+  }
+  .step-box p {
+    margin: 0 0 10px 0;
+    font-size: 11pt;
+  }
+  .step-box ul {
+    margin: 10px 0;
+    padding-left: 20px;
+  }
+  .step-box li {
+    font-size: 11pt;
+    margin-bottom: 5px;
+  }
+  .step-box p:last-child {
+    margin-bottom: 0;
+  }
+  .highlight {
+    background-color: #e2e8f0;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    color: #d94b00;
+  }
+  .alert-box {
+    background-color: #fff4e5;
+    border: 1px solid #ffe0b2;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 15px;
+  }
+  .alert-box strong {
+    color: #d94b00;
+  }
+</style>
+</head>
+<body>
+
+  <div class="banner">
+    <h1>WuPlay Setup</h1>
+    <p>Core Nexus: TorBox Exclusive Import Guide</p>
+  </div>
+
+  <div class="intro">
+    <p>This guide covers the necessary steps to successfully import and finalize your <strong>Core Nexus TorBox Exclusive</strong> configuration. Because this template relies on advanced smart logic, deduplication, and customized caching, there are a few specific API requirements to clear during the setup phase.</p>
+  </div>
+
+  <div class="step-box">
+    <div class="step-number">Step 1</div>
+    <div class="step-title">Select a Host & Load the Template</div>
+    <p>Before you can import the template, you need to open an AIOStreams web host (instance). Here is a list of trusted community hosts you can use:</p>
+    <ul>
+      <li><strong>ForTheWeak:</strong> aiostreams.fortheweak.cloud</li>
+      <li><strong>MidnightIgnite:</strong> aiostreams.midnightignite.com</li>
+      <li><strong>ElfHosted:</strong> aiostreams.elfhosted.com</li>
+    </ul>
+    <p>Once you load your preferred host, navigate to the Template Import menu. When prompted, enter your specific template ID to pull the customized configuration:</p>
+    <p><span class="highlight">core-nexus-torbox-exclusive--2026-05-15.23-43-04-azcri48</span></p>
+  </div>
+
+  <div class="step-box">
+    <div class="step-number">Step 2</div>
+    <div class="step-title">Secure the Poster API Keys</div>
+    <p>To power the advanced digital release filters and ensure your library art loads correctly, the system requires API keys for <strong>TMDB</strong> and <strong>TVDB</strong>. <em>(Note: Your RPDB key is already baked directly into this custom template, so you can leave that field as-is!)</em></p>
+    <div class="alert-box">
+      <p><strong>Where to find them:</strong> You do not need to search the web for these. Look directly underneath the respective text input boxes for TMDB and TVDB in the AIOStreams setup menu. There are built-in hyperlinks sitting right beneath the fields that will take you exactly where you need to go to generate your free keys.</p>
+    </div>
+  </div>
+
+  <div class="step-box">
+    <div class="step-number">Step 3</div>
+    <div class="step-title">Bypass and Remove Debridio</div>
+    <p>The template package includes the Debridio integration by default, which throws an error if left blank during the import process. If you do not use Debridio, you must bypass it to save the configuration.</p>
+    <p><strong>1. The Bypass:</strong> Click into the Debridio API Key box and type literally anything (e.g., "skip", "1234", or random letters). This tricks the validation check and allows you to proceed.</p>
+    <p><strong>2. The Removal:</strong> Once you have bypassed the prompt and successfully saved your configuration, open your newly generated AIOStreams configuration panel. Navigate to the <strong>Add-ons</strong> section, locate the Debridio instance, and delete it completely.</p>
+  </div>
+
+  <div class="step-box">
+    <div class="step-number">Step 4</div>
+    <div class="step-title">Save and Install to WuPlay</div>
+    <p>Once all the mandatory fields are satisfied (including your bypassed Debridio text), click <strong>Save</strong> at the bottom of the screen.</p>
+    <p>AIOStreams will generate a unique UUID and a final manifest URL for your build. Copy this manifest link, then open the WuPlay configurer, navigate to the Add-ons section, and paste the link to finalize your setup.</p>
+  </div>
+
+</body>
+</html>
+"""
+
+with open("template_import_guide_v3.html", "w") as f:
+    f.write(html_content)
+
+from weasyprint import HTML
+HTML("template_import_guide_v3.html").write_pdf("WuPlay_Core_Nexus_Import_Guide.pdf")
+print("[file-tag: WuPlay_Core_Nexus_Import_Guide.pdf]")
+

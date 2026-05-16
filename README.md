@@ -16,21 +16,21 @@ Streaming shouldn't involve trial and error. These builds are engineered to stri
 ### 📦 Single Service (TorBox Exclusive)
 *Optimized for a pure, high-speed TorBox and Usenet experience.*
 
-* **[Core Nexus 1080p SDR](./Templates/core-nexus-torbox-exclusive_rpdb.json):** Built for Android projectors and Google TV. Blocks 4K, AV1, DV, and heavy lossless audio to ensure zero-stutter playback on standard hardware. 60 Mbps cap.
-* **[Core Nexus 4K Home Theater](./Templates/core-nexus-4k-ht-torbox.json):** The unleashed edition. Hunts for 4K Remuxes, Dolby Vision, and HDR10+. Prioritizes TrueHD Atmos and DTS:X passthrough for dedicated soundbars and receivers.
+* **[Core Nexus 1080p SDR](./Templates/Single-Service/core-nexus-torbox-exclusive_rpdb.json):** Built for Android projectors and Google TV. Blocks 4K, AV1, DV, and heavy lossless audio.
+* **[Core Nexus 4K Home Theater](./Templates/Single-Service/core-nexus-4k-ht-torbox.json):** The unleashed edition. Hunts for 4K Remuxes, Dolby Vision, and HDR10+.
 
 ### ⛓️ Dual Service (Dual Core Hybrid)
 *For power users running TorBox + Real-Debrid. Features cross-service failover and massive library depth.*
 
-* **[Dual Core 1080p SDR](./Templates/core-nexus-dual-core-1080p.json):** Frictionless 1080p locking with dual-cache merging. Ensures a cached link is found for even the most obscure titles while maintaining hardware compatibility.
-* **[Dual Core 4K Unleashed](./Templates/core-nexus-dual-core-4k.json):** The ultimate master build. Combines TorBox Usenet priority with the massive Real-Debrid cache. Native 4K/DV/Atmos support with aggressive 13-point deduplication.
+* **[Dual Core 1080p SDR](./Templates/Dual-Service/core-nexus-dual-core-1080p.json):** Frictionless 1080p locking with dual-cache merging.
+* **[Dual Core 4K Unleashed](./Templates/Dual-Service/core-nexus-dual-core-4k.json):** The ultimate master build. Combines TorBox Usenet priority with the massive Real-Debrid cache.
 
 ---
 
 ## 📂 Repository Structure
 
 ### [`/Templates`](./Templates)
-Raw JSON configuration files. (Note: All personal API keys have been scrubbed. Free RPDB keys are baked in by default.)
+Raw JSON configuration files organized into **Single-Service** and **Dual-Service** subfolders.
 
 ### [`/Formatters`](./Formatters)
 Custom visual layouts for the AIOStreams UI featuring the **Core Zenith Diamond** and **Auburn Tiger** badging system.
@@ -44,11 +44,11 @@ Step-by-step setup guides explaining how to import these templates and link your
 
 1.  Navigate to your preferred AIOStreams host (e.g., [ForTheWeak](https://aiostreams.fortheweak.cloud/)).
 2.  Go to the **Template Import** menu.
-3.  Copy the **Raw Link** for your chosen build from the list below and paste it into the importer:
-    * [1080p Single - Raw Link](https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/main/Templates/core-nexus-torbox-exclusive_rpdb.json)
-    * [4K Single - Raw Link](https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/main/Templates/core-nexus-4k-ht-torbox.json)
-    * [1080p Dual Core - Raw Link](https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/main/Templates/core-nexus-dual-core-1080p.json)
-    * [4K Dual Core - Raw Link](https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/main/Templates/core-nexus-dual-core-4k.json)
+3.  Copy the **Raw Link** for your chosen build and paste it into the importer:
+    * [1080p Single - Raw Link](https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/main/Templates/Single-Service/core-nexus-torbox-exclusive_rpdb.json)
+    * [4K Single - Raw Link](https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/main/Templates/Single-Service/core-nexus-4k-ht-torbox.json)
+    * [1080p Dual Core - Raw Link](https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/main/Templates/Dual-Service/core-nexus-dual-core-1080p.json)
+    * [4K Dual Core - Raw Link](https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/main/Templates/Dual-Service/core-nexus-dual-core-4k.json)
 4.  Follow the setup instructions in the [`/Guides`](./Guides) folder.
 
 ---

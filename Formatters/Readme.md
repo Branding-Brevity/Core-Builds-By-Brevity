@@ -16,7 +16,6 @@ No more squinting at raw file names. Just clean, color-coded badging.
 Designed for maximum readability from the couch. The Zenith Diamond formatter uses a sleek, high-contrast badging system that prioritizes resolution (4K/1080p) and visual formats (DV/HDR10+) so you know exactly what your hardware is about to decode.
 
 ![Core Zenith Diamond Preview](../Assets/zenith_diamond_preview.png)
-*(Note to dev: Upload `zenith_diamond_preview.png` to your Assets folder)*
 
 **Key Features:**
 * Highlighted Remux and BluRay tags.
@@ -31,7 +30,6 @@ Designed for maximum readability from the couch. The Zenith Diamond formatter us
 Built for those who want a stylized, aggressive look to their stream lists. The Auburn Tiger Edition utilizes a custom color palette to make the absolute best cached links jump off the screen. 
 
 ![Auburn Tiger Preview](../Assets/auburn_tiger_preview.png)
-*(Note to dev: Upload `auburn_tiger_preview.png` to your Assets folder)*
 
 **Key Features:**
 * Bold, thematic color coding for quick scanning.

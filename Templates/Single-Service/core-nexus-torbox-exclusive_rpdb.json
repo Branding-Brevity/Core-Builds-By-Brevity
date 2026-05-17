@@ -5,7 +5,7 @@
     "description": "A frictionless 1080p SDR configuration exclusively powered by TorBox. Features the Core Zenith Diamond Formatter, strict 60 Mbps hardware bitrate capping, AV1 exclusion, Highly optimized for smooth, stutter-free playback",
     "source": "external",
     "author": "Branding_Brevity",
-    "version": "1.0.0",
+    "version": "1.0.7",
     "category": "Debrid",
     "serviceRequired": false,
     "setToSaveInstallMenu": true

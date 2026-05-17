@@ -4,6 +4,28 @@ All notable changes to the **Core Builds** templates and formatters will be docu
 
 ---
 
+## [1.0.7] - 2026-05-17
+
+### Added
+- **Tamtaro ESE Integration:** Added 5 stream expressions from Tamtaro's extended ESE set â€” `G's Low Bitrate`, `ongoingSeasonPack`, `Low Seeders`, `Extra SeaDex`, and `Final Limit (All)` â€” bringing the TorBox Exclusive template to 10 active expressions.
+- **Missing Config Fields:** Added `externalDownloads: false`, `autoRemoveDownloads: false`, and `excludeUncachedMode: or` to align with Tamtaro's complete setup standard.
+
+### Changed
+- **Performance Optimisation:** Set `maxResults: 15`, `maxResultsPerResolution: 5`, `onlyShowCachedStreams: true`, and `showP2PStreams: false` for faster stream loading on low-end hardware.
+- **Result Limit Aligned:** Corrected `resultLimits.global` from `45` to `15` to match `maxResults` â€” both result limiting systems are now consistent.
+- **Timeout Reduction:** Reduced all preset timeouts from 7000â€“8000ms to 5000ms and subtitles to 4000ms for snappier stream list load times.
+- **Service Trim:** Removed 15 disabled service entries, leaving only TorBox. Template now contains no dead service config.
+- **Title Matching Hardened:** Switched `titleMatching` from `contains` (0.9 similarity) to `exact` (1.0 similarity) to eliminate false stream matches.
+- **Deduplicator Upgraded:** Changed `multiGroupBehaviour` from `conservative` to `aggressive` for cleaner result deduplication.
+- **Year Matching Expanded:** Extended `yearMatching` to cover `series` and `anime` request types in addition to `movie`.
+- **Stream Type Cleanup:** Removed `p2p` from `preferredStreamTypes` and `torrent` from `cacheAndPlay.streamTypes` â€” now strictly `debrid` and `usenet` only.
+- **Audio Channel Order Fixed:** Corrected `preferredAudioChannels` from `[2.0, 5.1]` to `[5.1, 2.0]` to properly prioritise surround sound.
+- **Proxy Config Cleaned:** Removed dead MediaFlow proxy config that was not proxying any services or addons.
+- **Template Metadata Updated:** `appliedTemplates` now correctly references `core-nexus-torbox-exclusive v1.0.6` instead of the legacy dual-debrid source template.
+- **UX Polish:** Disabled `showChanges` and `areYouStillThere` prompts. Set `serviceWrap.reconfigureService` to `false`.
+
+---
+
 ## [1.0.6] - 2026-05-17
 
 ### Removed

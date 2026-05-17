@@ -1,6 +1,7 @@
 <p align="center">
-  <img src="./Assets/auburn_tiger_banner.svg" alt="Auburn Tiger Banner">
+  <img src="https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/main/Assets/auburn_tiger_banner.svg" alt="Auburn Tiger Banner">
 </p>
+
 # 🐅 Auburn Tiger Edition (by RB3)
 
 **Author:** RB3  
@@ -39,3 +40,4 @@ Departing from the standard Core Nexus UI design, this template features a warm,
 3. Paste the configuration code directly into the importer.
 4. Input your **TorBox** and **Real-Debrid** API keys when prompted by the setup sequence.
 5. **UI Optimization:** In your main AIOStreams settings, ensure that **Show file name** and **Show bitrate** are toggled **OFF**. The Auburn Tiger formatter handles these natively, and leaving the default settings on will break the visual layout.
+6. 

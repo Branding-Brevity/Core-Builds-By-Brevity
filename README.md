@@ -33,10 +33,28 @@ Streaming shouldn't involve trial and error. These builds are engineered to stri
 Raw JSON configuration files organized into **Single-Service** and **Dual-Service** subfolders.
 
 ### [`/Formatters`](./Formatters)
-Custom visual layouts for the AIOStreams UI featuring the **Core Zenith Diamond** and **Auburn Tiger** badging system.
+Custom visual layouts for the AIOStreams UI featuring the **Core Zenith Diamond**, **Core Nexus Crimson**, and **Auburn Tiger** badging systems.
+
+### [`/community-templates`](./community-templates)
+A collection of experimental layouts and community-driven templates offering alternative aesthetics.
 
 ### [`/Guides`](./Guides)
 Step-by-step setup guides explaining how to import these templates and link your manifest to WuPlay.
+
+---
+
+## 🤝 Community Templates & Non-Core Builds
+
+While the **Core Nexus** builds represent our official, heavily tested configurations, we also host a collection of experimental layouts and community-driven templates. These builds offer different aesthetics and use-cases outside of the primary WuPlay design language.
+
+| Template Name | Vibe / Style | View Build |
+| :--- | :--- | :--- |
+| **Auburn Tiger Edition** | Warm / Aggressive | [View JSON](./community-templates/auburn_tiger.json) |
+
+> **⚠️ Note on Community Templates:** > These files are not subject to the same strict character-limit and UI-breaking tests as the Core Nexus Masterfiles. Use them freely, but expect occasional formatting quirks depending on your scraper results.
+
+### Want to contribute?
+If you've built a killer AIOStreams formatter using our core logic, open a Pull Request and submit your `.json` file to the `community-templates/` folder!
 
 ---
 

@@ -1,6 +1,7 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/main/Community-Templates/Templates/RB3/auburn_tiger_banner.svg" alt="Auburn Tiger Banner">
+  <img src="./Assets/core_builds_banner.svg" alt="Core Builds Banner">
 </p>
+
 
 # 🐅 Auburn Tiger Edition (by RB3)
 

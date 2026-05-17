@@ -35,7 +35,7 @@ Raw JSON configuration files organized into **Single-Service** and **Dual-Servic
 ### [`/Formatters`](./Formatters)
 Custom visual layouts for the AIOStreams UI featuring the **Core Zenith Diamond** and **Auburn Tiger** badging system.
 
-### [`/Community-Builds`](.Community-Templates/Community-Builds)
+### [`/Community-Builds`](.Core-Builds-By-Brevity/Community-Templates)
 A collection of experimental layouts and community-driven templates offering alternative aesthetics outside of the core WuPlay design language.
 
 ### [`/Guides`](./Guides)
@@ -45,7 +45,7 @@ Step-by-step setup guides explaining how to import these templates and link your
 
 ## 🤝 Community Templates & Non-Core Builds
 
-While the **Core Nexus** builds represent our official, heavily tested configurations, we also host a collection of experimental layouts and community-driven templates. These builds offer different aesthetics and use-cases outside of the primary WuPlay design language.
+While the **configurations, we also host a collection of experimental layouts and community-driven templates. These builds offer different aesthetics and use-cases outside of the primary WuPlay design language.
 
 | Template Name | Vibe / Style | View Build |
 | :--- | :--- | :--- |

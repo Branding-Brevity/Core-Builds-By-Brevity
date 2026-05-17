@@ -35,7 +35,7 @@ Raw JSON configuration files organized into **Single-Service** and **Dual-Servic
 ### [`/Formatters`](./Formatters)
 Custom visual layouts for the AIOStreams UI featuring the **Core Zenith Diamond**, **Core Nexus Crimson**, and **Auburn Tiger** badging systems.
 
-### [`/community-templates`](./community-templates)
+### [`/Community-Templates`](./Community-Templates)
 A collection of experimental layouts and community-driven templates offering alternative aesthetics.
 
 ### [`/Guides`](./Guides)

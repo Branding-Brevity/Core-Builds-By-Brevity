@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./Assets/core_builds_banner.svg" alt="Core Builds Banner">
+  <img src="./Assets/auburn_tiger_banner.svg" alt="Core Builds Banner">
 </p>
 
 

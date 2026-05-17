@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="../Assets/auburn_tiger_banner.svg" alt="Auburn Tiger Banner">
+  <img src="./auburn_tiger_banner.svg" alt="Auburn Tiger Banner">
 </p>
 
 # 🐅 Auburn Tiger Edition (by RB3)
 
 **Author:** RB3  
 **Category:** Community Sandbox  
-**File:** `rb3-tb-pro-template--2026-05-16.15-25-36-vkqidl9-template.json`  
+**File:** `auburn-tiger-rb3.json`  
 **Addon Name:** WarEagleStreams- TB+RD  
 
 ## 🎯 Overview
@@ -35,7 +35,7 @@ Departing from the standard Core Nexus UI design, this template features a warm,
 
 ## 🚀 Installation Guide
 
-1. Download or copy the raw text from the `rb3-tb-pro-template` JSON file.
+1. Download or copy the raw text from the `auburn-tiger-rb3.json` file in this folder.
 2. Open your **AIOStreams Dashboard** and navigate to the **Template Import** menu.
 3. Paste the configuration code directly into the importer.
 4. Input your **TorBox** and **Real-Debrid** API keys when prompted by the setup sequence.

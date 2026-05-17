@@ -2,8 +2,8 @@
   <img src="https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/main/Community-Templates/Templates/RB3/auburn_tiger_banner.svg" alt="Auburn Tiger Banner">
 </p>
 
-
 # 🐅 Auburn Tiger Edition (by RB3)
+
 
 **Author:** RB3  
 **Category:** Community Sandbox  

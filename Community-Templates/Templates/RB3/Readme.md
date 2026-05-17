@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./auburn_tiger_banner.svg" alt="Auburn Tiger Banner">
+  <img src=". Assets/auburn_tiger_banner.svg" alt="Auburn Tiger Banner">
 </p>
 
 # 🐅 Auburn Tiger Edition (by RB3)

@@ -49,7 +49,7 @@ While the **Core Nexus** builds represent our official, heavily tested configura
 
 | Template Name | Vibe / Style | View Build |
 | :--- | :--- | :--- |
-| **Auburn Tiger Edition (by RB3)** | Warm / Aggressive | [View JSON](./Community-Builds/Auburn-Tiger/auburn-tiger-rb3.json) |
+| **Auburn Tiger Edition (by RB3)** | Warm / Aggressive | [View JSON](.Community-Templates/Templates/RB3) |
 
 > **⚠️ Note on Community Templates:** > These files are not subject to the same strict character-limit and UI-breaking tests as the Core Nexus Masterfiles. Use them freely, but expect occasional formatting quirks depending on your scraper results.
 

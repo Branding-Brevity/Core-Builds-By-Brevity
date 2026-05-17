@@ -35,7 +35,7 @@ Raw JSON configuration files organized into **Single-Service** and **Dual-Servic
 ### [`/Formatters`](./Formatters)
 Custom visual layouts for the AIOStreams UI featuring the **Core Zenith Diamond** and **Auburn Tiger** badging system.
 
-### [`/Community-Builds`](./Community-Builds)
+### [`/Community-Builds`](.Community-Templates/Community-Builds)
 A collection of experimental layouts and community-driven templates offering alternative aesthetics outside of the core WuPlay design language.
 
 ### [`/Guides`](./Guides)

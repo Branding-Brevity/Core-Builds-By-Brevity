@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "id": "core-nexus-dual-core-1080p-2026-05-18.17-42-58-uv4aeb2",
-    "name": "Core Nexus Dual Core 1080p",
-    "description": "A lightweight 1080p SDR configuration utilizing both TorBox and Real-Debrid to maximize stream availability. It ensures reliable streaming on standard setups by filtering out 4K, HDR, and heavy lossless audio. File sizes are capped at 15GB and hardware bitrates are strictly limited to 60 Mbps.",
+    "id": "core-nexus-4k-dual-core-2026-05-18.17-26-41-pctvk0e",
+    "name": "Core Nexus 4K Dual Core",
+    "description": "unleashed 4K setup powered by both TorBox and Real-Debrid for maximum link redundancy. Built for high-end home theaters, it prioritizes Dolby Vision, HDR, and 7.1 lossless audio (TrueHD, Atmos, DTS:X). It supports AV1 encodes and allows massive 150GB file sizes with a 150 Mbps bitrate ceiling.",
     "source": "external",
     "author": "Branding_Brevity",
     "version": "1.0.0",
@@ -21,100 +21,9 @@
         "id": "realdebrid",
         "enabled": false,
         "credentials": {}
-      },
-      {
-        "id": "alldebrid",
-        "enabled": false,
-        "credentials": {}
-      },
-      {
-        "id": "premiumize",
-        "enabled": false,
-        "credentials": {}
-      },
-      {
-        "id": "debridlink",
-        "enabled": false,
-        "credentials": {}
-      },
-      {
-        "id": "stremio_nntp",
-        "enabled": false,
-        "credentials": {}
-      },
-      {
-        "id": "nzbdav",
-        "enabled": false,
-        "credentials": {}
-      },
-      {
-        "id": "altmount",
-        "enabled": false,
-        "credentials": {}
-      },
-      {
-        "id": "offcloud",
-        "enabled": false,
-        "credentials": {}
-      },
-      {
-        "id": "putio",
-        "enabled": false,
-        "credentials": {}
-      },
-      {
-        "id": "easynews",
-        "enabled": false,
-        "credentials": {}
-      },
-      {
-        "id": "easydebrid",
-        "enabled": false,
-        "credentials": {}
-      },
-      {
-        "id": "debrider",
-        "enabled": false,
-        "credentials": {}
-      },
-      {
-        "id": "pikpak",
-        "enabled": false,
-        "credentials": {}
-      },
-      {
-        "id": "seedr",
-        "enabled": false,
-        "credentials": {}
-      },
-      {
-        "id": "stremthru_newz",
-        "enabled": false,
-        "credentials": {}
       }
     ],
     "presets": [
-      {
-        "type": "library",
-        "instanceId": "lib-1",
-        "enabled": true,
-        "options": {
-          "name": "Library",
-          "timeout": 5000,
-          "resources": [
-            "stream",
-            "catalog",
-            "meta"
-          ],
-          "mediaTypes": [],
-          "showRefreshActions": [
-            "catalog"
-          ],
-          "skipProcessing": false,
-          "hideStreams": false,
-          "useMultipleInstances": false
-        }
-      },
       {
         "type": "torbox-search",
         "instanceId": "5f6",
@@ -254,6 +163,8 @@
       }
     },
     "preferredQualities": [
+      "BluRay REMUX",
+      "BluRay",
       "WEB-DL",
       "WEBRip",
       "HDRip",
@@ -261,7 +172,7 @@
       "HDTV"
     ],
     "preferredResolutions": [
-      "1080p"
+      "2160p"
     ],
     "excludedQualities": [
       "CAM",
@@ -269,21 +180,12 @@
       "TS",
       "TC",
       "Unknown",
-      "HC HD-Rip",
-      "BluRay",
-      "BluRay REMUX"
+      "HC HD-Rip"
     ],
     "excludedVisualTags": [
       "3D",
       "H-OU",
-      "H-SBS",
-      "DV",
-      "HDR+DV",
-      "HDR Only",
-      "HDR10+",
-      "HDR10",
-      "DV Only",
-      "HDR"
+      "H-SBS"
     ],
     "sortCriteria": {
       "global": [
@@ -525,31 +427,31 @@
     "checkOwned": true,
     "trusted": false,
     "showChanges": false,
-    "addonName": "Core Nexus Dual Core 1080p",
+    "addonName": "Core Nexus 4K Dual Core",
     "addonLogo": "https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/main/Assets/core_icon.svg",
-    "addonDescription": "Low-End Hardware 1080p Dual Core (TorBox + RD). SDR Only + BluRay/Remux Blocked + WEB-DL Priority + RD Infringement Protection + Smart Caching.",
+    "addonDescription": "Unleashed 4K Dual Core (TorBox + RD). DV/HDR + TrueHD/Atmos + Uncapped Bitrate + AV1 Enabled.",
     "appliedTemplates": [
       {
-        "id": "core-nexus-dual-core-1080p",
+        "id": "core-nexus-dual-core-4k",
         "version": "1.0.9"
       },
       {
-        "id": "core-nexus-1080p-dual-core",
+        "id": "core-nexus-4k-dual-core",
         "version": "1.0.10"
       }
     ],
     "excludedResolutions": [
-      "2160p",
       "1440p",
       "Unknown"
     ],
     "includedResolutions": [
+      "2160p",
       "1080p",
       "720p"
     ],
     "requiredResolutions": [
-      "1080p",
-      "720p"
+      "2160p",
+      "1080p"
     ],
     "includedQualities": [],
     "requiredQualities": [],
@@ -584,42 +486,51 @@
     "includedVisualTags": [],
     "requiredVisualTags": [],
     "preferredVisualTags": [
+      "DV",
+      "HDR+DV",
+      "HDR10+",
+      "HDR10",
+      "HDR",
+      "HLG",
       "SDR"
     ],
-    "excludedAudioTags": [
-      "DTS",
-      "DTS-HD MA",
-      "TrueHD",
-      "DTS:X"
-    ],
+    "excludedAudioTags": [],
     "includedAudioTags": [
-      "DD+",
-      "DD",
-      "AAC",
-      "FLAC",
-      "Atmos"
-    ],
-    "requiredAudioTags": [],
-    "preferredAudioTags": [
-      "DD+",
+      "TrueHD",
+      "DTS-HD MA",
+      "DTS:X",
       "Atmos",
+      "DTS",
+      "DD+",
       "FLAC",
       "DD",
       "AAC"
     ],
+    "requiredAudioTags": [],
+    "preferredAudioTags": [
+      "TrueHD",
+      "Atmos",
+      "DTS:X",
+      "DTS-HD MA",
+      "FLAC",
+      "DD+",
+      "DTS",
+      "DD",
+      "AAC"
+    ],
     "excludedAudioChannels": [
-      "7.1",
       "6.1"
     ],
     "includedAudioChannels": [
+      "7.1",
       "5.1",
       "2.0",
       "Unknown"
     ],
     "requiredAudioChannels": [],
     "preferredAudioChannels": [
-      "5.1",
-      "2.0"
+      "7.1",
+      "5.1"
     ],
     "excludedStreamTypes": [
       "youtube"
@@ -630,16 +541,16 @@
       "debrid",
       "usenet"
     ],
-    "excludedEncodes": [
-      "AV1"
-    ],
+    "excludedEncodes": [],
     "includedEncodes": [
       "HEVC",
+      "AV1",
       "AVC"
     ],
     "requiredEncodes": [],
     "preferredEncodes": [
       "HEVC",
+      "AV1",
       "AVC"
     ],
     "excludedRegexPatterns": [],
@@ -693,19 +604,15 @@
         "enabled": true
       },
       {
-        "expression": "/*Hard Bluray & Remux Kill*/ quality(streams, 'Bluray', 'Bluray REMUX', 'Remux')",
-        "enabled": true
-      },
-      {
-        "expression": "/*Hard 4K Kill*/ resolution(streams, '2160p', '1440p', 'Unknown')",
-        "enabled": true
-      },
-      {
         "expression": "/*Kill Dead Uncached Torrents*/ seeders(uncached(type(streams, 'debrid', 'p2p')), 0, 0)",
         "enabled": true
       },
       {
         "expression": "/*Low SEL Score*/ count(streamExpressionScore(negate(merge(library(streams), seadex(streams)),merge(cached(streams),type(streams,'p2p','http'))),-50))<10?[]:streamExpressionScore(negate(merge(library(streams),seadex(streams)),streams),-1000000,-50)",
+        "enabled": true
+      },
+      {
+        "expression": "/*Bad 1080P Bluray*/(queryType=='movie') and count(quality(resolution(streams,'2160p'),'Bluray REMUX'))==0 and (count(quality(resolution(streams,'1080p'),'Bluray REMUX'))==0) and count(rseMatched(resolution(quality(streams, 'Bluray'), '1080p'), 'DE Bluray T1', 'DE Bluray T2', 'DE Bluray T3', 'UHD Bluray T1', 'HD Bluray T1', 'UHD Bluray T2', 'HD Bluray T2', 'UHD Bluray T3', 'HD Bluray T3')) == 0 ? negate(merge(seadex(streams),library(streams)),quality(resolution(streams,'1080p'),'Bluray')):[]",
         "enabled": true
       },
       {
@@ -736,12 +643,18 @@
       }
     ],
     "includedStreamExpressions": [],
-    "rankedStreamExpressions": [],
+    "rankedStreamExpressions": [
+      {
+        "expression": "releaseGroup == 'CtrlHD' or releaseGroup == 'Ember' or releaseGroup == 'Judas' or releaseGroup == 'Goki' or releaseGroup == 'KITSUNE' or releaseGroup == 'NOMA'",
+        "score": 100,
+        "enabled": true
+      }
+    ],
     "rankedRegexPatterns": [],
     "selOverrides": [],
     "dynamicAddonFetching": {
       "enabled": true,
-      "condition": "count(cached(resolution(totalStreams, \"1080p\"))) >= 8"
+      "condition": "count(cached(resolution(totalStreams, \"2160p\"))) >= 8 and count(cached(releaseGroup(totalStreams, \"CtrlHD\", \"Ember\", \"Judas\", \"Goki\", \"KITSUNE\", \"NOMA\"))) >= 2"
     },
     "groups": {
       "enabled": false,
@@ -755,19 +668,19 @@
       ]
     },
     "resultLimits": {
-      "global": 15,
-      "resolution": 5,
+      "global": 20,
+      "resolution": 8,
       "mode": "conjunctive"
     },
     "size": {
       "global": {
         "movies": [
           0,
-          15000000000
+          150000000000
         ],
         "series": [
           0,
-          8000000000
+          80000000000
         ]
       },
       "resolution": {}
@@ -777,11 +690,11 @@
       "global": {
         "movies": [
           0,
-          60000000
+          150000000
         ],
         "series": [
           0,
-          60000000
+          150000000
         ]
       }
     },
@@ -798,84 +711,10 @@
     },
     "preloadStreams": {
       "enabled": true,
-      "selector": "slice(cached(streams), 0, 1)",
+      "selector": "slice(cached(streams), 0, 2)",
       "singleStream": true
     },
-    "catalogModifications": [
-      {
-        "id": "lib-14bd7.aiostreams::library.torbox",
-        "type": "library",
-        "name": "TorBox",
-        "shuffle": false,
-        "enabled": true,
-        "usePosterService": false,
-        "hideable": true,
-        "searchable": true,
-        "addonName": "Library"
-      },
-      {
-        "id": "nx-fix-024bd7.meteor_library",
-        "type": "movie",
-        "name": "Your Movies",
-        "shuffle": false,
-        "enabled": true,
-        "usePosterService": false,
-        "hideable": true,
-        "searchable": true,
-        "addonName": "Meteor"
-      },
-      {
-        "id": "nx-fix-024bd7.meteor_library",
-        "type": "series",
-        "name": "Your Series",
-        "shuffle": false,
-        "enabled": true,
-        "usePosterService": false,
-        "hideable": true,
-        "searchable": true,
-        "addonName": "Meteor"
-      },
-      {
-        "id": "nx-fix-024bd7.meteor_anime",
-        "type": "anime",
-        "name": "Your Anime",
-        "shuffle": false,
-        "enabled": true,
-        "usePosterService": false,
-        "hideable": true,
-        "searchable": true,
-        "addonName": "Meteor"
-      },
-      {
-        "id": "nx-fix-024bd7.meteor_hentai",
-        "type": "hentai",
-        "name": "Your Hentai",
-        "shuffle": false,
-        "enabled": true,
-        "usePosterService": false,
-        "hideable": true,
-        "searchable": true,
-        "addonName": "Meteor"
-      },
-      {
-        "id": "nx-fix-024bd7.meteor_unmatched",
-        "type": "other",
-        "name": "Your Unmatched",
-        "shuffle": false,
-        "enabled": true,
-        "usePosterService": false,
-        "hideable": true,
-        "searchable": true,
-        "addonName": "Meteor"
-      },
-      {
-        "id": "lib-14bd7.aiostreams::library.realdebrid",
-        "type": "library",
-        "name": "Real-Debrid",
-        "shuffle": false,
-        "enabled": true
-      }
-    ],
+    "catalogModifications": [],
     "nzbFailover": {
       "enabled": true,
       "position": "last"
@@ -890,8 +729,8 @@
     },
     "rpdbApiKey": "<template_placeholder>",
     "usePosterRedirectApi": true,
-    "maxResults": 15,
-    "maxResultsPerResolution": 5,
+    "maxResults": 20,
+    "maxResultsPerResolution": 8,
     "onlyShowCachedStreams": true,
     "showP2PStreams": false,
     "externalDownloads": false,

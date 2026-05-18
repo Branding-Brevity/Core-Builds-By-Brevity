@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "id": "auburn-tiger-rb3", no
+    "id": "auburn-tiger-rb3",
     "name": "community-build-auburn-tiger-rb3",
     "description": "Torbox Pro with usenet boosted. Also comes with Branding_Brevity custom Auburn Tigers formatter. ",
     "source": "external",
@@ -243,6 +243,10 @@
         "enabled": true
       },
       {
+        "expression": "/*Bad 1080P Bluray*/(queryType=='movie') and count(quality(resolution(streams,'2160p'),'Bluray REMUX'))==0 and (count(quality(resolution(streams,'1080p'),'Bluray REMUX'))==0) and count(rseMatched(resolution(quality(streams, 'Bluray'), '1080p'), 'DE Bluray T1', 'DE Bluray T2', 'DE Bluray T3', 'UHD Bluray T1', 'HD Bluray T1', 'UHD Bluray T2', 'HD Bluray T2', 'UHD Bluray T3', 'HD Bluray T3')) == 0 ? negate(merge(seadex(streams),library(streams)),quality(resolution(streams,'1080p'),'Bluray')):[]",
+        "enabled": true
+      },
+      {
         "expression": "/*RD Copyright (per DMM)*/ service( keyword(streams, 'all', 'web-dl', 'webrip', 'bdrip', 'hdrip', 'dvdrip', 'bluray.x264', 'hdtv.x264', 'hdtv.xvid', 'web.x264', 'web.h264'), 'realdebrid')",
         "enabled": true
       },
@@ -454,4 +458,9 @@
       "definitions": {
         "custom": {
           "name": "{service.cached::istrue[\"⚡ Iɴsᴛᴀɴᴛ 🔸 \"||\"⏳ Uɴᴄᴀᴄʜᴇᴅ 🔸 \"]}{service.shortName::exists[\"{service.shortName} 🔸 \"||\"\"]}{stream.resolution::exists[\"{stream.resolution::replace('2160p','🟠 4K UHD')::replace('1440p','🔵 2K')::replace('1080p','🔵 1080ᴘ')::replace('720p','🟠 720ᴘ')::replace('480p','🔵 480ᴘ')}\"||\"⚪ Uɴᴋɴᴏᴡɴ\"]} 🔸 {stream.quality::exists[\"{stream.quality::replace('BluRay REMUX','💎 Rᴇᴍᴜx')::replace('BLURAY REMUX','💎 Rᴇᴍᴜx')::replace('Bluray Remux','💎 Rᴇᴍᴜx')::replace('BluRay Remux','💎 Rᴇᴍᴜx')::replace('BluRay','💿 BʟᴜRᴀʏ')::replace('BLURAY','💿 BʟᴜRᴀʏ')::replace('WEB-DL','🦅 Wᴇʙ-DL')::replace('Web-dl','🦅 Wᴇʙ-DL')::replace('WEBRip','📼 WᴇʙRɪᴘ')::replace('Webrip','📼 WᴇʙRɪᴘ')::smallcaps}\"||\"🔘 Sᴛᴀɴᴅᴀʀᴅ\"]}{stream.audioTags::exists[\" 🔸 {stream.audioTags::join(' 🔸 ')::replace('Atmos','🎶 Aᴛᴍᴏs')::replace('TrueHD','💎 TʀᴜᴇHD')::replace('DTS-HD MA','🔷 DTS-HD MA')::replace('DTS-X','🎵 DTS-X')::replace('DDP','🎶 DD+')::replace('DD+','🎶 DD+')::replace('DD','🎵 DD')::replace('AAC','🎵 ᴀᴀᴄ')::replace('FLAC','💿 ꜰʟᴀᴄ')::smallcaps}\"||\"\"]}{stream.audioTags::~(?i)(EAC3|DDP|DD\\+)[\" 🔸 🔊 JBL Sᴘᴀᴛɪᴀʟ\"||\"\"]}{stream.releaseGroup::~(?i)(epsilon|framestor|qxr|tigole|ntb|flux|d-z0n3|playbd|hifi|don|huno|bmf)[\" 🔸 👑 Pʀᴇᴍɪᴜᴍ\"||\"\"]}{stream.editions::exists[\" 🔸 🎬 {stream.editions::join(' 🔸 ')::smallcaps}\"||\"\"]}{stream.filename::~Boutique[\" 🔸 🎬 ʙᴏᴜᴛɪQᴜᴇ\"||\"\"]}{stream.filename::~Despecialized[\" 🔸 🌌 ᴅᴇꜱᴘᴇᴄɪᴀʟɪᴢᴇᴅ\"||\"\"]}{stream.filename::~Final.Cut[\" 🔸 ✂️ ꜰɪɴᴀʟ ᴄᴜᴛ\"||\"\"]}{stream.filename::~International[\" 🔸 🌍 ɪɴᴛᴇʀɴᴀᴛɪᴏɴᴀʟ\"||\"\"]}{stream.filename::~Matte[\" 🔸 🌌 ᴏᴘᴇɴ ᴍᴀᴛᴛᴇ\"||\"\"]}{stream.filename::~Uncensored[\" 🔸 🩸 ᴜɴᴄᴇɴꜱᴏʀᴇᴅ\"||\"\"]}{stream.filename::~Unrated[\" 🔸 🎬 ᴜɴʀᴀᴛᴇᴅ\"||\"\"]}{stream.filename::~IMAX[\" 🔸 🎞️ ɪᴍᴀx\"||\"\"]}{stream.filename::~Hybrid[\" 🔸 🧬 ʜʏʙʀɪᴅ\"||\"\"]}",
-          "description": "🗓️ {stream.age::>0[\"{stream.age} Dᴀʏs\"||\"✨ Nᴇᴡ\"]}{stream.type::exists[\" 🔸 ☁️ {stream.type::smallcaps}\"||\"\"]} 🔹 💾 {stream
+          "description": "🗓️ {stream.age::>0[\"{stream.age} Dᴀʏs\"||\"✨ Nᴇᴡ\"]}{stream.type::exists[\" 🔸 ☁️ {stream.type::smallcaps}\"||\"\"]} 🔸 💾 {stream.size::>0[\"{stream.size::sbytes::smallcaps}\"||\"Uɴᴋɴᴏᴡɴ\"]}"
+        }
+      }
+    }
+  }
+}

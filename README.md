@@ -2,7 +2,7 @@
   <img src="./Assets/core_builds_banner.svg" alt="Core Builds Banner">
 </p>
 
-# 🛡️ Core Builds by Brevity
+# 🛡️ Core Builds by Branding_Brevity
 
 Welcome to **Core Builds**. This repository hosts highly optimized configuration templates and custom formatters for **AIOStreams**, specifically tuned for seamless playback on WuPlay, Stremio, and Android-based home theater environments.
 
@@ -49,6 +49,7 @@ While the **Core Nexus** builds represent our official configurations, we also h
 
 | Template Name | Vibe / Style | View Build |
 | :--- | :--- | :--- |
+| **RB3 TorBox Pro + RD Hybrid** | Premium Dual-Service | [View JSON](Community-Templates/Templates/RB3/rb3-2026-05-18.04-04-30-4r5bofv-template.json) |
 | **Auburn Tiger Edition (by RB3)** | Warm / Aggressive | [View JSON](Community-Templates/Templates/RB3/auburn-tiger-rb3.json) |
 
 > **⚠️ Note on Community Templates:**
@@ -72,10 +73,25 @@ If you've built a killer AIOStreams formatter, open a Pull Request and submit yo
 
 ---
 
+## 📜 Code of Conduct
+We are committed to fostering a welcoming, respectful, and harassment-free environment for everyone. This project has adopted the Contributor Covenant Code of Conduct. 
+
+By participating in this project or our Discord community, you agree to abide by its terms. Please read our full [Code of Conduct](CODE_OF_CONDUCT.md) before contributing.
+
+---
+
+## 💬 Connect on Discord
+Have questions, feedback, or need help tweaking your setup? You can reach out to me directly on Discord:
+* **Discord Username:** `tazzakaz` (Display Name: *Branding_Brevity*)
+
 ## ☕ Support the Project
-If these templates have leveled up your home theater setup and saved you from buffering headaches, consider supporting the continuous updates!
+If these templates have leveled up your home theater setup and saved you from buffering headaches, consider supporting the continuous updates! 
+
+**✨ Supporter Perks:**
+* **Custom Hardware Build:** Donations allow you to request a completely custom AIOStreams template, tailored specifically to your exact hardware capabilities, network limits, and viewing preferences!
+* **Early Access:** Get temporary early access to all new beta builds and upcoming template updates before they go public!
 
 [![Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/branding_brevity/?hidefeed=true&widget=true&embed=true)
 
 ---
-*Built and maintained by Brevity.*
+*Built and maintained by Branding_Brevity.*

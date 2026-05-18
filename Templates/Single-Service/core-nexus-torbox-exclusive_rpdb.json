@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "id": "core-nexus-torbox-exclusive--2026-05-15.23-43-04-azcri48",
-    "name": "Core Nexus Torbox Exclusive ",
+    "id": "core-nexus-1080p-torbox-exclusive",
+    "name": "Core Nexus TorBox Exclusive",
     "description": "A frictionless 1080p SDR configuration exclusively powered by TorBox. Features the Core Zenith Diamond Formatter, strict 60 Mbps hardware bitrate capping, AV1 exclusion, Highly optimized for smooth, stutter-free playback",
     "source": "external",
     "author": "Branding_Brevity",
-    "version": "1.0.7",
+    "version": "1.0.10",
     "category": "Debrid",
     "serviceRequired": false,
     "setToSaveInstallMenu": true
@@ -15,11 +15,11 @@
     "showChanges": false,
     "addonName": "Core Nexus TB Exclusive",
     "addonLogo": "https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/main/Assets/core_icon.svg",
-    "addonDescription": "Frictionless 1080p TorBox Exclusive. Zenith Formatter + RB3 Smart Logic + Smart Caching.",
+    "addonDescription": "Low-End Hardware 1080p TorBox Exclusive. SDR Only + BluRay/Remux Blocked + WEB-DL Priority + Encode Safe + Smart Caching.",
     "appliedTemplates": [
       {
         "id": "core-nexus-torbox-exclusive",
-        "version": "1.0.6"
+        "version": "1.0.9"
       }
     ],
     "excludedResolutions": [
@@ -58,7 +58,14 @@
       "HDTV"
     ],
     "excludedLanguages": [],
-    "includedLanguages": [],
+    "includedLanguages": [
+      "English",
+      "Original",
+      "Dual Audio",
+      "Multi",
+      "Dubbed",
+      "Unknown"
+    ],
     "requiredLanguages": [
       "English",
       "Original",
@@ -69,7 +76,9 @@
     ],
     "preferredLanguages": [
       "English",
+      "Original",
       "Dual Audio",
+      "Multi",
       "Dubbed"
     ],
     "excludedSubtitles": [],
@@ -179,7 +188,7 @@
     "ageRangeTypes": [],
     "digitalReleaseFilter": {
       "enabled": true,
-      "tolerance": 8,
+      "tolerance": 3,
       "requestTypes": [
         "movie",
         "series",
@@ -200,6 +209,14 @@
     ],
     "excludedStreamExpressions": [
       {
+        "expression": "/*Hard CAM Kill*/ quality(streams, 'CAM', 'SCR', 'TS', 'TC', 'HC HD-Rip')",
+        "enabled": true
+      },
+      {
+        "expression": "/*Hard YouTube Kill*/ type(streams, 'youtube')",
+        "enabled": true
+      },
+      {
         "expression": "/*Hard Bluray & Remux Kill*/ quality(streams, 'Bluray', 'Bluray REMUX', 'Remux')",
         "enabled": true
       },
@@ -213,10 +230,6 @@
       },
       {
         "expression": "/*Low SEL Score*/ count(streamExpressionScore(negate(merge(library(streams), seadex(streams)),merge(cached(streams),type(streams,'p2p','http'))),-50))<10?[]:streamExpressionScore(negate(merge(library(streams),seadex(streams)),streams),-1000000,-50)",
-        "enabled": true
-      },
-      {
-        "expression": "/*Bad 1080P Bluray*/(queryType=='movie') and count(quality(resolution(streams,'2160p'),'Bluray REMUX'))==0 and (count(quality(resolution(streams,'1080p'),'Bluray REMUX'))==0) and count(rseMatched(resolution(quality(streams, 'Bluray'), '1080p'), 'DE Bluray T1', 'DE Bluray T2', 'DE Bluray T3', 'UHD Bluray T1', 'HD Bluray T1', 'UHD Bluray T2', 'HD Bluray T2', 'UHD Bluray T3', 'HD Bluray T3')) == 0 ? negate(merge(seadex(streams),library(streams)),quality(resolution(streams,'1080p'),'Bluray')):[]",
         "enabled": true
       },
       {
@@ -247,19 +260,13 @@
       }
     ],
     "includedStreamExpressions": [],
-    "rankedStreamExpressions": [
-      {
-        "expression": "releaseGroup == 'CtrlHD' or releaseGroup == 'Ember' or releaseGroup == 'Judas' or releaseGroup == 'Goki' or releaseGroup == 'KITSUNE' or releaseGroup == 'NOMA'",
-        "score": 100,
-        "enabled": true
-      }
-    ],
+    "rankedStreamExpressions": [],
     "rankedRegexPatterns": [],
     "regexOverrides": [],
     "selOverrides": [],
     "dynamicAddonFetching": {
       "enabled": true,
-      "condition": "count(cached(resolution(totalStreams, \"1080p\"))) >= 8 and count(cached(releaseGroup(totalStreams, \"CtrlHD\", \"Ember\", \"Judas\", \"Goki\", \"KITSUNE\", \"NOMA\"))) >= 2"
+      "condition": "count(cached(resolution(totalStreams, \"1080p\"))) >= 8"
     },
     "groups": {
       "enabled": false,
@@ -408,8 +415,8 @@
       "definitions": {
         "overrides": {
           "tamtaro": {
-            "name": "{service.cached::istrue[\"\u26a1 I\u0274s\u1d1b\u1d00\u0274\u1d1b \u2022 \"||\"\u23f3 U\u0274\u1d04\u1d00\u1d04\u029c\u1d07\u1d05 \u2022 \"]}{service.shortName::exists[\"{service.shortName}\"||\"\"]}\ud83d\udd39 {stream.resolution::exists[\"{stream.resolution::replace('2160p','\ud83d\udfe3 4K UHD')::replace('1440p','\ud83d\udfe1 2K')::replace('1080p','\ud83d\udd35 1080\u1d18')::replace('720p','\ud83d\udfe2 720\u1d18')::replace('480p','\u26ab 480\u1d18')}\"||\"\u26aa U\u0274\u1d0b\u0274\u1d0f\u1d21\u0274\"]} \u2022 {stream.quality::exists[\"{stream.quality::replace('BluRay REMUX','\ud83d\udc8e R\u1d07\u1d0d\u1d1cx')::replace('BLURAY REMUX','\ud83d\udc8e R\u1d07\u1d0d\u1d1cx')::replace('Bluray Remux','\ud83d\udc8e R\u1d07\u1d0d\u1d1cx')::replace('BluRay Remux','\ud83d\udc8e R\u1d07\u1d0d\u1d1cx')::replace('BluRay','\ud83d\udcbf B\u029f\u1d1cR\u1d00\u028f')::replace('BLURAY','\ud83d\udcbf B\u029f\u1d1cR\u1d00\u028f')::replace('WEB-DL','\ud83c\udf7f W\u1d07\u0299-DL')::replace('Web-dl','\ud83c\udf7f W\u1d07\u0299-DL')::replace('WEBRip','\ud83d\udcfc W\u1d07\u0299R\u026a\u1d18')::replace('Webrip','\ud83d\udcfc W\u1d07\u0299R\u026a\u1d18')::smallcaps}\"||\"\ud83d\udd18 S\u1d1b\u1d00\u0274\u1d05\u1d00\u0280\u1d05\"]}{stream.audioTags::exists[\"\ud83d\udd39 {stream.audioTags::join(' \u2022 ')::replace('Atmos','\ud83c\udfb6 A\u1d1b\u1d0d\u1d0fs')::replace('TrueHD','\ud83d\udc8e T\u0280\u1d1c\u1d07HD')::replace('DTS-HD MA','\ud83d\udd37 DTS-HD MA')::replace('DTS-X','\ud83c\udfb5 DTS-X')::replace('DDP','\ud83c\udfb6 DD+')::replace('DD+','\ud83c\udfb6 DD+')::replace('DD','\ud83c\udfb5 DD')::replace('AAC','\ud83c\udfb5 \u1d00\u1d00\u1d04')::replace('FLAC','\ud83d\udcbf \ua730\u029f\u1d00\u1d04')::smallcaps}\"||\"\"]}{stream.audioChannels::exists[\" \u2022 \ud83d\udd0a {stream.audioChannels::join('/')}\"||\"\"]}{stream.audioTags::~(?i)(EAC3|DDP|DD\\+)[\"\ud83d\udd39 \ud83d\udd0a JBL S\u1d18\u1d00\u1d1b\u026a\u1d00\u029f\"||\"\"]}{stream.visualTags::~(?i)(SDR|HDR10)[\"\ud83d\udd39 \u2600\ufe0f H\u026a\u1d0d\u1d00\u029f\u1d00\u028f\u1d00\"||\"\"]}{stream.releaseGroup::~(?i)(epsilon|framestor|qxr|tigole|ntb|flux|d-z0n3|playbd|hifi|don|huno|bmf)[\"\ud83d\udd39 \ud83d\udc51 P\u0280\u1d07\u1d0d\u026a\u1d1c\u1d0d\"||\"\"]}{stream.editions::exists[\"\ud83d\udd39 \ud83c\udfac {stream.editions::join(' \u2022 ')::smallcaps}\"||\"\"]}{stream.filename::~Boutique[\"\ud83d\udd39 \ud83c\udfac \u0299\u1d0f\u1d1c\u1d1b\u026aQ\u1d1c\u1d07\"||\"\"]}{stream.filename::~Despecialized[\"\ud83d\udd39 \ud83c\udf0c \u1d05\u1d07\ua731CPE\u1d04\u026a\u1d00\u029f\u026a\u1d22\u1d07\u1d05\"||\"\"]}{stream.filename::~Final.Cut[\"\ud83d\udd39 \u2702\ufe0f \ua730\u026a\u0274\u1d00\u029f \u1d04\u1d1c\u1d1b\"||\"\"]}{stream.filename::~International[\"\ud83d\udd39 \ud83c\udf0d \u026a\u0274\u1d1b\u1d07\u0280\u0274\u1d00\u1d1b\u026a\u1d0f\u0274\u1d00\u029f\"||\"\"]}{stream.filename::~Matte[\"\ud83d\udd39 \ud83c\udf0c \u1d0f\u1d18\u1d07\u0274 \u1d0d\u1d00\u1d1b\u1d1b\u1d07\"||\"\"]}{stream.filename::~Uncensored[\"\ud83d\udd39 \ud83e\ude78 \u1d1c\u0274\u1d04\u1d07\u0274\ua731\u1d0f\u0280\u1d07\u1d05\"||\"\"]}{stream.filename::~Unrated[\"\ud83d\udd39 \ud83c\udfac \u1d1c\u0274\u0280\u1d00\u1d1b\u1d07\u1d05\"||\"\"]}{stream.filename::~IMAX[\"\ud83d\udd39 \ud83c\udf9e\ufe0f \u026a\u1d0d\u1d00x\"||\"\"]}{stream.filename::~Hybrid[\"\ud83d\udd39 \ud83e\uddec \u029c\u028f\u0299\u0280\u026a\u1d05\"||\"\"]}",
-            "description": "\ud83d\uddd3\ufe0f {stream.age::>0[\"{stream.age} D\u1d00\u028fs\"||\"\u2728 N\u1d07\u1d21\"]}{stream.type::exists[\"\ud83d\udd39 \u2601\ufe0f {stream.type::smallcaps}\"||\"\"]}{addon.name::exists[\"\ud83d\udd39 \ud83e\udde9 {addon.name::smallcaps}\"||\"\"]}{tools.newLine}{stream.bitrate::exists[\"\u26a1 {stream.bitrate::sbitrate::replace('MBPS','\u1d0d\u0299\u1d18s')::replace('Mbps','\u1d0d\u0299\u1d18s')::replace('KBPS','\u1d0b\u0299\u1d18s')::replace('Kbps','\u1d0b\u0299\u1d18s')::smallcaps}\"||\"\u26a1 U\u0274\u1d0b\u0274\u1d0f\u1d21\u0274\"]}{stream.size::>0[\"\ud83d\udd39 \ud83d\udcbe {stream.size::sbytes::smallcaps}\"||\"\ud83d\udd39 \ud83d\udcbe U\u0274\u1d0b\u0274\u1d0f\u1d21\u0274\"]}{stream.seeders::>0[\"\ud83d\udd39 \ud83c\udf31 {stream.seeders} S\u1d07\u1d07\u1d05\u1d07\u0280s\"||\"\"]}{tools.newLine}{tools.newLine}\ud83c\udf9e\ufe0f V\u026a\u1d05\u1d07\u1d0f: {stream.visualTags::exists[\"{stream.visualTags::join('\ud83d\udd39 ')::replace('HDR10+','\u2728 \u029c\u1d05\u0280\u00b9\u2070\u207a')::replace('HDR10','\ud83c\udf1f \u029c\u1d05\u0280\u00b9\u2070')::replace('SDR','\u2600\ufe0f SDR')::replace('HDR','\ud83c\udf1f HDR')::replace('DV','\u2728 DV')::replace('10BIT','\ud83c\udfa8 10\u0299\u026a\u1d1b')::replace('10bit','\ud83c\udfa8 10\u0299\u026a\u1d1b')::replace('STANDARD','S\u1d1b\u1d00\u0274\u1d05\u1d00\u0280\u1d05')::replace('Standard','S\u1d1b\u1d00\u0274\u1d05\u1d00\u0280\u1d05')::smallcaps}\"||\"\u2600\ufe0f SDR\"]}{stream.encode::exists[\"\ud83d\udd39 \u2699\ufe0f {stream.encode::replace('HEVC','\u029c\u1d07\u1d20\u1d04')::replace('AVC','\u1d00\u1d20\u1d04')::replace('AV1','\u1d00\u1d201')::smallcaps}\"||\"\"]}\ud83d\udd39 \ud83c\udf0d L\u1d00\u0274\u0262: {stream.languages::>1[\"\u1d07\u0274\u0262\u029f\u026as\u029c\ud83d\udd39 \ud83d\udde3\ufe0f \u1d0d\u1d1c\u029f\u1d1b\u026a\"||\"\"]}{stream.languages::==1[\"{stream.languages::join('')::smallcaps}\"||\"\"]}{stream.languages::exists[\"\"||\"U\u0274\u1d0b\u0274\u1d0f\u1d21\u0274\"]}{tools.newLine}\ud83c\udfaf R\u1d07\u029f\u1d07\u1d00s\u1d07: {stream.releaseGroup::exists[\"\ud83d\udc51 {stream.releaseGroup::smallcaps}\"||\"\ud83d\udc64 U\u0274\u1d0b\u0274\u1d0f\u1d21\u0274 G\u0280\u1d0f\u1d1cG\"]}{stream.regexMatched::exists[\"\ud83d\udd39 \ud83d\udee1\ufe0f {stream.regexMatched::smallcaps}\"||\"\"]}{stream.seadexBest::istrue[\"\ud83d\udd39 \ud83c\udfc6 B\u1d07s\u1d1b R\u1d07\u029f\u1d07\u1d00s\u1d07\"||\"\"]}"
+            "name": "{service.cached::istrue[\"⚡ Iɴsᴛᴀɴᴛ • \"||\"⏳ Uɴᴄᴀᴄʜᴇᴅ • \"]}{service.shortName::exists[\"{service.shortName}\"||\"\"]}🔹 {stream.resolution::exists[\"{stream.resolution::replace('2160p','🟣 4K UHD')::replace('1440p','🟡 2K')::replace('1080p','🔵 1080ᴘ')::replace('720p','🟢 720ᴘ')::replace('480p','⚫ 480ᴘ')}\"||\"⚪ Uɴᴋɴᴏᴡɴ\"]} • {stream.quality::exists[\"{stream.quality::replace('BluRay REMUX','💎 Rᴇᴍᴜx')::replace('BLURAY REMUX','💎 Rᴇᴍᴜx')::replace('Bluray Remux','💎 Rᴇᴍᴜx')::replace('BluRay Remux','💎 Rᴇᴍᴜx')::replace('BluRay','💿 BʟᴜRᴀʏ')::replace('BLURAY','💿 BʟᴜRᴀʏ')::replace('WEB-DL','🍿 Wᴇʙ-DL')::replace('Web-dl','🍿 Wᴇʙ-DL')::replace('WEBRip','📼 WᴇʙRɪᴘ')::replace('Webrip','📼 WᴇʙRɪᴘ')::smallcaps}\"||\"🔘 Sᴛᴀɴᴅᴀʀᴅ\"]}{stream.audioTags::exists[\"🔹 {stream.audioTags::join(' • ')::replace('Atmos','🎶 Aᴛᴍᴏs')::replace('TrueHD','💎 TʀᴜᴇHD')::replace('DTS-HD MA','🔷 DTS-HD MA')::replace('DTS-X','🎵 DTS-X')::replace('DDP','🎶 DD+')::replace('DD+','🎶 DD+')::replace('DD','🎵 DD')::replace('AAC','🎵 ᴀᴀᴄ')::replace('FLAC','💿 ꜰʟᴀᴄ')::smallcaps}\"||\"\"]}{stream.audioChannels::exists[\" • 🔊 {stream.audioChannels::join('/')}\"||\"\"]}{stream.audioTags::~(?i)(EAC3|DDP|DD\\+)[\"🔹 🔊 JBL Sᴘᴀᴛɪᴀʟ\"||\"\"]}{stream.visualTags::~(?i)(SDR|HDR10)[\"🔹 ☀️ Hɪᴍᴀʟᴀʏᴀ\"||\"\"]}{stream.releaseGroup::~(?i)(epsilon|framestor|qxr|tigole|ntb|flux|d-z0n3|playbd|hifi|don|huno|bmf)[\"🔹 👑 Pʀᴇᴍɪᴜᴍ\"||\"\"]}{stream.editions::exists[\"🔹 🎬 {stream.editions::join(' • ')::smallcaps}\"||\"\"]}{stream.filename::~Boutique[\"🔹 🎬 ʙᴏᴜᴛɪQᴜᴇ\"||\"\"]}{stream.filename::~Despecialized[\"🔹 🌌 ᴅᴇꜱCPEᴄɪᴀʟɪᴢᴇᴅ\"||\"\"]}{stream.filename::~Final.Cut[\"🔹 ✂️ ꜰɪɴᴀʟ ᴄᴜᴛ\"||\"\"]}{stream.filename::~International[\"🔹 🌍 ɪɴᴛᴇʀɴᴀᴛɪᴏɴᴀʟ\"||\"\"]}{stream.filename::~Matte[\"🔹 🌌 ᴏᴘᴇɴ ᴍᴀᴛᴛᴇ\"||\"\"]}{stream.filename::~Uncensored[\"🔹 🩸 ᴜɴᴄᴇɴꜱᴏʀᴇᴅ\"||\"\"]}{stream.filename::~Unrated[\"🔹 🎬 ᴜɴʀᴀᴛᴇᴅ\"||\"\"]}{stream.filename::~IMAX[\"🔹 🎞️ ɪᴍᴀx\"||\"\"]}{stream.filename::~Hybrid[\"🔹 🧬 ʜʏʙʀɪᴅ\"||\"\"]}",
+            "description": "🗓️ {stream.age::>0[\"{stream.age} Dᴀʏs\"||\"✨ Nᴇᴡ\"]}{stream.type::exists[\"🔹 ☁️ {stream.type::smallcaps}\"||\"\"]}{addon.name::exists[\"🔹 🧩 {addon.name::smallcaps}\"||\"\"]}{tools.newLine}{stream.bitrate::exists[\"⚡ {stream.bitrate::sbitrate::replace('MBPS','ᴍʙᴘs')::replace('Mbps','ᴍʙᴘs')::replace('KBPS','ᴋʙᴘs')::replace('Kbps','ᴋʙᴘs')::smallcaps}\"||\"⚡ Uɴᴋɴᴏᴡɴ\"]}{stream.size::>0[\"🔹 💾 {stream.size::sbytes::smallcaps}\"||\"🔹 💾 Uɴᴋɴᴏᴡɴ\"]}{stream.seeders::>0[\"🔹 🌱 {stream.seeders} Sᴇᴇᴅᴇʀs\"||\"\"]}{tools.newLine}{tools.newLine}🎞️ Vɪᴅᴇᴏ: {stream.visualTags::exists[\"{stream.visualTags::join('🔹 ')::replace('HDR10+','✨ ʜᴅʀ¹⁰⁺')::replace('HDR10','🌟 ʜᴅʀ¹⁰')::replace('SDR','☀️ SDR')::replace('HDR','🌟 HDR')::replace('DV','✨ DV')::replace('10BIT','🎨 10ʙɪᴛ')::replace('10bit','🎨 10ʙɪᴛ')::replace('STANDARD','Sᴛᴀɴᴅᴀʀᴅ')::replace('Standard','Sᴛᴀɴᴅᴀʀᴅ')::smallcaps}\"||\"☀️ SDR\"]}{stream.encode::exists[\"🔹 ⚙️ {stream.encode::replace('HEVC','ʜᴇᴠᴄ')::replace('AVC','ᴀᴠᴄ')::replace('AV1','ᴀᴠ1')::smallcaps}\"||\"\"]}🔹 🌍 Lᴀɴɢ: {stream.languages::>1[\"ᴇɴɢʟɪsʜ🔹 🗣️ ᴍᴜʟᴛɪ\"||\"\"]}{stream.languages::==1[\"{stream.languages::join('')::smallcaps}\"||\"\"]}{stream.languages::exists[\"\"||\"Uɴᴋɴᴏᴡɴ\"]}{tools.newLine}🎯 Rᴇʟᴇᴀsᴇ: {stream.releaseGroup::exists[\"👑 {stream.releaseGroup::smallcaps}\"||\"👤 Uɴᴋɴᴏᴡɴ GʀᴏᴜG\"]}{stream.regexMatched::exists[\"🔹 🛡️ {stream.regexMatched::smallcaps}\"||\"\"]}{stream.seadexBest::istrue[\"🔹 🏆 Bᴇsᴛ Rᴇʟᴇᴀsᴇ\"||\"\"]}"
           }
         }
       }
@@ -421,7 +428,7 @@
     },
     "resultLimits": {
       "global": 15,
-      "resolution": 15,
+      "resolution": 5,
       "mode": "conjunctive"
     },
     "size": {
@@ -457,7 +464,7 @@
       "subtitles"
     ],
     "statistics": {
-      "enabled": false,
+      "enabled": true,
       "statsToShow": [
         "addon",
         "filter"
@@ -616,7 +623,7 @@
         "instanceId": "tb-nzb-1",
         "enabled": true,
         "options": {
-          "name": "Search\u207f\u1dbb\u1d47",
+          "name": "Searchⁿᶻᵇ",
           "newznabUrl": "https://search-api.torbox.app/newznab",
           "apiPath": "/api",
           "timeout": 5000,
@@ -659,7 +666,7 @@
       {
         "type": "comet",
         "instanceId": "nx-fix-01",
-        "enabled": true,
+        "enabled": false,
         "options": {
           "name": "Comet RD",
           "timeout": 5000,
@@ -796,6 +803,10 @@
     "showP2PStreams": false,
     "externalDownloads": false,
     "autoRemoveDownloads": false,
-    "excludeUncachedMode": "or"
+    "excludeUncachedMode": "or",
+    "excludedStreamSources": [
+      "YouTube",
+      "AI Enhanced"
+    ]
   }
 }

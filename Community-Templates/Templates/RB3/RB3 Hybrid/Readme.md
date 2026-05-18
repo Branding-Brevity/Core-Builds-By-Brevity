@@ -18,22 +18,27 @@ A premium, dual-service AIOStreams template designed to maximize stream availabi
 ### ⚙️ Advanced Filtering & Sorting
 * **Tamtaro SEL Framework (v2.6.1):** Integrates Tamtaro's live-synced Preferred, Excluded, and Included Stream Expressions (PSE/ESE/ISE) for dynamic, cloud-updated filtering.
 * **Vidhin's English Regex:** Live-syncs Vidhin's Ranked Regexes to intelligently score and sort releases based on trusted release groups and formatting standards.
-* **Aggressive Deduplication:** Uses AIOStreams' "Aggressive" Smart Detect deduplicator to clean up bloated result lists by merging identical files based on infoHashes, file sizes, and audio/video tracks.
+* **Aggressive Deduplication:** Uses AIOStreams' "Aggressive" Smart Detect deduplicator to clean up bloated result lists by merging identical files.
+
+### ⏩ Flawless Autoplay
+* **Stremio & WuPlay Ready:** The AutoPlay settings in this template are rigorously tested and guaranteed to work flawlessly across both Stremio and WuPlay. 
+* **No Cinemeta Required:** These settings allow AutoPlay to function perfectly even if you completely remove Cinemeta from your setup and rely solely on AIOMetaData and AIOStreams.
+
+### 🗣️ Language Customization
+* **Native Language Support:** While this template defaults to English, it is built to be easily customizable. You can seamlessly change the output to your native language by adjusting the **Required** and **Preferred Languages** filters in the configuration menu.
+
+### 🎨 Visual Formatter
+* **Tam-Taro Default:** This template is pre-set to use Tam-Taro's highly detailed visual formatter to inject clean typography and badges (e.g., `4K`, `Remux`, `HDR`) directly into your stream list.
+* **Easily Swappable:** If you prefer a different look, you can easily change this to any of the other preloaded formatters within the AIOStreams settings.
 
 ### 🧩 Included Addons (Presets)
 This template comes pre-wired with a highly optimized stack of scrapers and utilities:
 * **Debrid / Torrents:** Meteor, Comet, Torrentio, Knaben, Sootio
-* **Usenet Search:** Searchⁿᶻᵇ (via TorBox), STorz (Torznab)
+* **Usenet Search:** * **Searchⁿᶻᵇ:** This is Tam's preloaded Newznab addon configured specifically for the TorBox Search indexer. All you need to do is paste your TorBox API key into it!
+  * **STorz:** Torznab integration.
 * **Anime:** SeaDex
-* **Subtitles:** OpenSubtitles V3+ (Defaulted to English)
+* **Subtitles:** OpenSubtitles V3+
 * **UI:** Library integration (TorBox & Real-Debrid catalogs pushed to Discover)
-
-### 🎨 Custom Visual Formatter
-Includes a highly customized, compact data formatter that injects visual badges directly into Stremio. It translates complex stream data into easy-to-read icons:
-* **Source Tags:** `[nzb]`, `[p2p]`, `[web]`
-* **Health Indicators:** Identifies verified/unverified Usenet health directly in the title.
-* **Dynamic Badging:** Replaces standard tags with clean typography (e.g., `4K`, `Remux`, `HDR`, `Atmos`).
-* **SeaDex Integration:** Clearly marks "Best Release" and "Alt Best Release" for anime watchers.
 
 ## 🛠️ Prerequisites
 To use this template to its full potential, ensure you have the following API keys ready during the AIOStreams setup:
@@ -42,4 +47,3 @@ To use this template to its full potential, ensure you have the following API ke
 3. **TMDB API Key & Read Access Token** (Free)
 4. **TVDB API Key** (Free)
 5. **RPDB API Key** (Free tier supported for custom posters)
-6. 

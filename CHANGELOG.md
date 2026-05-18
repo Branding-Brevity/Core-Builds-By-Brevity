@@ -3,7 +3,16 @@
 All notable changes to the **Core Builds** templates and formatters will be documented in this file.
 
 ---
+## [1.0.10] - 2026-05-18
 
+### Changed
+- **Template Metadata Overhaul:** Updated the `name` and `description` fields across all four templates (`core-nexus-4k-dual-core`, `core-nexus-4k-ht-torbox`, `core-nexus-dual-core-1080p`, `core-nexus-1080p-torbox-exclusive`) to accurately reflect their specific configurations, resolutions, and service dependencies.
+- **Unique Template IDs Assigned:** Replaced the shared, duplicate ID with unique, hyphenated IDs for each file. This ensures all four templates can be loaded into AIOStreams simultaneously without conflicting or overwriting one another.
+
+### Fixed
+- **Hard YouTube Kill ESE Corrected:** Replaced invalid `streamType(streams, 'youtube')` with the correct `type(streams, 'youtube')` in the `/*Hard YouTube Kill*/` excluded stream expression across all four templates. `streamType` is not a recognised AIOStreams function — the expression was throwing an `undefined variable` evaluation error and failing silently instead of blocking YouTube streams.
+- **RD Infringing File Scrub ESE Corrected:** Replaced the invalid `filename()` function with the native `keyword()` text-matching function in the Real-Debrid infringement block. The previous expression was throwing an `undefined variable: filename` error and breaking the list evaluation.
+  
 ## [1.0.9] - 2026-05-18
 
 ### Added

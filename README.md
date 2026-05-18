@@ -23,7 +23,7 @@ Streaming should be frictionless. These builds are engineered to strip out unpla
 *For power users running TorBox + Real-Debrid. Features cross-service failover and massive library depth.*
 
 * **[Dual Core 1080p SDR](./Templates/Dual-Service/core-nexus-dual-core-1080p.json):** Frictionless 1080p locking with dual-cache merging.
-* **[Dual Core 4K Unleashed](./Templates/Dual-Service/core-nexus-dual-core-4k.json):** The ultimate master build. Combines TorBox Usenet priority with the massive Real-Debrid cache.
+* **[Dual Core 4K Unleashed](./Templates/Dual-Service/core-nexus-4k-dual-core.json):** The ultimate master build. Combines TorBox Usenet priority with the massive Real-Debrid cache.
 
 ---
 

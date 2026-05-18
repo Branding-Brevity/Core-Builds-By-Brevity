@@ -1,4 +1,4 @@
-# 🚀 RB3 TorBox Pro + RD Hybrid
+<img src="./rb3_banner.svg" alt="RB3 Builds Banner">
 
 A premium, dual-service AIOStreams template designed to maximize stream availability by combining the power of **TorBox Pro** and **Real-Debrid**. Built on top of the robust Tamtaro SEL framework, this configuration is heavily biased toward high-quality, cached Usenet releases. 
 

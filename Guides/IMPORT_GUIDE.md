@@ -14,6 +14,7 @@ Before importing, choose the right build for your setup. If you're running on mu
 | `core-nexus-4k-ht-torbox.json` | 4K HDR | TorBox only | Shield / 4K TVs, home theater |
 | `core-nexus-dual-core-1080p.json` | 1080p SDR | TorBox + Real-Debrid | Low-end devices, dual-cache failover |
 | `core-nexus-4k-dual-core.json` | 4K HDR | TorBox + Real-Debrid | Shield / 4K TVs, maximum coverage |
+| `core-nexus-4k-essential-dual-core.json` | 4K HDR | TorBox Essential + Real-Debrid | Shield / 4K TVs, no Usenet required |
 | `core-nexus-tb-hybrid-1080p.json` | 1080p SDR | TorBox + NZBGeek | Users with a Usenet indexer subscription |
 
 > All five templates include the full **12-service roster** pre-loaded. Enable only the services you actually subscribe to — the rest are ignored.
@@ -59,6 +60,8 @@ https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/main/T
 All 12 debrid services are pre-loaded in every template, all set to **disabled by default**. Toggle on only the services you subscribe to — everything else stays off and is ignored.
 
 **Available services:** TorBox · Real-Debrid · AllDebrid · Premiumize · DebridLink · Offcloud · Put.io · EasyNews · EasyDebrid · PikPak · Seedr · Debrider
+
+> 💡 **4K Essential Dual Core** is identical to the flagship 4K Dual Core but with Usenet removed. Use this if you are on the TorBox Essential plan which does not include Usenet access. All 4K quality targets, RD scrub, and SeaDex enforcement are unchanged.
 
 > 💡 For the **TB Hybrid** template, you will also need a **NZBGeek API key** to activate the Usenet indexer tier. If you don't have one, every other addon in the template still works without it.
 

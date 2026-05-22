@@ -15,21 +15,29 @@ Streaming shouldn't involve trial and error. These builds are engineered to stri
 ## 🚀 The Flagship Builds
 
 ### ⛓️ Dual Service — TorBox + Real-Debrid
-*Cross-service failover with the RD Infringing File Scrub for account protection.*
+*Cross-service failover. TorBox handles Usenet and uncached traffic. Real-Debrid serves cached streams only, with full RD Infringing File Scrub for account protection.*
 
-- **[Dual Core 1080p SDR](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/TorBox/Dual/core-nexus-dual-core-1080p.json)** — Frictionless 1080p dual-cache merging. Filters 4K, HDR, and lossless audio for reliable playback on standard hardware.
-- **[Dual Core 4K Unleashed](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/TorBox/Dual/core-nexus-4k-dual-core.json)** — The ultimate master build. TorBox Usenet priority merged with RD's massive cache. Targets Dolby Vision, HDR10+, TrueHD, and Atmos.
+| Template | Resolution | Best For | Docs |
+|---|---|---|---|
+| [Dual Core 1080p SDR](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/TorBox/Dual/core-nexus-dual-core-1080p.json) | 1080p SDR | Budget hardware, phones, tablets | [README](Templates/TorBox/Dual/core-nexus-dual-core-1080p.md) |
+| [Dual Core 4K Unleashed](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/TorBox/Dual/core-nexus-4k-dual-core.json) | 4K HDR | Shield, Apple TV 4K, OLED/QLED | [README](Templates/TorBox/Dual/core-nexus-4k-dual-core.md) |
 
 ### 📦 Single Service — TorBox Exclusive
-*Optimised for a pure, high-speed TorBox and Usenet experience.*
+*Optimised for a pure TorBox and Usenet experience. No secondary debrid service required.*
 
-- **[Core Nexus TorBox Exclusive (RPDB)](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/TorBox/Single/core-nexus-torbox-exclusive_rpdb.json)** — 1080p SDR build with RPDB poster integration. Blocks 4K, Remux, and lossless audio for low-end and Android hardware.
-- **[Core Nexus 4K Home Theater](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/TorBox/Single/core-nexus-4k-ht-torbox.json)** — The unleashed TorBox edition. Hunts for 4K Remuxes, Dolby Vision, HDR10+, TrueHD, and Atmos. 150GB file ceiling.
+| Template | Resolution | Best For | Docs |
+|---|---|---|---|
+| [TorBox Exclusive (RPDB)](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/TorBox/Single/core-nexus-torbox-exclusive_rpdb.json) | 1080p SDR | Budget hardware, RPDB poster art | [README](Templates/TorBox/Single/core-nexus-torbox-exclusive_rpdb.md) |
+| [4K Home Theater](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/TorBox/Single/core-nexus-4k-ht-torbox.json) | 4K HDR | Shield, Apple TV 4K, full HT setup | [README](Templates/TorBox/Single/core-nexus-4k-ht-torbox.md) |
 
 ### 🔀 Hybrid — TorBox + Usenet Indexer
 *For users pairing TorBox with a dedicated Usenet indexer for maximum source diversity.*
 
-- **[TB Hybrid 1080p](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/TorBox/Hybrid/core-nexus-tb-hybrid-1080p.json)** — TorBox combined with NZBGeek Usenet integration. 1080p SDR, WEB-DL priority. Requires a NZBGeek API key to activate the Usenet tier.
+| Template | Resolution | Best For | Docs |
+|---|---|---|---|
+| [TB Hybrid 1080p](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/TorBox/Hybrid/core-nexus-tb-hybrid-1080p.json) | 1080p SDR | TorBox + NZBGeek, cached + uncached | [README](Templates/TorBox/Hybrid/core-nexus-tb-hybrid-1080p.md) |
+
+> ⚠️ The Hybrid template requires a **NZBGeek API key** configured in the Addons section after loading. See the [Import Guide](Guides/IMPORT_GUIDE.md) for the full setup step.
 
 ---
 
@@ -70,6 +78,10 @@ Core-Builds-By-Brevity/
 ├── 📁 Assets/              Banners and icons
 ├── 📁 Formatters/          UI layouts (Core Zenith Diamond, Core Clean Stream)
 ├── 📁 Guides/              Setup and editing documentation
+│   ├── IMPORT_GUIDE.md
+│   ├── FORMATTER_GUIDE.md
+│   ├── ADVANCED_EDITING.md
+│   └── DEVICE_PROFILES.md
 ├── 📁 Regex/               Hosted trusted regex patterns
 ├── 📁 Templates/
 │   └── 📁 TorBox/
@@ -122,26 +134,42 @@ Detailed instructions in the [Import Guide](https://github.com/Branding-Brevity/
 
 ## 🔧 Under the Hood
 
-Every template includes:
-
+### All Templates
 - **Tamtaro SEL stack** — Live-synced excluded stream expressions, preferred stream expressions, and excluded regex via Tamtaro's GitHub URLs. Stays current without manual updates.
 - **Vidhin05 ranked regex + expressions** — Release group scoring and ranking pulled from Vidhin05's maintained lists.
 - **Hard CAM kill** — Wipes CAM, SCR, TS, TC, HC HD-Rip at both quality and stream expression layers.
 - **Hard YouTube kill** — Catches AI-enhanced YouTube links other filters miss.
-- **RD Infringing File Scrub** *(dual templates)* — Expanded to cover the full May 2026 RD keyword blocklist: WEB-DL, WEBRip, AMZN, DSNP, HULU, NF, CR, PCOK, PMTP, ATVP, MAX, SHO, CRAV, STAN, BCORE, YTS, RARBG. BluRay REMUX intentionally exempt.
-- **Per-resolution size enforcement** — Floors and ceilings set per resolution tier. 4K movies: 5 GB–150 GB. 1080p movies: 1 GB–25 GB. Prevents sub-gigabyte junk and over-sized bloat from slipping through.
+- **3D / H-OU / H-SBS block** — Glasses-required 3D content excluded across all templates.
 - **Full 12-service roster** — All services pre-loaded and set to opt-in. Enable only what you use.
 - **Tamtaro deduplicator** — Full smartDetect config with 13 attributes: size, resolution, quality, visualTags, audioTags, audioChannels, languages, encode, edition, network, remastered, bitrate, releaseGroup.
-- **3D / H-OU / H-SBS block** — Glasses-required 3D content excluded across all templates.
-- **EZTV** — TV show torrent search added as an opt-in built-in addon.
-- **MediaFusion** — Pre-configured to ElfHosted's public instance (`mediafusion.elfhosted.com`). Works out of the box on any AIOStreams host.
 - **Aggressive deduplication + exact title matching** — No duplicate streams, no false matches.
+- **EZTV** — TV show torrent search available as an opt-in built-in addon on all templates.
+- **MediaFusion** — Pre-configured to ElfHosted's public instance (`mediafusion.elfhosted.com`). Works out of the box on any AIOStreams host.
+- **Audio sort corrected** — All templates sort 7.1 > 5.1 > 2.0. Ascending sort (stereo first) was a bug in earlier versions.
+- **Series sort rebuilt** — TV show results were previously sorted with 3 keys. Now fully specified per resolution tier.
+
+### 4K Templates Only
+- **SeaDex best-release enforced** — `seadexBestOnly: true` ensures only the definitive best encode is served for anime. Quality over compatibility on high-end hardware.
+- **Size range 5 GB–150 GB** — Floor prevents mislabelled junk, ceiling accommodates full BluRay REMUX.
+- **Visual tag priority: DV → HDR+DV → HDR10+ → HDR10 → HDR → HLG → SDR** — Dolby Vision first, always.
+- **Audio priority: TrueHD → Atmos → DTS:X → DTS-HD MA → FLAC** — Lossless first, always.
+- **Cached movie sort includes size tiebreaker** — When quality and audio are equal, the larger file wins. Larger typically means a better REMUX on high-end hardware.
+
+### 1080p Templates Only
+- **4K and HDR fully excluded** — 2160p, 1440p, DV, HDR10+, HDR10, HDR, HLG all blocked. SDR only.
+- **BluRay and Remux blocked** — Too large and often unplayable on budget hardware.
+- **Size range 1 GB–25 GB** — Tight ceiling prevents oversized files on hardware with limited buffering headroom.
+
+### Dual Templates Only (TorBox + Real-Debrid)
+- **RD Infringing File Scrub** — Covers the full May 2026 RD keyword blocklist: WEB-DL, WEBRip, AMZN, DSNP, HULU, NF, CR, PCOK, PMTP, ATVP, MAX, SHO, CRAV, STAN, BCORE, YTS, RARBG. BluRay REMUX intentionally exempt.
+- **RD serves cached only** — Uncached streams are excluded from Real-Debrid. TorBox handles all uncached traffic via Usenet. RD's unreliable uncached is never surfaced.
+- **MediaFlow proxy active for RD** — All Real-Debrid traffic routed through MediaFlow to protect against IP-based account flags.
 
 ---
 
 ## 📜 Version & Stability
 
-> **Stability Notice:** Versions prior to `1.1.2` should be considered **unstable**. Earlier releases contained broken JSON, invalid enum values, and non-functional stream expressions. The first stable, publish-ready release across all templates is `v1.1.2`. Current version is **`v2.0.0`**.
+> **Stability Notice:** Versions prior to `1.1.2` should be considered **unstable**. Earlier releases contained broken JSON, invalid enum values, and non-functional stream expressions. The first stable, publish-ready release across all templates is `v1.1.2`. Current version is **`v2.1.0`**.
 
 See the [full CHANGELOG](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/CHANGELOG.md) for complete version history.
 

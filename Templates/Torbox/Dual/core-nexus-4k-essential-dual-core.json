@@ -824,7 +824,7 @@
         "enabled": true
       },
       {
-        "expression": "/* RD Infringing File Scrub */ service(streams, 'realdebrid') and negate(quality(streams, 'BluRay REMUX', 'BluRay'), streams) and keyword(streams, 'WEB-DL', 'WEBRip', 'AMZN', 'DSNP', 'HULU', 'NF', 'CR', 'PCOK', 'PMTP', 'ATVP', 'MAX', 'SHO', 'CRAV', 'STAN', 'BCORE', 'YTS', 'RARBG')",
+        "expression": "/* RD Infringing File Scrub */ service(streams, 'realdebrid') and negate(quality(streams, 'BluRay REMUX', 'BluRay'), streams) and keyword(streams, 'all', 'WEB-DL', 'WEBRip', 'AMZN', 'DSNP', 'HULU', 'NF', 'CR', 'PCOK', 'PMTP', 'ATVP', 'MAX', 'SHO', 'CRAV', 'STAN', 'BCORE', 'YTS', 'RARBG')",
         "enabled": true
       },
       {

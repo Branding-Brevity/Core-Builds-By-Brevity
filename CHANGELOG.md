@@ -6,6 +6,62 @@ All notable changes to the **Core Builds** templates and formatters will be docu
 
 ---
 
+## [2.1.0] - 2026-05-22
+
+### Fixed
+- **`audioChannel` Sort Direction:** Corrected from `asc` to `desc` in both `global` and `cached` sort criteria across all five templates. Ascending order was ranking stereo (2.0) above surround (7.1), producing worst-audio-first results on every stream list. Now correctly prioritises 7.1 > 5.1 > 2.0.
+- **Core Zenith Diamond — Multi-Language Hardcoded English:** The `::>1` language branch was hardcoded as `"ᴇɴɢʟɪsʜ🔹 🗣️ ᴍᴜʟᴛɪ"`, displaying "English" on every multi-language stream regardless of whether English was present. Corrected to `"🗣️ ᴍᴜʟᴛɪ"` — shows MULTI only.
+- **Core Zenith Diamond — `stream.age` Double Suffix:** `{stream.age} Dᴀʏs` was producing `10d Dᴀʏs` because `stream.age` already returns with a `d` suffix in current AIOStreams versions. Removed the `Dᴀʏs` label.
+- **Core Clean Stream — Four Formatter Bugs:**
+  - `stream.quality::exists` — single `|` separator corrected to `||`
+  - `stream.visualTags::exists` — single `|` separator corrected to `||`
+  - `stream.languages::>1` false branch — was `"MULTI"` (identical to true branch), corrupting display on single-language and no-language streams. Corrected to `""`
+  - Stray space between `==1` and `exists` language blocks removed
+- **Core Clean Stream — `stream.age` Double Suffix:** `{stream.age}d` was producing `10dd`. Removed hardcoded `d` suffix — `stream.age` already includes the unit.
+- **Core Clean Stream — P2P Stream Display:**
+  - `ONLY` was showing with no service name on P2P/uncached streams (e.g. `[ 62.5 GB ] • ONLY`). Service label now conditional — hidden when no service is present
+  - `[?]` bracket fallback on last line replaced with clean empty fallback — P2P streams no longer show `[?]` prefix
+
+### Added
+- **NekoBT Removed:** Dropped from all five templates. Not supported by AIOStreams hosts — was added in error and would fail silently on all hosted instances.
+- **`seadexBestOnly: true` (4K templates):** Forces best-release-only for anime on the two 4K templates. On high-end hardware the difference between a mediocre encode and the SeaDex best release is significant. Left unset on 1080p templates where playback compatibility matters more than encode quality.
+- **`excludeUncachedFromServices: ['realdebrid']` (dual templates):** Real-Debrid uncached is unreliable compared to TorBox's Usenet pipeline. The two dual-core templates now route all uncached traffic exclusively through TorBox, with RD serving cached streams only.
+
+### Changed
+- **Series Sort Criteria — Per-Template Differentiation:**
+  - *4K templates:* Expanded from 3 keys to 11 — `cached → expressionMatched → seadex → resolution → quality → expressionScore → visualTag → audioTag → audioChannel → seeders → age`. TV shows on high-end hardware now receive the same quality-prioritised sort as movies.
+  - *1080p templates:* Expanded from 3 keys to 7 — `cached → expressionMatched → resolution → quality → audioChannel → seeders → age`. Lighter stack appropriate for low-end playback hardware.
+- **`cachedMovies` Sort — Size Tiebreaker (4K templates):** Added `size: desc` as the final tiebreaker in the `cachedMovies` sort criteria on both 4K templates. When two cached movies are equal in quality, visual tag, and audio, the larger file is preferred — on high-end hardware larger typically indicates a true REMUX rather than a compressed re-encode. Not applied to 1080p templates where smaller files improve buffering reliability.
+- **NZBGeek Preset Hardened (Hybrid template):** API key placeholder updated from the silent `<nzbgeek_api_key>` to `"REQUIRED — paste your NZBGeek API key here"` for immediate visibility on import. Added `services: ['torbox']` to bind NZBGeek results to TorBox as the download service. Added `checkOwned: true` to check TorBox's owned files before searching, consistent with the TorBox Newznab preset behaviour.
+
+---
+
+## [2.0.0] - 2026-05-22
+
+### Added
+- **Tamtaro SEL Stack:** Live-synced filtering across all five templates via Tamtaro's maintained GitHub URLs. `syncedExcludedStreamExpressionUrls` (Extended ESE list), `syncedPreferredStreamExpressionUrls` (PSE list), and `syncedExcludedRegexUrls` (junk filename regex) are all now wired to Tamtaro's sources and update automatically.
+- **Vidhin05 Ranked Regex + Expressions:** Added `syncedRankedRegexUrls` and `syncedRankedStreamExpressionUrls` pointing to Vidhin05's release group regex and scoring expressions across all five templates.
+- **EZTV Preset:** Added TV show torrent search via EZTV as a built-in opt-in addon across all five templates, positioned after Knaben. Disabled by default.
+- **Full 12-Service Roster:** All five templates now include the complete debrid service list — TorBox, Real-Debrid, AllDebrid, Premiumize, DebridLink, Offcloud, Put.io, EasyNews, EasyDebrid, PikPak, Seedr, Debrider. All set to `enabled: false` for user opt-in. Previously only 8 services were listed.
+- **Per-Resolution Size Enforcement:** Replaced the flat global size cap with per-resolution floors and ceilings. 4K templates: movies 5 GB–150 GB global, 2160p up to 150 GB, 1080p capped at 30 GB, 720p capped at 12 GB. 1080p templates: movies 1 GB–60 GB global, 1080p capped at 25 GB, 720p capped at 10 GB. Prevents sub-gigabyte junk and prevents oversized files slipping through on wrong-resolution results.
+- **3D / H-OU / H-SBS Block:** Added Tamtaro's glasses-required 3D visual tag exclusions to `excludedVisualTags` across all five templates, merged with any existing per-template exclusions.
+- **SeaDex Enabled:** `enableSeadex: true` set explicitly across all templates.
+- **Tamtaro Quality Ordering:** Applied Tamtaro's `preferredQualities`, `preferredEncodes`, and `preferredAudioTags` ordering where not already set — BluRay REMUX first, AV1 > HEVC > AVC encode priority, Atmos > TrueHD > DTS-HD MA audio chain.
+- **Tamtaro Year + Title Matching:** Applied `yearMatching` (strict, tolerance 1, all content types) and `titleMatching` (exact mode, all content types) from Tamtaro's setup where not already present.
+- **Hard CAM Kill + YouTube Kill ESEs:** Injected as top-priority excluded stream expressions on any template missing them.
+
+### Changed
+- **Template Suite Consolidated:** Any-Host templates (`core-nexus-anyhost-1080p`, `core-nexus-anyhost-1080p-dual`, `core-nexus-anyhost-4k`, `core-nexus-anyhost-4k-dual`) retired. Universal debrid support is now delivered via the full 12-service opt-in roster in all remaining templates. Suite reduced to five focused builds.
+- **Peerflix Removed:** Dropped from all templates. Primarily a Spanish-language source (Mejortorrent, Wolfmax4K, Dontorrent, Bitsearch) — zero net gain for English debrid setups. Coverage already handled by Knaben, TorrentGalaxy, and Meteor.
+- **RD Infringing File Scrub Expanded:** Extended keyword list in the Real-Debrid ESE to cover the full May 2026 RD blocklist: added `CR`, `PCOK`, `PMTP`, `ATVP`, `MAX`, `SHO`, `CRAV`, `STAN`, `BCORE`, `YTS`, `RARBG` alongside the existing `WEB-DL`, `WEBRip`, `AMZN`, `DSNP`, `HULU`, `NF`. BluRay REMUX intentionally exempt — disc rips are unaffected by RD's filter.
+- **MediaFusion URL Pre-Configured:** Set to `https://mediafusion.elfhosted.com` across all five templates. Previously the URL field was empty, which would silently fail on instances without a default configured.
+- **Deduplicator Upgraded:** Applied Tamtaro's full smartDetect deduplicator config — 13 attributes (size, resolution, quality, visualTags, audioTags, audioChannels, languages, encode, edition, network, remastered, bitrate, releaseGroup), `multiGroupBehaviour: aggressive`, `libraryBehaviour: prefer`.
+- **Services All Set to Opt-In:** All services across all templates forced to `enabled: false`. Previously some templates preserved `enabled: true` on their primary service, which would require that specific service to work. Now all services are purely opt-in.
+- **Hybrid Template Metadata Fixed:** `core-nexus-tb-hybrid-1080p` was incorrectly named and described as "Core Nexus Torbox Exclusive" — now correctly identified as "Core Nexus TB Hybrid 1080p" with an accurate description reflecting its TorBox + NZBGeek dual-indexer purpose.
+- **Version Unified:** All five templates bumped to `v2.0.0`. Previous versions ranged inconsistently from `1.0.2` to `1.0.12`.
+
+---
+
 ## [1.2.0] - 2026-05-21
 
 ### Added

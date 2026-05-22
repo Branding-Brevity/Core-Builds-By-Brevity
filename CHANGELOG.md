@@ -6,6 +6,66 @@ All notable changes to the **Core Builds** templates and formatters will be docu
 
 ---
 
+## [2.1.8] - 2026-05-23
+
+### Changed
+- **Per-Resolution Regex Pattern Optimisation (1080p Templates):** The 18 regex patterns that can never match any stream in 1080p templates have been removed from `rankedRegexPatterns`. These are patterns for Remux T1/T2/T3, UHD BluRay T1/T2/T3, HD BluRay T1/T2/T3, and DV (Disk) -- all target qualities or resolutions that are explicitly excluded before regex evaluation runs, making them dead weight. 1080p templates now carry 131 patterns instead of 149. 4K templates retain all 149 -- everything is potentially relevant. File size reduction: ~9 KB per 1080p template.
+- **`preferredRegexPatterns` Per-Resolution (1080p Templates):** Previous preferred patterns (Remux T1, UHD BluRay T1, FraMeSToR) were all for excluded qualities -- they could never boost any stream. Replaced with Web T1 patterns (Radarr, Sonarr, Web T1) and top web-relevant groups (126811, FLUX, SiC, hallowed, BHDStudio) -- groups that actually release the WEB-DL content these templates target.
+
+---
+
+## [2.1.7] - 2026-05-23
+
+### Added
+- **`seasonEpisodeMatching`:** Added across all 12 templates — `enabled: true, strict: true, requestTypes: [movie, series, anime]`. Ensures the correct episode is matched rather than a loose title-only match. Was missing entirely from all previous versions.
+- **`nzbFailover`:** `enabled: true, position: last` -- automatic NZB failover when a Usenet download fails, falling back to the next available source. Particularly relevant for the Hybrid template.
+- **`cacheAndPlay`:** `enabled: true, streamTypes: [usenet]` -- enables background caching of Usenet streams while playback begins. Prevents waiting for a full Usenet download before the stream starts.
+- **`hideErrors: true`:** Suppresses error/info streams from the visible stream list. The GitHub redirect info entry that confused new users no longer appears.
+- **`streamExpressionScore` in Sort Criteria:** Added after `streamExpressionMatched` in all sort sections across all 12 templates. `streamExpressionMatched` is boolean; `streamExpressionScore` is the numeric score from ranked expressions. Both are now used.
+- **6 Missing Tamtaro ESEs added (all templates):**
+  - `Low Seeders` -- filters low-seeder P2P and uncached streams when better options exist
+  - `Extra Cached (HQ)` -- limits surplus high-quality cached streams beyond result caps
+  - `Extra Cached (LQ)` -- limits surplus low-quality cached streams
+  - `Extra Uncached (All)` -- limits surplus uncached streams
+  - `Unknown Resolution` -- filters unknown-resolution streams when enough known-resolution results exist
+  - `Unknown Quality` -- filters unknown-quality streams when enough known-quality results exist
+
+### Changed
+- **`bitrate.useMetadataRuntime: true`:** Added to bitrate config across all 12 templates. Uses actual video metadata runtime for more accurate bitrate calculation rather than estimated values.
+
+---
+
+## [2.1.6] - 2026-05-23
+
+### Fixed
+- **`regexScore` Added to Sort Criteria (All Templates):** `rankedRegexPatterns` was scoring streams but the score was never used in sorting -- `regexScore` was absent from `sortCriteria`. Added as a tiebreaker after `quality` in both global and series sort across all 12 templates. Release group ranking now actively influences stream ordering.
+- **`titleMatching` Contradiction Resolved:** `mode: exact` with `similarityThreshold: 0.85` was contradictory -- exact mode ignores the threshold entirely. Corrected to `similarityThreshold: 1` to match the exact mode intent. Prevents false title matches on similarly named content.
+- **`yearMatching` Tightened:** Reverted from `strict: false, tolerance: 2` back to `strict: true, tolerance: 1` (Tamtaro standard). A 2-year non-strict window was too permissive and could surface wrong-year releases for sequels and remasters.
+
+### Changed
+- **`stremthruTorz` Now Opt-In (All Templates):** Set to `enabled: false` across all 12 templates. StremThru Torz requires a StremThru instance which is not universally available. Users with StremThru (ElfHosted plans, self-hosted) can enable it in addon settings.
+- **`preferredRegexPatterns` Populated:** The 7 highest-tier patterns (Remux T1, UHD BluRay T1, Anime BD T1, FraMeSToR -- score >= 90) added to `preferredRegexPatterns` as an additional boost signal alongside the full `rankedRegexPatterns` scoring.
+
+---
+
+## [2.1.5] - 2026-05-23
+
+### Changed
+- **Scored Regex Patterns Baked In (All Templates):** All 149 release group regex patterns are now inlined directly into `rankedRegexPatterns` across all six universal and six nightly templates. No synced URL or whitelist required. Scoring covers the full tier range: Remux T1 (+100), FraMeSToR (+100), Anime BD T1 (+95), UHD BluRay T1 (+90), Web T1 (+70) through LQ groups (-75), Upscaled (-80), BR-DISK (-90), Extras (-200), and 100+ other tiered entries. `syncedRankedRegexUrls` cleared on all templates -- the inline version supersedes the hosted URL approach.
+- **Hard Exclusion Patterns Added:** The 11 most destructive patterns (score <= -70) are also added to `excludedRegexPatterns` as hard blocks: Upscaled, BR-DISK, Extras (Radarr/Sonarr), LQ groups (x4), Sing-Along, and Retags (Radarr/Sonarr). These streams are now filtered before reaching the sort step.
+
+---
+
+## [2.1.4] - 2026-05-23
+
+### Changed
+- **AnimeTosho and TorrentGalaxy Now Opt-In (All Templates):** Both addons have been set to `enabled: false` across all templates. AnimeTosho is anime-specific and returns 0 results for all other content, adding noise and confusion for general users. TorrentGalaxy is frequently blocked by Cloudflare, returning HTML instead of JSON and causing `Partial Success` errors in scrape summaries. Both remain available -- enable them in your addon settings if you specifically want them.
+
+### Fixed
+- **Formatter "Failed to parse JSON" (Core Zenith Diamond):** The JSON file is valid. This error is caused by a download encoding issue on the user's end, not a syntax problem in the file. Re-download directly from the GitHub releases page to resolve.
+
+---
+
 ## [2.1.3] - 2026-05-23
 
 ### Changed

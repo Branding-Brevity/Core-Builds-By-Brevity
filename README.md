@@ -150,18 +150,25 @@ Detailed instructions in the [Import Guide](https://github.com/Branding-Brevity/
 ## 🔧 Under the Hood
 
 ### All Templates
-- **Tamtaro SEL stack** — Live-synced excluded stream expressions, preferred stream expressions, and excluded regex via Tamtaro's GitHub URLs. Stays current without manual updates.
-- **Vidhin05 ranked regex + expressions** — Release group scoring and ranking pulled from Vidhin05's maintained lists.
 - **Hard CAM kill** — Wipes CAM, SCR, TS, TC, HC HD-Rip at both quality and stream expression layers.
 - **Hard YouTube kill** — Catches AI-enhanced YouTube links other filters miss.
-- **3D / H-OU / H-SBS block** — Glasses-required 3D content excluded across all templates.
+- **3D / H-OU / H-SBS block** — Glasses-required 3D content excluded.
 - **Full 12-service roster** — All services pre-loaded and set to opt-in. Enable only what you use.
-- **Tamtaro deduplicator** — Full smartDetect config with 13 attributes: size, resolution, quality, visualTags, audioTags, audioChannels, languages, encode, edition, network, remastered, bitrate, releaseGroup.
-- **Aggressive deduplication + exact title matching** — No duplicate streams, no false matches.
-- **EZTV** — TV show torrent search available as an opt-in built-in addon on all templates.
-- **MediaFusion** — Pre-configured to ElfHosted's public instance (`mediafusion.elfhosted.com`). Works out of the box on any AIOStreams host.
-- **Audio sort corrected** — All templates sort 7.1 > 5.1 > 2.0. Ascending sort (stereo first) was a bug in earlier versions.
-- **Series sort rebuilt** — TV show results were previously sorted with 3 keys. Now fully specified per resolution tier.
+- **Tamtaro deduplicator** — Full smartDetect config with 13 attributes.
+- **Exact title + year + episode matching** — `titleMatching: exact`, `yearMatching: strict tolerance 1`, `seasonEpisodeMatching: strict`. No false matches on sequels, remasters, or wrong episodes.
+- **149-pattern release group scoring** — Fully scored regex patterns baked directly into every template. No synced URL or whitelist required. Remux T1 (+100) through LQ groups (-75) to Extras (-200).
+- **`rankedRegexPatterns` + `preferredRegexPatterns`** — Both active and feeding into `regexScore` sort. Top-tier groups surface above mid-tier groups within the same quality level.
+- **`streamExpressionScore` in sort** — Numeric expression scoring feeds into stream ordering alongside `streamExpressionMatched`.
+- **`regexScore` in sort** — Release group ranking actively influences final stream order.
+- **`cacheAndPlay` for Usenet** — Background download while playback begins. No waiting for a full Usenet download before the stream starts.
+- **`nzbFailover`** — Automatic Usenet NZB failover when a download fails.
+- **`hideErrors: true`** — Error and informational streams hidden from the list. No more GitHub redirect card appearing in Stremio.
+- **`bitrate.useMetadataRuntime: true`** — Accurate runtime-based bitrate calculation using actual video metadata.
+- **6 Tamtaro ESEs** — Low Seeders, Extra Cached (HQ), Extra Cached (LQ), Extra Uncached (All), Unknown Resolution, Unknown Quality — all inline, no whitelist needed.
+- **EZTV** — TV show torrent search available as an opt-in built-in addon.
+- **MediaFusion** — Pre-configured to ElfHosted's public instance. Works out of the box on any AIOStreams host.
+- **Audio sort corrected** — All templates sort 7.1 > 5.1 > 2.0.
+- **Series sort fully specified** — Per resolution tier, not the 3-key stub from earlier versions.
 
 ### 4K Templates Only
 - **SeaDex best-release enforced** — `seadexBestOnly: true` ensures only the definitive best encode is served for anime. Quality over compatibility on high-end hardware.
@@ -184,7 +191,7 @@ Detailed instructions in the [Import Guide](https://github.com/Branding-Brevity/
 
 ## 📜 Version & Stability
 
-> **Stability Notice:** Versions prior to `1.1.2` should be considered **unstable**. Earlier releases contained broken JSON, invalid enum values, and non-functional stream expressions. The first stable, publish-ready release across all templates is `v1.1.2`. Current version is **`v2.1.3`** (Universal) / **`v2.1.3-nightly`** (Nightly).
+> **Stability Notice:** Versions prior to `1.1.2` should be considered **unstable**. Earlier releases contained broken JSON, invalid enum values, and non-functional stream expressions. The first stable, publish-ready release across all templates is `v1.1.2`. Current version is **`v2.1.8`** (Universal) / **`v2.1.8-nightly`** (Nightly).
 
 See the [full CHANGELOG](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/CHANGELOG.md) for complete version history.
 

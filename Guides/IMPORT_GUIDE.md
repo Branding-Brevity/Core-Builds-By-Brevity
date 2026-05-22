@@ -8,57 +8,78 @@ This guide covers everything you need to successfully import and finalise your *
 
 Before importing, choose the right build for your setup. If you're running on multiple devices, see the **Device Profiles** section at the bottom of this guide.
 
-### 🔵 TorBox Builds
-*Optimised for TorBox Usenet + torrent cache priority*
+| Template | Resolution | Services | Best For |
+|---|---|---|---|
+| `core-nexus-torbox-exclusive_rpdb.json` | 1080p SDR | TorBox only | Low-end devices, RPDB poster integration |
+| `core-nexus-4k-ht-torbox.json` | 4K HDR | TorBox only | Shield / 4K TVs, home theater |
+| `core-nexus-dual-core-1080p.json` | 1080p SDR | TorBox + Real-Debrid | Low-end devices, dual-cache failover |
+| `core-nexus-4k-dual-core.json` | 4K HDR | TorBox + Real-Debrid | Shield / 4K TVs, maximum coverage |
+| `core-nexus-tb-hybrid-1080p.json` | 1080p SDR | TorBox + NZBGeek | Users with a Usenet indexer subscription |
 
-| Template | Resolution | Best For |
-|---|---|---|
-| `core-nexus-torbox-exclusive_rpdb.json` | 1080p SDR | Low-end devices, TorBox only |
-| `core-nexus-4k-ht-torbox.json` | 4K HDR | Shield / 4K TVs, TorBox only |
-| `core-nexus-dual-core-1080p.json` | 1080p SDR | Low-end devices, TorBox + RD |
-| `core-nexus-4k-dual-core.json` | 4K HDR | Shield / 4K TVs, TorBox + RD |
-| `core-nexus-tb-hybrid-1080p.json` | 1080p SDR | Low-end, cached + uncached (NZBGeek) |
-
-### 🟢 Any Host Builds
-*Works with any debrid service — TorBox, Real-Debrid, AllDebrid, Premiumize, and more*
-
-| Template | Resolution | Best For |
-|---|---|---|
-| `core-nexus-anyhost-1080p.json` | 1080p SDR | Low-end devices, single debrid |
-| `core-nexus-anyhost-4k.json` | 4K HDR | High-end devices, single debrid |
-| `core-nexus-anyhost-1080p-dual.json` | 1080p SDR | Low-end devices, dual debrid |
-| `core-nexus-anyhost-4k-dual.json` | 4K HDR | High-end devices, dual debrid |
+> All five templates include the full **12-service roster** pre-loaded. Enable only the services you actually subscribe to — the rest are ignored.
 
 ---
 
 ## 2️⃣ Open an AIOStreams Host
 
-Open one of the following trusted community hosts in your browser:
+Open one of the following community hosts in your browser. A live status page is available at [status.dinsden.top](https://status.dinsden.top/status/aiostreams).
 
-- **ForTheWeak:** `https://aiostreams.fortheweak.cloud`
-- **MidnightIgnite:** `https://aiostreams.midnightignite.com`
-- **ElfHosted:** `https://aiostreams.elfhosted.com`
+| Rank | Host | URL |
+|------|------|-----|
+| 🥇 | **ElfHosted** | `https://aiostreams.elfhosted.com` |
+| 🥈 | **Yeb's** | `https://aiostreams.fortheweak.cloud` |
+| 🥉 | **Midnight's** | `https://aiostreamsfortheweebsstable.midnightignite.me` |
+| 4 | **Viren's** | `https://aiostreams.viren070.me` |
+| 5 | **Kuu's** | `https://aiostreams.stremio.ru` |
+| 6 | **ATBP Hosting** | `https://aio.atbphosting.com` |
+| 7 | **Omni's** | `https://aiostreams.12312023.xyz` |
 
-Navigate to the **Template Import** menu and paste the raw GitHub URL for your chosen template. All raw links follow this pattern:
+Navigate to the **Template Import** menu and paste the raw GitHub URL for your chosen template. Raw links follow this pattern:
 
 ```
-https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/main/Templates/TorBox/Single/core-nexus-torbox-exclusive_rpdb.json
+https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/main/Templates/TorBox/Dual/core-nexus-4k-dual-core.json
 ```
+
+**Full raw URLs:**
+
+| Template | Raw URL |
+|---|---|
+| TorBox Exclusive (RPDB) | `.../Templates/TorBox/Single/core-nexus-torbox-exclusive_rpdb.json` |
+| 4K HT TorBox | `.../Templates/TorBox/Single/core-nexus-4k-ht-torbox.json` |
+| Dual Core 1080p | `.../Templates/TorBox/Dual/core-nexus-dual-core-1080p.json` |
+| Dual Core 4K | `.../Templates/TorBox/Dual/core-nexus-4k-dual-core.json` |
+| TB Hybrid 1080p | `.../Templates/TorBox/Hybrid/core-nexus-tb-hybrid-1080p.json` |
+
+*(Prepend `https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/main/` to each path)*
 
 ---
 
-## 3️⃣ Enter Your API Keys
+## 3️⃣ Enable Your Services
 
-The template requires a few API keys to function fully. Fill in only the services you use — leave everything else blank.
+All 12 debrid services are pre-loaded in every template, all set to **disabled by default**. Toggle on only the services you subscribe to — everything else stays off and is ignored.
 
-### Required
-- **TorBox API Key** — found in your TorBox account settings
-- **TMDB API Key** — a link to generate this for free is directly below the input field in the AIOStreams setup menu
+**Available services:** TorBox · Real-Debrid · AllDebrid · Premiumize · DebridLink · Offcloud · Put.io · EasyNews · EasyDebrid · PikPak · Seedr · Debrider
 
-### Optional (based on your services)
-- **Real-Debrid API Key** — for dual-core builds only
-- **AllDebrid / Premiumize / DebridLink** — for Any Host builds, add whichever you subscribe to
-- **RPDB API Key** — already pre-filled with a free tier key in the template; leave it as-is unless you have your own
+> 💡 For the **TB Hybrid** template, you will also need a **NZBGeek API key** to activate the Usenet indexer tier. If you don't have one, every other addon in the template still works without it.
+
+> ⚠️ **TB Hybrid — Extra Step Required:** The NZBGeek API key cannot be entered in the credentials modal above. After clicking **Load Template** and saving, go to the **Addons** section, find the **NZBGeek** preset, and paste your API key there. NZBGeek will return no results until this is done. Your NZBGeek API key is found in your account settings at [nzbgeek.info](https://nzbgeek.info).
+
+---
+
+### 🔀 TB Hybrid — NZBGeek Additional Setup
+
+The NZBGeek API key **cannot** be entered in the standard credentials modal — AIOStreams only shows recognised debrid services and TMDB in that screen. NZBGeek is a newznab addon and requires a separate step after the template loads.
+
+**After clicking Load Template and saving:**
+
+1. Stay on your AIOStreams dashboard and scroll to the **Addons** section
+2. Find the **NZBGeek** addon in the list
+3. Click the ⚙️ settings icon next to it
+4. Replace the placeholder text with your actual NZBGeek API key
+   - Your NZBGeek API key is found at [nzbgeek.info](https://nzbgeek.info) → Account → API Key
+5. Click **Save**
+
+> ⚠️ Until the API key is entered, NZBGeek will be active but return no results. Every other addon in the hybrid template — TorBox Search, Comet, Meteor, Zilean, Knaben, MediaFusion — works immediately without it.
 
 > 💡 **TVDB has been removed** from all Core Nexus templates. If the field appears, leave it blank.
 
@@ -66,7 +87,7 @@ The template requires a few API keys to function fully. Fill in only the service
 
 ## 4️⃣ Save & Install
 
-Once all required fields are filled in, click **Save** at the bottom of the screen. AIOStreams will generate a unique manifest URL for your build.
+Once your services are configured, click **Save** at the bottom of the screen. AIOStreams will generate a unique manifest URL for your build.
 
 **For Stremio:** Click the **Install** button that appears after saving. Stremio will open and prompt you to confirm.
 

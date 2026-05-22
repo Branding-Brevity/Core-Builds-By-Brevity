@@ -6,6 +6,13 @@ All notable changes to the **Core Builds** templates and formatters will be docu
 
 ---
 
+## [2.1.1] - 2026-05-22
+
+### Added
+- **Core Nexus 4K Essential Dual Core:** New template (`core-nexus-4k-essential-dual-core.json`) for users on the TorBox Essential plan paired with Real-Debrid. Identical to the flagship 4K Dual Core in every respect -- Dolby Vision, HDR10+, TrueHD/Atmos priority, 5 GB-150 GB file range, SeaDex best-release enforcement, RD Infringing File Scrub, and full Tamtaro SEL stack -- with two changes: the `newznab` (TorBox Usenet) preset removed since Essential plan has no Usenet access, and `preferredStreamTypes` set to `['debrid']` only. Requested by community following the v2.1.0 Reddit release.
+
+---
+
 ## [2.1.0] - 2026-05-22
 
 ### Fixed

@@ -6,6 +6,20 @@ All notable changes to the **Core Builds** templates and formatters will be docu
 
 ---
 
+## [2.1.3] - 2026-05-23
+
+### Changed
+- **Synced URLs Removed (All Templates):** All five `synced*Urls` fields (`syncedExcludedStreamExpressionUrls`, `syncedPreferredStreamExpressionUrls`, `syncedExcludedRegexUrls`, `syncedRankedRegexUrls`, `syncedRankedStreamExpressionUrls`) have been cleared across all six templates. On stable AIOStreams instances (Kuu, ATBP, Omni, Midnight stable, self-hosted without whitelist env vars), these external URLs are not whitelisted, causing AIOStreams to return a 404 during import — even when importing directly from a local file. The critical Tamtaro stream expressions were already inline in all templates and remain fully intact. The primary losses are the live-sync of Tamtaro's filename junk regex and the full Vidhin05 release group ranking; a partial inline release group list remains. All templates now import successfully on every AIOStreams instance including stable builds.
+
+---
+
+## [2.1.2] - 2026-05-22
+
+### Fixed
+- **RD Infringing File Scrub -- `keyword()` Invalid Attribute:** The `keyword()` SEL function requires an attribute as its second argument (`filename`, `folderName`, `indexer`, `releaseGroup`, or `all`). The expression was passing keywords directly as the second argument, causing an `invalid attribute` import error on all three dual-service templates. Fixed by inserting `'all'` as the attribute, which searches across filename, folderName, indexer, and releaseGroup -- the most comprehensive match for catching streaming service tags. Affected templates: `core-nexus-4k-dual-core`, `core-nexus-dual-core-1080p`, `core-nexus-4k-essential-dual-core`.
+
+---
+
 ## [2.1.1] - 2026-05-22
 
 ### Added

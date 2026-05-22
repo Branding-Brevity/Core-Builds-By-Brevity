@@ -21,6 +21,7 @@ Streaming shouldn't involve trial and error. These builds are engineered to stri
 |---|---|---|---|
 | [Dual Core 1080p SDR](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Dual/core-nexus-dual-core-1080p.json) | 1080p SDR | Budget hardware, phones, tablets | [README](Templates/Torbox/Dual/core-nexus-dual-core-1080p.md) |
 | [Dual Core 4K Unleashed](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Dual/core-nexus-4k-dual-core.json) | 4K HDR | Shield, Apple TV 4K, OLED/QLED | [README](Templates/Torbox/Dual/core-nexus-4k-dual-core.md) |
+| [4K Essential Dual Core](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Dual/core-nexus-4k-essential-dual-core.json) | 4K HDR | Shield, Apple TV 4K -- TorBox Essential plan | [README](Templates/Torbox/Dual/core-nexus-4k-essential-dual-core.md) |
 
 ### 📦 Single Service — TorBox Exclusive
 *Optimised for a pure TorBox and Usenet experience. No secondary debrid service required.*
@@ -160,7 +161,7 @@ Detailed instructions in the [Import Guide](https://github.com/Branding-Brevity/
 - **Size range 1 GB–25 GB** — Tight ceiling prevents oversized files on hardware with limited buffering headroom.
 
 ### Dual Templates Only (TorBox + Real-Debrid)
-- **RD Infringing File Scrub** — Covers the full May 2026 RD keyword blocklist: WEB-DL, WEBRip, AMZN, DSNP, HULU, NF, CR, PCOK, PMTP, ATVP, MAX, SHO, CRAV, STAN, BCORE, YTS, RARBG. BluRay REMUX intentionally exempt.
+- **RD Infringing File Scrub** *(all dual templates)* — Covers the full May 2026 RD keyword blocklist: WEB-DL, WEBRip, AMZN, DSNP, HULU, NF, CR, PCOK, PMTP, ATVP, MAX, SHO, CRAV, STAN, BCORE, YTS, RARBG. BluRay REMUX intentionally exempt.
 - **RD serves cached only** — Uncached streams are excluded from Real-Debrid. TorBox handles all uncached traffic via Usenet. RD's unreliable uncached is never surfaced.
 - **MediaFlow proxy active for RD** — All Real-Debrid traffic routed through MediaFlow to protect against IP-based account flags.
 

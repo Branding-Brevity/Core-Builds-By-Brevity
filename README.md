@@ -19,23 +19,23 @@ Streaming shouldn't involve trial and error. These builds are engineered to stri
 
 | Template | Resolution | Best For | Docs |
 |---|---|---|---|
-| [Dual Core 1080p SDR](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/TorBox/Dual/core-nexus-dual-core-1080p.json) | 1080p SDR | Budget hardware, phones, tablets | [README](Templates/TorBox/Dual/core-nexus-dual-core-1080p.md) |
-| [Dual Core 4K Unleashed](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/TorBox/Dual/core-nexus-4k-dual-core.json) | 4K HDR | Shield, Apple TV 4K, OLED/QLED | [README](Templates/TorBox/Dual/core-nexus-4k-dual-core.md) |
+| [Dual Core 1080p SDR](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Dual/core-nexus-dual-core-1080p.json) | 1080p SDR | Budget hardware, phones, tablets | [README](Templates/Torbox/Dual/core-nexus-dual-core-1080p.md) |
+| [Dual Core 4K Unleashed](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Dual/core-nexus-4k-dual-core.json) | 4K HDR | Shield, Apple TV 4K, OLED/QLED | [README](Templates/Torbox/Dual/core-nexus-4k-dual-core.md) |
 
 ### 📦 Single Service — TorBox Exclusive
 *Optimised for a pure TorBox and Usenet experience. No secondary debrid service required.*
 
 | Template | Resolution | Best For | Docs |
 |---|---|---|---|
-| [TorBox Exclusive (RPDB)](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/TorBox/Single/core-nexus-torbox-exclusive_rpdb.json) | 1080p SDR | Budget hardware, RPDB poster art | [README](Templates/TorBox/Single/core-nexus-torbox-exclusive_rpdb.md) |
-| [4K Home Theater](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/TorBox/Single/core-nexus-4k-ht-torbox.json) | 4K HDR | Shield, Apple TV 4K, full HT setup | [README](Templates/TorBox/Single/core-nexus-4k-ht-torbox.md) |
+| [TorBox Exclusive (RPDB)](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Single/core-nexus-torbox-exclusive_rpdb.json) | 1080p SDR | Budget hardware, RPDB poster art | [README](Templates/Torbox/Single/core-nexus-torbox-exclusive_rpdb.md) |
+| [4K Home Theater](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Single/core-nexus-4k-ht-torbox.json) | 4K HDR | Shield, Apple TV 4K, full HT setup | [README](Templates/Torbox/Single/core-nexus-4k-ht-torbox.md) |
 
 ### 🔀 Hybrid — TorBox + Usenet Indexer
 *For users pairing TorBox with a dedicated Usenet indexer for maximum source diversity.*
 
 | Template | Resolution | Best For | Docs |
 |---|---|---|---|
-| [TB Hybrid 1080p](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/TorBox/Hybrid/core-nexus-tb-hybrid-1080p.json) | 1080p SDR | TorBox + NZBGeek, cached + uncached | [README](Templates/TorBox/Hybrid/core-nexus-tb-hybrid-1080p.md) |
+| [TB Hybrid 1080p](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Hybrid/core-nexus-tb-hybrid-1080p.json) | 1080p SDR | TorBox + NZBGeek, cached + uncached | [README](Templates/Hybrid/core-nexus-tb-hybrid-1080p.md) |
 
 > ⚠️ The Hybrid template requires a **NZBGeek API key** configured in the Addons section after loading. See the [Import Guide](Guides/IMPORT_GUIDE.md) for the full setup step.
 
@@ -84,10 +84,9 @@ Core-Builds-By-Brevity/
 │   └── DEVICE_PROFILES.md
 ├── 📁 Regex/               Hosted trusted regex patterns
 ├── 📁 Templates/
-│   └── 📁 TorBox/
-│       ├── 📁 Single/      TorBox-only builds (RPDB, 4K HT)
-│       ├── 📁 Dual/        TorBox + Real-Debrid (1080p, 4K)
-│       └── 📁 Hybrid/      TorBox + Usenet Indexer
+│   └── 📁 Single/          TorBox-only builds (RPDB, 4K HT)
+│       ├── 📁 Dual/            TorBox + Real-Debrid (1080p, 4K)
+│       └── 📁 Hybrid/          TorBox + Usenet Indexer
 ├── CHANGELOG.md
 └── README.md
 ```
@@ -117,7 +116,7 @@ A live status page for all instances is at [status.dinsden.top](https://status.d
 Navigate to the **Template Import** menu and paste the raw GitHub URL for your chosen build:
 
 ```
-https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/main/Templates/TorBox/Dual/core-nexus-4k-dual-core.json
+https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/main/Templates/Torbox/Dual/core-nexus-4k-dual-core.json
 ```
 
 ### 3. Configure Services

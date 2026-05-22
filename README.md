@@ -72,17 +72,32 @@ See the [Formatter Guide](https://github.com/Branding-Brevity/Core-Builds-By-Bre
 
 ---
 
+## 📖 Guides
+
+| Guide | Description |
+|---|---|
+| [Import Guide](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Guides/IMPORT_GUIDE.md) | How to import templates, enter credentials, and install in Stremio or WuPlay |
+| [Formatter Guide](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Guides/FORMATTER_GUIDE.md) | Installing and switching between Core Zenith Diamond and Core Clean Stream |
+| [Device Profiles](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Guides/DEVICE_PROFILES.md) | Multi-device household setup using two Stremio accounts |
+| [Advanced Editing](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Guides/ADVANCED_EDITING.md) | Raw JSON editing, valid enum values, SEL syntax rules |
+| [Reset Guide](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Guides/RESET_GUIDE.md) | Soft reset, hard reset, and password recovery |
+| [Troubleshooting](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Guides/TROUBLESHOOTING.md) | Common errors and quick fixes |
+
+---
+
 ## 📂 Repository Structure
 
 ```
 Core-Builds-By-Brevity/
 ├── 📁 Assets/              Banners and icons
 ├── 📁 Formatters/          UI layouts (Core Zenith Diamond, Core Clean Stream)
-├── 📁 Guides/              Setup and editing documentation
-│   ├── IMPORT_GUIDE.md
-│   ├── FORMATTER_GUIDE.md
-│   ├── ADVANCED_EDITING.md
-│   └── DEVICE_PROFILES.md
+├── 📁 Guides/
+│   ├── IMPORT_GUIDE.md         How to import templates and configure services
+│   ├── FORMATTER_GUIDE.md      Installing and switching visual formatters
+│   ├── DEVICE_PROFILES.md      Multi-device household setup
+│   ├── ADVANCED_EDITING.md     Raw JSON editing and SEL syntax rules
+│   ├── RESET_GUIDE.md          Soft and hard reset procedures
+│   └── TROUBLESHOOTING.md      Common errors and fixes
 ├── 📁 Regex/               Hosted trusted regex patterns
 ├── 📁 Templates/
 │   └── 📁 Single/          TorBox-only builds (RPDB, 4K HT)
@@ -169,7 +184,7 @@ Detailed instructions in the [Import Guide](https://github.com/Branding-Brevity/
 
 ## 📜 Version & Stability
 
-> **Stability Notice:** Versions prior to `1.1.2` should be considered **unstable**. Earlier releases contained broken JSON, invalid enum values, and non-functional stream expressions. The first stable, publish-ready release across all templates is `v1.1.2`. Current version is **`v2.1.0`**.
+> **Stability Notice:** Versions prior to `1.1.2` should be considered **unstable**. Earlier releases contained broken JSON, invalid enum values, and non-functional stream expressions. The first stable, publish-ready release across all templates is `v1.1.2`. Current version is **`v2.1.2`**.
 
 See the [full CHANGELOG](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/CHANGELOG.md) for complete version history.
 

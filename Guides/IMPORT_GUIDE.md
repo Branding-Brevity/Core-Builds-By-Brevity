@@ -37,18 +37,18 @@ Open one of the following community hosts in your browser. A live status page is
 Navigate to the **Template Import** menu and paste the raw GitHub URL for your chosen template. Raw links follow this pattern:
 
 ```
-https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/main/Templates/TorBox/Dual/core-nexus-4k-dual-core.json
+https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/main/Templates/Torbox/Dual/core-nexus-4k-dual-core.json
 ```
 
 **Full raw URLs:**
 
 | Template | Raw URL |
 |---|---|
-| TorBox Exclusive (RPDB) | `.../Templates/TorBox/Single/core-nexus-torbox-exclusive_rpdb.json` |
-| 4K HT TorBox | `.../Templates/TorBox/Single/core-nexus-4k-ht-torbox.json` |
-| Dual Core 1080p | `.../Templates/TorBox/Dual/core-nexus-dual-core-1080p.json` |
-| Dual Core 4K | `.../Templates/TorBox/Dual/core-nexus-4k-dual-core.json` |
-| TB Hybrid 1080p | `.../Templates/TorBox/Hybrid/core-nexus-tb-hybrid-1080p.json` |
+| TorBox Exclusive (RPDB) | `.../Templates/Torbox/Single/core-nexus-torbox-exclusive_rpdb.json` |
+| 4K HT TorBox | `.../Templates/Torbox/Single/core-nexus-4k-ht-torbox.json` |
+| Dual Core 1080p | `.../Templates/Torbox/Dual/core-nexus-dual-core-1080p.json` |
+| Dual Core 4K | `.../Templates/Torbox/Dual/core-nexus-4k-dual-core.json` |
+| TB Hybrid 1080p | `.../Templates/Hybrid/core-nexus-tb-hybrid-1080p.json` |
 
 *(Prepend `https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/main/` to each path)*
 

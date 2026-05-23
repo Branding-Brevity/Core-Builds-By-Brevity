@@ -216,7 +216,6 @@ None of the five templates quite fit your setup? Open a request and we'll look i
 
 **Where to request:**
 - **GitHub Issues** → [Open a Template Request](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/issues/new?labels=template+request&title=Template+Request:+) — use the `template request` label
-- **Discord** → Drop a message in the AIOStreams community server
 
 We can't guarantee every combination will get its own template, but common requests that fill a genuine gap will be considered for the next release.
 

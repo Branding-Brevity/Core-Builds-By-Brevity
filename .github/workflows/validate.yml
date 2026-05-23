@@ -1,0 +1,53 @@
+name: Validate Templates
+
+on:
+  push:
+    paths:
+      - 'Templates/**/*.json'
+      - 'Formatters/**/*.json'
+      - 'Regex/**/*.json'
+  pull_request:
+    paths:
+      - 'Templates/**/*.json'
+      - 'Formatters/**/*.json'
+      - 'Regex/**/*.json'
+
+jobs:
+  validate-json:
+    name: Validate JSON Files
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Validate all JSON files
+        run: |
+          import json, sys, pathlib
+
+          errors = []
+          files = list(pathlib.Path('.').rglob('*.json'))
+          files = [f for f in files if '.github' not in str(f)]
+
+          print(f"Validating {len(files)} JSON file(s)...")
+
+          for fpath in sorted(files):
+            try:
+              with open(fpath) as f:
+                json.load(f)
+              print(f"  PASS  {fpath}")
+            except json.JSONDecodeError as e:
+              errors.append(f"  FAIL  {fpath}: {e}")
+              print(f"  FAIL  {fpath}: {e}")
+
+          if errors:
+            print(f"\n{len(errors)} file(s) failed validation.")
+            sys.exit(1)
+          else:
+            print(f"\nAll {len(files)} files passed.")
+        shell: python

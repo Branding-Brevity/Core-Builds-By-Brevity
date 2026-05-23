@@ -19,80 +19,87 @@
   </a>
 </p>
 
-# 🛡️ Core Builds by Brevity
-
-Welcome to **Core Builds**. This repository hosts highly optimised, frictionless configuration templates and custom formatters for **AIOStreams**, specifically tuned for seamless playback on WuPlay, Stremio, and Android-based home theater setups.
-
-## 🎯 The Philosophy
-
-Streaming shouldn't involve trial and error. These builds are engineered to strip out unplayable clutter, prevent network choking, and serve only the highest quality compatible files. Every build features aggressive deduplication, smart caching, YouTube/CAM filtering, and prioritises English/Dual-Audio tracks natively.
+**Core Builds** is a collection of highly optimised, frictionless AIOStreams templates — engineered to serve only the highest quality compatible streams, strip out unplayable clutter, and work reliably across every host and device.
 
 ---
 
-## 🚀 The Flagship Builds
+## 📦 Templates
 
-### ⛓️ Dual Service — TorBox + Real-Debrid
-*Cross-service failover. TorBox handles Usenet and uncached traffic. Real-Debrid serves cached streams only, with full RD Infringing File Scrub for account protection.*
+Templates are grouped by service combination and use case. Every template includes full release group scoring, strict title and episode matching, Tamtaro ESEs, and the complete 12-service opt-in roster.
 
-| Template | Resolution | Best For | Docs |
-|---|---|---|---|
-| [Dual Core 1080p SDR](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Dual/core-nexus-dual-core-1080p.json) | 1080p SDR | Budget hardware, phones, tablets | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Dual/README_dual-core-1080p.md) |
-| [Dual Core 4K Unleashed](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Dual/core-nexus-4k-dual-core.json) | 4K HDR | Shield, Apple TV 4K, OLED/QLED | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Dual/README_4k-dual-core.md) |
-| [4K Essential Dual Core](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Dual/core-nexus-4k-essential-dual-core.json) | 4K HDR | Shield, Apple TV 4K -- TorBox Essential plan | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Dual/README_4k-essential-dual-core.md) |
+### ⛓️ Dual Service — TorBox Pro + Real-Debrid
 
-### 📦 Single Service — TorBox Exclusive
-*Optimised for a pure TorBox and Usenet experience. No secondary debrid service required.*
+TorBox handles Usenet and uncached traffic. Real-Debrid serves cached streams only, with full RD Infringing File Scrub for account protection.
 
 | Template | Resolution | Best For | Docs |
 |---|---|---|---|
-| [TorBox Exclusive (RPDB)](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Single/core-nexus-torbox-exclusive_rpdb.json) | 1080p SDR | Budget hardware, RPDB poster art | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Single/README_torbox-exclusive-rpdb.md) |
-| [4K Home Theater](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Single/core-nexus-4k-ht-torbox.json) | 4K HDR | Shield, Apple TV 4K, full HT setup | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Single/README_4k-ht-torbox.md) |
+| [Dual Core 1080p](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Dual/core-nexus-dual-core-1080p.json) | 1080p SDR | Budget hardware, phones, tablets | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Dual/README_dual-core-1080p.md) |
+| [Dual Core 4K](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Dual/core-nexus-4k-dual-core.json) | 4K HDR | Shield, Apple TV 4K, OLED/QLED | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Dual/README_4k-dual-core.md) |
+| [4K Essential + RD](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Dual/core-nexus-4k-essential-dual-core.json) | 4K HDR | TorBox Essential plan + Real-Debrid | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Dual/README_4k-essential-dual-core.md) |
 
-### 🔀 Hybrid — TorBox + Usenet Indexer
-*For users pairing TorBox with a dedicated Usenet indexer for maximum source diversity.*
+### 📦 Single Service — TorBox Only
+
+No secondary debrid service required. TorBox Pro builds include Usenet. TorBox Essential builds use torrent cache only.
+
+| Template | Plan | Resolution | Best For | Docs |
+|---|---|---|---|---|
+| [TorBox Exclusive (RPDB)](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Single/core-nexus-torbox-exclusive_rpdb.json) | Pro | 1080p SDR | Budget hardware, RPDB poster art | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Single/README_torbox-exclusive-rpdb.md) |
+| [4K Home Theater](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Single/core-nexus-4k-ht-torbox.json) | Pro | 4K HDR | Shield, Apple TV 4K, full HT setup | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Single/README_4k-ht-torbox.md) |
+| [1080p Essential](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Single/core-nexus-1080p-essential-torbox.json) | Essential | 1080p SDR | Budget hardware, no Usenet needed | — |
+| [4K Essential](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Single/core-nexus-4k-essential-torbox.json) | Essential | 4K HDR | Shield, Apple TV 4K, no Usenet needed | — |
+
+### 🔀 Hybrid — TorBox Pro + Usenet Indexer
+
+Combines TorBox with NZBGeek for maximum source diversity. Shows both cached and uncached streams.
 
 | Template | Resolution | Best For | Docs |
 |---|---|---|---|
-| [TB Hybrid 1080p](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Hybrid/core-nexus-tb-hybrid-1080p.json) | 1080p SDR | TorBox + NZBGeek, cached + uncached | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Hybrid/README_tb-hybrid-1080p.md) |
+| [TB Hybrid 1080p](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Hybrid/core-nexus-tb-hybrid-1080p.json) | 1080p SDR | TorBox Pro + NZBGeek subscribers | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Hybrid/README_tb-hybrid-1080p.md) |
 
+> ⚠️ Requires a **NZBGeek API key** — enter it in the Addons section after loading. See the [Import Guide](Guides/IMPORT_GUIDE.md) for the setup step.
 
-### ⚡ Speed Tier — Instant Autoplay (2-3 Second Load)
-*Stripped to 4 addons only: Library, TorBox Search, Comet, Zilean. For users who prioritise instant results over maximum source coverage.*
+### ⚡ Speed Tier — Instant Autoplay
 
-#### With EasyNews (TorBox Essential + EasyNews)
+Stripped to 4 addons only (Library, TorBox Search, Comet, Zilean) for 2-3 second cached stream delivery. For users who prioritise instant results over maximum coverage.
+
+#### TorBox Essential + EasyNews
 
 | Template | Resolution | Docs |
 |---|---|---|
 | [Speed 1080p (EasyNews)](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/EasyNews/core-nexus-speed-1080p.json) | 1080p SDR | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/EasyNews/README_speed-1080p-easynews.md) |
 | [Speed 4K (EasyNews)](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/EasyNews/core-nexus-speed-4k.json) | 4K HDR | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/EasyNews/README_speed-4k-easynews.md) |
 
-#### TorBox Essential Only (No EasyNews)
+#### TorBox Essential Only
 
 | Template | Resolution | Docs |
 |---|---|---|
 | [Speed 1080p](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/TorBox/core-nexus-speed-1080p-torbox.json) | 1080p SDR | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/TorBox/README_speed-1080p-torbox.md) |
 | [Speed 4K](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/TorBox/core-nexus-speed-4k-torbox.json) | 4K HDR | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/TorBox/README_speed-4k-torbox.md) |
 
-> Speed templates use 3500ms timeouts, 10 results max, and a 5-key sort. All other Core Builds features (scored regex ranking, Tamtaro ESEs, episode matching, cacheAndPlay) remain intact.
+> Speed templates use 3500ms timeouts, 10 results max, and a 5-key sort. All Core Builds features (scored regex ranking, Tamtaro ESEs, episode matching) remain intact.
 
-> ⚠️ The Hybrid template requires a **NZBGeek API key** configured in the Addons section after loading. See the [Import Guide](Guides/IMPORT_GUIDE.md) for the full setup step.
+### 🌙 Nightly Versions
+
+Nightly versions of all standard templates are available with live-synced Tamtaro SEL stack and Vidhin05 ranked expressions. **Nightly and whitelisted AIOStreams hosts only** — will fail to import on stable instances.
+
+Find them in `Templates/Torbox/Nightly/` — same filenames as the standard builds.
 
 ---
 
 ## 🌍 Universal Debrid Support
 
-All five templates ship with the **full 12-service roster** pre-loaded and set to opt-in. Enable only the services you actually subscribe to — the rest are ignored:
+All templates ship with the **full 12-service roster** pre-loaded and set to opt-in. Enable only the services you actually subscribe to — the rest are ignored:
 
 `TorBox` · `Real-Debrid` · `AllDebrid` · `Premiumize` · `DebridLink` · `Offcloud` · `Put.io` · `EasyNews` · `EasyDebrid` · `PikPak` · `Seedr` · `Debrider`
 
 ---
 
-## 📱 Device Profiles — Multi-Device Setup
+## 📱 Device Profiles
 
-AIOStreams can't detect what device is requesting a stream — every request looks identical to the server. The cleanest workaround for households with mixed devices is **two separate Stremio accounts**:
+AIOStreams can't detect what device is requesting a stream — every request looks identical. Use **two separate Stremio accounts** for mixed households:
 
-- **🔵 Low-End Account** → install a 1080p SDR template on phones, tablets, budget TVs
-- **🟣 High-End Account** → install a 4K template on Shield, Apple TV 4K, OLED/QLED sets
+- **Low-End Account** → 1080p SDR template on phones, tablets, budget TVs
+- **High-End Account** → 4K template on Shield, Apple TV 4K, OLED/QLED sets
 
 See the [Device Profiles Guide](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Guides/DEVICE_PROFILES.md) for full setup instructions.
 
@@ -100,12 +107,85 @@ See the [Device Profiles Guide](https://github.com/Branding-Brevity/Core-Builds-
 
 ## 🎨 Custom Formatters
 
-Two formatters included to control how streams display in your list:
-
-- **💎 Core Zenith Diamond** — Information-dense, emoji-coded badges, smallcaps text. Shows service pool, resolution, quality, audio, special flags (OWNED, LIBRARY, SEADEX BEST) and a 4-line metadata description.
-- **📺 Core Clean Stream** — Minimal plain-text formatter matching native Stremio card layout. No emojis, no smallcaps, just clean readable text.
+| Formatter | Style |
+|---|---|
+| **💎 Core Zenith Diamond** | Emoji-coded badges, smallcaps text. Service pool, resolution, quality, audio, SEADEX / OWNED / LIBRARY flags. |
+| **📺 Core Clean Stream** | Minimal plain text. Matches native Stremio card layout. No emojis, no smallcaps. |
 
 See the [Formatter Guide](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Guides/FORMATTER_GUIDE.md) for installation.
+
+---
+
+## ⚙️ Quick Start
+
+### 1. Choose a Host
+
+| Rank | Host | URL | Notes |
+|------|------|-----|-------|
+| 🥇 | **ElfHosted** | [aiostreams.elfhosted.com](https://aiostreams.elfhosted.com/stremio/configure) | Most stable. Debrid-only on public instance — suits these templates perfectly. |
+| 🥈 | **Yeb's** | [aiostreams.fortheweak.cloud](https://aiostreams.fortheweak.cloud/stremio/configure) | AIOStreams Discord admin. Also offers [Nightly](https://aiostreams-nightly.fortheweak.cloud/stremio/configure). |
+| 🥉 | **Midnight's** | [aiostreamsfortheweebsstable.midnightignite.me](https://aiostreamsfortheweebsstable.midnightignite.me/stremio/configure) | TorBox community manager. Also offers [Nightly](https://aiostreamsfortheweebs.midnightignite.me/stremio/configure). |
+| 4 | **Viren's** | [aiostreams.viren070.me](https://aiostreams.viren070.me/stremio/configure) | Developer's own instance. Nightly only. |
+| 5 | **Kuu's** | [aiostreams.stremio.ru](https://aiostreams.stremio.ru/stremio/configure) | Also offers [Nightly](https://aiostreams-nightly.stremio.ru/stremio/configure). |
+| 6 | **ATBP Hosting** | [aio.atbphosting.com](https://aio.atbphosting.com/stremio/configure) | Community instance. |
+| 7 | **Omni's** | [aiostreams.12312023.xyz](https://aiostreams.12312023.xyz/stremio/configure) | Community instance. |
+
+Full instance list: [docs.aiostreams.viren070.me](https://docs.aiostreams.viren070.me/getting-started/public-instances/)
+
+### 2. Import a Template
+
+Paste a raw GitHub URL into the **Template Import** menu:
+
+```
+https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/refs/heads/main/Templates/Torbox/Dual/core-nexus-4k-dual-core.json
+```
+
+### 3. Enable Your Services
+
+Toggle on only the services you subscribe to — all 12 are pre-loaded and off by default.
+
+### 4. Install
+
+Click **Save**, copy the manifest URL, and paste it into Stremio or WuPlay.
+
+Full walkthrough in the [Import Guide](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Guides/IMPORT_GUIDE.md).
+
+---
+
+## 🔧 Under the Hood
+
+### All Templates
+- **Hard CAM + YouTube kill** — CAM, SCR, TS, TC and AI-enhanced YouTube links blocked at multiple layers.
+- **3D block** — H-OU, H-SBS and all 3D visual tags excluded.
+- **149-pattern release group scoring** — Fully scored regex baked in. No synced URL or whitelist required. Remux T1 (+100) through Extras (-200).
+- **`regexScore` + `streamExpressionScore` in sort** — Release group ranking and expression scoring both feed into final stream ordering.
+- **Exact title, year, and episode matching** — Strict mode on all three. No wrong-year or wrong-episode results.
+- **Full 12-service roster** — All opt-in. Enable only what you subscribe to.
+- **Tamtaro deduplicator** — SmartDetect aggressive, 13 attributes.
+- **Tamtaro ESEs inline** — Low Seeders, Extra Cached (HQ/LQ), Extra Uncached, Unknown Resolution, Unknown Quality — no whitelist needed.
+- **`hideErrors: true`** — Info and error streams hidden. No GitHub redirect card in Stremio.
+- **`bitrate.useMetadataRuntime: true`** — Accurate runtime-based bitrate.
+- **EZTV** — TV-specific torrent search, opt-in.
+- **MediaFusion** — Pre-configured to ElfHosted's public instance.
+
+### 4K Templates
+- **SeaDex best-release enforced** for anime.
+- **Size range 5 GB–150 GB** — accommodates full BluRay REMUX.
+- **DV → HDR10+ → HDR10 → HDR visual priority.**
+- **TrueHD → Atmos → DTS:X → DTS-HD MA audio priority.**
+
+### 1080p Templates
+- **4K, HDR, BluRay and Remux blocked** — SDR WEB-DL only.
+- **Size range 1 GB–25 GB.**
+
+### Dual Templates (TorBox + Real-Debrid)
+- **RD Infringing File Scrub** — Full May 2026 keyword blocklist. BluRay REMUX exempt.
+- **RD cached only** — Uncached routed through TorBox exclusively.
+- **MediaFlow proxy** — RD traffic protected against IP flags.
+
+### Pro Templates (with Usenet)
+- **`cacheAndPlay`** — Background Usenet download while playback begins.
+- **`nzbFailover`** — Automatic NZB failover when a download fails.
 
 ---
 
@@ -113,11 +193,11 @@ See the [Formatter Guide](https://github.com/Branding-Brevity/Core-Builds-By-Bre
 
 | Guide | Description |
 |---|---|
-| [Import Guide](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Guides/IMPORT_GUIDE.md) | How to import templates, enter credentials, and install in Stremio or WuPlay |
-| [Formatter Guide](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Guides/FORMATTER_GUIDE.md) | Installing and switching between Core Zenith Diamond and Core Clean Stream |
-| [Device Profiles](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Guides/DEVICE_PROFILES.md) | Multi-device household setup using two Stremio accounts |
-| [Advanced Editing](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Guides/ADVANCED_EDITING.md) | Raw JSON editing, valid enum values, SEL syntax rules |
-| [Reset Guide](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Guides/RESET_GUIDE.md) | Soft reset, hard reset, and password recovery |
+| [Import Guide](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Guides/IMPORT_GUIDE.md) | Import templates, enter credentials, install in Stremio or WuPlay |
+| [Formatter Guide](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Guides/FORMATTER_GUIDE.md) | Install and switch formatters |
+| [Device Profiles](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Guides/DEVICE_PROFILES.md) | Multi-device household setup |
+| [Advanced Editing](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Guides/ADVANCED_EDITING.md) | Raw JSON editing and SEL syntax |
+| [Reset Guide](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Guides/RESET_GUIDE.md) | Soft reset, hard reset, password recovery |
 | [Troubleshooting](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Guides/TROUBLESHOOTING.md) | Common errors and quick fixes |
 
 ---
@@ -126,25 +206,19 @@ See the [Formatter Guide](https://github.com/Branding-Brevity/Core-Builds-By-Bre
 
 ```
 Core-Builds-By-Brevity/
-├── 📁 Assets/              Banners and icons
-├── 📁 Formatters/          UI layouts (Core Zenith Diamond, Core Clean Stream)
-├── 📁 Guides/
-│   ├── IMPORT_GUIDE.md         How to import templates and configure services
-│   ├── FORMATTER_GUIDE.md      Installing and switching visual formatters
-│   ├── DEVICE_PROFILES.md      Multi-device household setup
-│   ├── ADVANCED_EDITING.md     Raw JSON editing and SEL syntax rules
-│   ├── RESET_GUIDE.md          Soft and hard reset procedures
-│   └── TROUBLESHOOTING.md      Common errors and fixes
-├── 📁 Regex/               Hosted trusted regex patterns
+├── 📁 Assets/
+├── 📁 Formatters/          Core Zenith Diamond, Core Clean Stream
+├── 📁 Guides/              Import, Formatter, Device Profiles, Advanced, Reset, Troubleshooting
+├── 📁 Regex/               Hosted scored regex patterns
 ├── 📁 Templates/
 │   └── 📁 Torbox/
-│       ├── 📁 Single/          TorBox-only builds -- universal (any host)
-│       ├── 📁 Dual/            TorBox + Real-Debrid -- universal (any host)
-│       ├── 📁 Hybrid/          TorBox + Usenet Indexer -- universal (any host)
-│       ├── 📁 Speed/            Speed-optimised builds (4 addons only)
-│       │   ├── 📁 EasyNews/      TorBox Essential + EasyNews
-│       │   └── 📁 TorBox/        TorBox Essential only
-│       └── 📁 Nightly/         Live-synced builds -- nightly hosts only
+│       ├── 📁 Single/      TorBox-only (Pro + Essential variants)
+│       ├── 📁 Dual/        TorBox + Real-Debrid
+│       ├── 📁 Hybrid/      TorBox + Usenet Indexer
+│       ├── 📁 Speed/       Speed-optimised (4 addons only)
+│       │   ├── 📁 EasyNews/
+│       │   └── 📁 TorBox/
+│       └── 📁 Nightly/     Live-synced — nightly hosts only
 │           ├── 📁 Single/
 │           ├── 📁 Dual/
 │           └── 📁 Hybrid/
@@ -154,117 +228,28 @@ Core-Builds-By-Brevity/
 
 ---
 
-## ⚙️ Quick Start
+## 💬 Don't See What You Need?
 
-### 1. Choose a Host
+Open a request and we'll look into it.
 
-A live status page for all instances is at [docs.aiostreams.viren070.me](https://docs.aiostreams.viren070.me/getting-started/public-instances/).
+**Include:** your debrid service(s), target resolution, hardware, and any specific requirements.
 
-| Rank | Host | URL | Channel | Notes |
-|------|------|-----|---------|-------|
-| 🥇 | **ElfHosted** | [aiostreams.elfhosted.com](https://aiostreams.elfhosted.com/stremio/configure) | Stable | Professional hosting service. Most stable and reliable. Public instance excludes P2P/HTTP/Live — debrid-only, which suits these templates perfectly. Private paid plans available with no restrictions. |
-| 🥈 | **Yeb's** | [aiostreams.fortheweak.cloud](https://aiostreams.fortheweak.cloud/stremio/configure) | Stable | Hosted by an AIOStreams Discord admin. Long-standing, community-trusted. Also offers a [Nightly build](https://aiostreams-nightly.fortheweak.cloud/stremio/configure) for early access. |
-| 🥉 | **Midnight's** | [aiostreamsfortheweebsstable.midnightignite.me](https://aiostreamsfortheweebsstable.midnightignite.me/stremio/configure) | Stable | Hosted by the TorBox community manager. Well-regarded, TorBox-optimised. Also offers a [Nightly build](https://aiostreamsfortheweebs.midnightignite.me/stremio/configure). |
-| 4 | **Viren's** | [aiostreams.viren070.me](https://aiostreams.viren070.me/stremio/configure) | Nightly | Hosted by the developer himself. Always on the latest features. Nightly-only — good for power users comfortable with occasional minor bugs. |
-| 5 | **Kuu's** | [aiostreams.stremio.ru](https://aiostreams.stremio.ru/stremio/configure) | Stable | Officially listed community instance. Also offers a [Nightly build](https://aiostreams-nightly.stremio.ru/stremio/configure). |
-| 6 | **ATBP Hosting** | [aio.atbphosting.com](https://aio.atbphosting.com/stremio/configure) | Stable | Officially listed community instance. |
-| 7 | **Omni's** | [aiostreams.12312023.xyz](https://aiostreams.12312023.xyz/stremio/configure) | Stable | Hosted by @a.ves. Officially listed community instance. |
-
-> **Recommendation:** Start with **ElfHosted** or **Yeb's**. For TorBox users, **Midnight's** is purpose-built for that workflow.
-
-### 2. Import a Template
-
-Navigate to the **Template Import** menu and paste the raw GitHub URL for your chosen build:
-
-```
-https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/refs/heads/main/Templates/Torbox/Dual/core-nexus-4k-dual-core.json
-```
-
-### 3. Configure Services
-
-Enable only the debrid services you actually subscribe to — all 12 are pre-loaded and set to opt-in.
-
-### 4. Install
-
-Click **Save** and copy the generated manifest URL into Stremio or WuPlay.
-
-Detailed instructions in the [Import Guide](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Guides/IMPORT_GUIDE.md).
-
----
-
-## 🔧 Under the Hood
-
-### All Templates
-- **Hard CAM kill** — Wipes CAM, SCR, TS, TC, HC HD-Rip at both quality and stream expression layers.
-- **Hard YouTube kill** — Catches AI-enhanced YouTube links other filters miss.
-- **3D / H-OU / H-SBS block** — Glasses-required 3D content excluded.
-- **Full 12-service roster** — All services pre-loaded and set to opt-in. Enable only what you use.
-- **Tamtaro deduplicator** — Full smartDetect config with 13 attributes.
-- **Exact title + year + episode matching** — `titleMatching: exact`, `yearMatching: strict tolerance 1`, `seasonEpisodeMatching: strict`. No false matches on sequels, remasters, or wrong episodes.
-- **149-pattern release group scoring** — Fully scored regex patterns baked directly into every template. No synced URL or whitelist required. Remux T1 (+100) through LQ groups (-75) to Extras (-200).
-- **`rankedRegexPatterns` + `preferredRegexPatterns`** — Both active and feeding into `regexScore` sort. Top-tier groups surface above mid-tier groups within the same quality level.
-- **`streamExpressionScore` in sort** — Numeric expression scoring feeds into stream ordering alongside `streamExpressionMatched`.
-- **`regexScore` in sort** — Release group ranking actively influences final stream order.
-- **`cacheAndPlay` for Usenet** — Background download while playback begins. No waiting for a full Usenet download before the stream starts.
-- **`nzbFailover`** — Automatic Usenet NZB failover when a download fails.
-- **`hideErrors: true`** — Error and informational streams hidden from the list. No more GitHub redirect card appearing in Stremio.
-- **`bitrate.useMetadataRuntime: true`** — Accurate runtime-based bitrate calculation using actual video metadata.
-- **6 Tamtaro ESEs** — Low Seeders, Extra Cached (HQ), Extra Cached (LQ), Extra Uncached (All), Unknown Resolution, Unknown Quality — all inline, no whitelist needed.
-- **EZTV** — TV show torrent search available as an opt-in built-in addon.
-- **MediaFusion** — Pre-configured to ElfHosted's public instance. Works out of the box on any AIOStreams host.
-- **Audio sort corrected** — All templates sort 7.1 > 5.1 > 2.0.
-- **Series sort fully specified** — Per resolution tier, not the 3-key stub from earlier versions.
-
-### 4K Templates Only
-- **SeaDex best-release enforced** — `seadexBestOnly: true` ensures only the definitive best encode is served for anime. Quality over compatibility on high-end hardware.
-- **Size range 5 GB–150 GB** — Floor prevents mislabelled junk, ceiling accommodates full BluRay REMUX.
-- **Visual tag priority: DV → HDR+DV → HDR10+ → HDR10 → HDR → HLG → SDR** — Dolby Vision first, always.
-- **Audio priority: TrueHD → Atmos → DTS:X → DTS-HD MA → FLAC** — Lossless first, always.
-- **Cached movie sort includes size tiebreaker** — When quality and audio are equal, the larger file wins. Larger typically means a better REMUX on high-end hardware.
-
-### 1080p Templates Only
-- **4K and HDR fully excluded** — 2160p, 1440p, DV, HDR10+, HDR10, HDR, HLG all blocked. SDR only.
-- **BluRay and Remux blocked** — Too large and often unplayable on budget hardware.
-- **Size range 1 GB–25 GB** — Tight ceiling prevents oversized files on hardware with limited buffering headroom.
-
-### Dual Templates Only (TorBox + Real-Debrid)
-- **RD Infringing File Scrub** *(all dual templates)* — Covers the full May 2026 RD keyword blocklist: WEB-DL, WEBRip, AMZN, DSNP, HULU, NF, CR, PCOK, PMTP, ATVP, MAX, SHO, CRAV, STAN, BCORE, YTS, RARBG. BluRay REMUX intentionally exempt.
-- **RD serves cached only** — Uncached streams are excluded from Real-Debrid. TorBox handles all uncached traffic via Usenet. RD's unreliable uncached is never surfaced.
-- **MediaFlow proxy active for RD** — All Real-Debrid traffic routed through MediaFlow to protect against IP-based account flags.
+- **GitHub Issues** → [Open a Template Request](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/issues/new?labels=template+request&title=Template+Request:+)
+- **Discord** → AIOStreams community server
 
 ---
 
 ## 📜 Version & Stability
 
-> **Stability Notice:** Versions prior to `1.1.2` should be considered **unstable**. Earlier releases contained broken JSON, invalid enum values, and non-functional stream expressions. The first stable, publish-ready release across all templates is `v1.1.2`. Current version is **`v2.1.8`** (Universal) / **`v2.1.8-nightly`** (Nightly).
+> Versions prior to `1.1.2` are **unstable**. Current version: **`v2.2.1`** (Universal) / **`v2.1.8-nightly`** (Nightly).
 
-See the [full CHANGELOG](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/CHANGELOG.md) for complete version history.
-
----
-
----
-
-## 💬 Don't See What You Need?
-
-None of the five templates quite fit your setup? Open a request and we'll look into it.
-
-**What to include:**
-- Your debrid service(s) — e.g. TorBox Essential + AllDebrid
-- Your target resolution — 4K or 1080p
-- Your hardware — Shield, Fire Stick, phone, etc.
-- Any specific requirements — IMAX, anime-only, no Remux, etc.
-
-**Where to request:**
-- **GitHub Issues** → [Open a Template Request](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/issues/new?labels=template+request&title=Template+Request:+) — use the `template request` label
-- **Discord** → Drop a message in the AIOStreams community server
-
-We can't guarantee every combination will get its own template, but common requests that fill a genuine gap will be considered for the next release.
+[Full CHANGELOG](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/CHANGELOG.md)
 
 ---
 
 ## ☕ Support the Project
 
-If these templates have leveled up your home theater or Stremio setup and saved you from buffering headaches, consider buying me a coffee. Your support fuels the late-night testing and continuous updates.
+If these templates have leveled up your setup, consider buying me a coffee.
 
 [![Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/branding_brevity/?hidefeed=true&widget=true&embed=true)
 

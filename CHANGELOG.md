@@ -6,6 +6,14 @@ All notable changes to the **Core Builds** templates and formatters will be docu
 
 ---
 
+## [2.2.1] - 2026-05-23
+
+### Added
+- **Core Nexus 4K Essential (`core-nexus-4k-essential-torbox.json`):** Full-featured 4K build for TorBox Essential users with no Usenet access. Based on the 4K HT TorBox template with `newznab` removed, `preferredStreamTypes` set to `['debrid']` only, and `nzbFailover`/`cacheAndPlay` disabled. Full 9-addon stack retained. Targets 2160p with Dolby Vision, HDR10+, TrueHD/Atmos, 5-150 GB. SeaDex enforced for anime. Upload to `Templates/Torbox/Single/`.
+- **Core Nexus 1080p Essential (`core-nexus-1080p-essential-torbox.json`):** Full-featured 1080p SDR build for TorBox Essential users with no Usenet access. Based on the TorBox Exclusive template with the same Essential modifications. Targets WEB-DL/WEBRip, blocks BluRay/Remux/4K/HDR, 1-25 GB. Full 9-addon stack retained. Upload to `Templates/Torbox/Single/`.
+
+---
+
 ## [2.2.0] - 2026-05-23
 
 ### Added

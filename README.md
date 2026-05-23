@@ -202,9 +202,29 @@ See the [full CHANGELOG](https://github.com/Branding-Brevity/Core-Builds-By-Brev
 
 ---
 
+---
+
+## 💬 Don't See What You Need?
+
+None of the five templates quite fit your setup? Open a request and we'll look into it.
+
+**What to include:**
+- Your debrid service(s) — e.g. TorBox Essential + AllDebrid
+- Your target resolution — 4K or 1080p
+- Your hardware — Shield, Fire Stick, phone, etc.
+- Any specific requirements — IMAX, anime-only, no Remux, etc.
+
+**Where to request:**
+- **GitHub Issues** → [Open a Template Request](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/issues/new?labels=template+request&title=Template+Request:+) — use the `template request` label
+- **Discord** → Drop a message in the AIOStreams community server
+
+We can't guarantee every combination will get its own template, but common requests that fill a genuine gap will be considered for the next release.
+
+---
+
 ## ☕ Support the Project
 
-If these templates have levelled up your home theater or Stremio setup and saved you from buffering headaches, consider buying me a coffee. Your support fuels the late-night testing and continuous updates.
+If these templates have leveled up your home theater or Stremio setup and saved you from buffering headaches, consider buying me a coffee. Your support fuels the late-night testing and continuous updates.
 
 [![Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/branding_brevity/?hidefeed=true&widget=true&embed=true)
 

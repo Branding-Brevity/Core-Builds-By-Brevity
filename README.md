@@ -132,7 +132,7 @@ A live status page for all instances is at [status.dinsden.top](https://status.d
 Navigate to the **Template Import** menu and paste the raw GitHub URL for your chosen build:
 
 ```
-https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/main/Templates/Torbox/Dual/core-nexus-4k-dual-core.json
+https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/refs/heads/main/Templates/Torbox/Dual/core-nexus-4k-dual-core.json
 ```
 
 ### 3. Configure Services

@@ -55,6 +55,26 @@ Streaming shouldn't involve trial and error. These builds are engineered to stri
 |---|---|---|---|
 | [TB Hybrid 1080p](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Hybrid/core-nexus-tb-hybrid-1080p.json) | 1080p SDR | TorBox + NZBGeek, cached + uncached | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Hybrid/README_tb-hybrid-1080p.md) |
 
+
+### ⚡ Speed Tier — Instant Autoplay (2-3 Second Load)
+*Stripped to 4 addons only: Library, TorBox Search, Comet, Zilean. For users who prioritise instant results over maximum source coverage.*
+
+#### With EasyNews (TorBox Essential + EasyNews)
+
+| Template | Resolution | Docs |
+|---|---|---|
+| [Speed 1080p (EasyNews)](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/EasyNews/core-nexus-speed-1080p.json) | 1080p SDR | [README](Templates/Torbox/Speed/EasyNews/README_speed-1080p.md) |
+| [Speed 4K (EasyNews)](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/EasyNews/core-nexus-speed-4k.json) | 4K HDR | [README](Templates/Torbox/Speed/EasyNews/README_speed-4k.md) |
+
+#### TorBox Essential Only (No EasyNews)
+
+| Template | Resolution | Docs |
+|---|---|---|
+| [Speed 1080p](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/TorBox/core-nexus-speed-1080p-torbox.json) | 1080p SDR | [README](Templates/Torbox/Speed/TorBox/README_speed-1080p-torbox.md) |
+| [Speed 4K](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/TorBox/core-nexus-speed-4k-torbox.json) | 4K HDR | [README](Templates/Torbox/Speed/TorBox/README_speed-4k-torbox.md) |
+
+> Speed templates use 3500ms timeouts, 10 results max, and a 5-key sort. All other Core Builds features (scored regex ranking, Tamtaro ESEs, episode matching, cacheAndPlay) remain intact.
+
 > ⚠️ The Hybrid template requires a **NZBGeek API key** configured in the Addons section after loading. See the [Import Guide](Guides/IMPORT_GUIDE.md) for the full setup step.
 
 ---
@@ -121,6 +141,9 @@ Core-Builds-By-Brevity/
 │       ├── 📁 Single/          TorBox-only builds -- universal (any host)
 │       ├── 📁 Dual/            TorBox + Real-Debrid -- universal (any host)
 │       ├── 📁 Hybrid/          TorBox + Usenet Indexer -- universal (any host)
+│       ├── 📁 Speed/            Speed-optimised builds (4 addons only)
+│       │   ├── 📁 EasyNews/      TorBox Essential + EasyNews
+│       │   └── 📁 TorBox/        TorBox Essential only
 │       └── 📁 Nightly/         Live-synced builds -- nightly hosts only
 │           ├── 📁 Single/
 │           ├── 📁 Dual/

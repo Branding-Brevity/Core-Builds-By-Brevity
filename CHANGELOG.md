@@ -6,6 +6,24 @@ All notable changes to the **Core Builds** templates and formatters will be docu
 
 ---
 
+## [2.2.0] - 2026-05-23
+
+### Added
+- **Speed Tier — 4 New Templates:** A new template category for users prioritising instant autoplay (2-3 second stream load) over maximum source coverage. All four speed templates use only Library, TorBox Search, Comet, and Zilean — the four fastest scrapers — with 3500ms timeouts, 10 global results, 4 per resolution, and a 5-key sort. All other Core Builds features remain: scored regex ranking, Tamtaro ESEs, episode matching, `cacheAndPlay`, `hideErrors`, and `nzbFailover`.
+
+  | Template | Resolution | Services |
+  |---|---|---|
+  | `Speed/EasyNews/core-nexus-speed-1080p` — **Core Nexus Speed 1080p (EasyNews)** | 1080p SDR | TorBox Essential + EasyNews |
+  | `Speed/EasyNews/core-nexus-speed-4k` — **Core Nexus Speed 4K (EasyNews)** | 4K HDR | TorBox Essential + EasyNews |
+  | `Speed/TorBox/core-nexus-speed-1080p-torbox` — **Core Nexus Speed 1080p** | 1080p SDR | TorBox Essential only |
+  | `Speed/TorBox/core-nexus-speed-4k-torbox` — **Core Nexus Speed 4K** | 4K HDR | TorBox Essential only |
+
+  4K speed templates include: Dolby Vision and HDR10+ priority, TrueHD/Atmos audio chain, 5-150 GB file range, SeaDex best-release for anime.
+  1080p speed templates include: SDR only, BluRay and Remux blocked, 1-25 GB file range.
+  TorBox-only variants set `preferredStreamTypes: [debrid]` and disable Usenet-specific failover.
+
+---
+
 ## [2.1.8] - 2026-05-23
 
 ### Changed

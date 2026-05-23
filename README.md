@@ -1,6 +1,28 @@
 <p align="center">
-  <img src="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/raw/main/Assets/core_builds_banner.svg" alt="Core Builds Banner">
+  <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/releases/latest">
+    <img src="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/raw/refs/heads/main/Assets/core_builds_banner.svg" alt="Core Builds Banner"/>
+  </a>
 </p>
+
+<p align="center">
+  <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/releases/latest">
+    <img src="https://img.shields.io/github/v/release/Branding-Brevity/Core-Builds-By-Brevity?style=for-the-badge&color=00d4ff&labelColor=0d1117&label=VERSION" alt="Latest Release"/>
+  </a>
+  <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/releases">
+    <img src="https://img.shields.io/github/downloads/Branding-Brevity/Core-Builds-By-Brevity/total?style=for-the-badge&color=e05030&labelColor=0d1117&label=DOWNLOADS" alt="Total Downloads"/>
+  </a>
+  <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/stargazers">
+    <img src="https://img.shields.io/github/stars/Branding-Brevity/Core-Builds-By-Brevity?style=for-the-badge&color=00d4ff&labelColor=0d1117&label=STARS" alt="Stars"/>
+  </a>
+  <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/commits/main">
+    <img src="https://img.shields.io/github/last-commit/Branding-Brevity/Core-Builds-By-Brevity?style=for-the-badge&color=7eeeff&labelColor=0d1117&label=UPDATED" alt="Last Updated"/>
+  </a>
+  <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/CHANGELOG.md">
+    <img src="https://img.shields.io/badge/CHANGELOG-v2.1.8-888fa0?style=for-the-badge&labelColor=0d1117" alt="Changelog"/>
+  </a>
+</p>
+
+
 
 # 🛡️ Core Builds by Brevity
 
@@ -216,6 +238,7 @@ None of the five templates quite fit your setup? Open a request and we'll look i
 
 **Where to request:**
 - **GitHub Issues** → [Open a Template Request](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/issues/new?labels=template+request&title=Template+Request:+) — use the `template request` label
+- **Discord** → Drop a message in the AIOStreams community server
 
 We can't guarantee every combination will get its own template, but common requests that fill a genuine gap will be considered for the next release.
 

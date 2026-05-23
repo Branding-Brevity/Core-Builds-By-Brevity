@@ -1,4 +1,10 @@
 <p align="center">
+  <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/releases/latest">
+    <img src="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/raw/refs/heads/main/Assets/core_builds_banner.svg" alt="Core Builds Banner" width="100%"/>
+  </a>
+</p>
+
+<p align="center">
   <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/actions/workflows/validate.yml">
     <img src="https://img.shields.io/github/actions/workflow/status/Branding-Brevity/Core-Builds-By-Brevity/validate.yml?style=for-the-badge&label=BUILD&logo=github&logoColor=white&labelColor=1a1f27&color=2ea44f" alt="Build Status"/>
   </a>
@@ -12,26 +18,6 @@
     <img src="https://img.shields.io/badge/DONATE-Ko--fi-ff5f5f?style=for-the-badge&logo=ko-fi&logoColor=white&labelColor=1a1f27" alt="Donate"/>
   </a>
 </p>
-
-<p align="center">
-  <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/releases/latest">
-    <img src="https://img.shields.io/github/v/release/Branding-Brevity/Core-Builds-By-Brevity?style=for-the-badge&color=00d4ff&labelColor=0d1117&label=VERSION" alt="Latest Release"/>
-  </a>
-  <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/releases">
-    <img src="https://img.shields.io/github/downloads/Branding-Brevity/Core-Builds-By-Brevity/total?style=for-the-badge&color=e05030&labelColor=0d1117&label=DOWNLOADS" alt="Total Downloads"/>
-  </a>
-  <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/stargazers">
-    <img src="https://img.shields.io/github/stars/Branding-Brevity/Core-Builds-By-Brevity?style=for-the-badge&color=00d4ff&labelColor=0d1117&label=STARS" alt="Stars"/>
-  </a>
-  <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/commits/main">
-    <img src="https://img.shields.io/github/last-commit/Branding-Brevity/Core-Builds-By-Brevity?style=for-the-badge&color=7eeeff&labelColor=0d1117&label=UPDATED" alt="Last Updated"/>
-  </a>
-  <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/CHANGELOG.md">
-    <img src="https://img.shields.io/badge/CHANGELOG-v2.1.8-888fa0?style=for-the-badge&labelColor=0d1117" alt="Changelog"/>
-  </a>
-</p>
-
-
 
 # 🛡️ Core Builds by Brevity
 

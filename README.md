@@ -100,9 +100,14 @@ Core-Builds-By-Brevity/
 │   └── TROUBLESHOOTING.md      Common errors and fixes
 ├── 📁 Regex/               Hosted trusted regex patterns
 ├── 📁 Templates/
-│   └── 📁 Single/          TorBox-only builds (RPDB, 4K HT)
-│       ├── 📁 Dual/            TorBox + Real-Debrid (1080p, 4K)
-│       └── 📁 Hybrid/          TorBox + Usenet Indexer
+│   └── 📁 Torbox/
+│       ├── 📁 Single/          TorBox-only builds -- universal (any host)
+│       ├── 📁 Dual/            TorBox + Real-Debrid -- universal (any host)
+│       ├── 📁 Hybrid/          TorBox + Usenet Indexer -- universal (any host)
+│       └── 📁 Nightly/         Live-synced builds -- nightly hosts only
+│           ├── 📁 Single/
+│           ├── 📁 Dual/
+│           └── 📁 Hybrid/
 ├── CHANGELOG.md
 └── README.md
 ```
@@ -113,7 +118,7 @@ Core-Builds-By-Brevity/
 
 ### 1. Choose a Host
 
-A live status page for all instances is at [status.dinsden.top](https://status.dinsden.top/status/aiostreams).
+A live status page for all instances is at [docs.aiostreams.viren070.me](https://docs.aiostreams.viren070.me/getting-started/public-instances/).
 
 | Rank | Host | URL | Channel | Notes |
 |------|------|-----|---------|-------|

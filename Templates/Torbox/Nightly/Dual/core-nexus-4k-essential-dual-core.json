@@ -1,8 +1,8 @@
 {
   "metadata": {
     "id": "core-nexus-4k-dual-core",
-    "name": "Core Nexus 4K Dual Core",
-    "description": "[Nightly hosts only] The flagship 4K build. Powered by TorBox and Real-Debrid in tandem — TorBox handles Usenet and all uncached traffic, Real-Debrid serves cached streams only. Targets 2160p with Dolby Vision, HDR10+, and HDR10 priority. Enforces 7.1 surround preference, TrueHD/Atmos/DTS:X audio chain, and AV1/HEVC encode priority. File range 5 GB–150 GB to accommodate full BluRay REMUX. SeaDex best-release enforced for anime. Tamtaro SEL stack with live-synced ESEs, PSEs, and regex. Expanded RD Infringing File Scrub covering the full May 2026 keyword blocklist. Designed for Nvidia Shield, Apple TV 4K, and high-end OLED/QLED displays.",
+    "name": "Core Nexus 4K Essential Dual Core",
+    "description": "[Nightly hosts only] A 4K dual-service build for TorBox Essential and Real-Debrid users. Identical to the 4K Dual Core flagship but with Usenet removed -- compatible with TorBox Essential plan which does not include Usenet access. TorBox handles torrent caching and uncached traffic. Real-Debrid serves cached streams only. Targets 2160p with Dolby Vision, HDR10+, and HDR10 priority. Enforces 7.1 surround preference, TrueHD/Atmos/DTS:X audio chain, and AV1/HEVC encode priority. File range 5 GB-150 GB to accommodate full BluRay REMUX. SeaDex best-release enforced for anime. Tamtaro SEL stack with live-synced ESEs, PSEs, and regex. Expanded RD Infringing File Scrub covering the full May 2026 keyword blocklist. Designed for Nvidia Shield, Apple TV 4K, and high-end OLED/QLED displays.",
     "source": "external",
     "author": "Branding_Brevity",
     "version": "2.1.8-nightly",
@@ -203,29 +203,6 @@
           "timeout": 5000
         },
         "category": "P2P"
-      },
-      {
-        "type": "newznab",
-        "instanceId": "tb-nzb-1",
-        "enabled": true,
-        "options": {
-          "name": "Searchⁿᶻᵇ",
-          "newznabUrl": "https://search-api.torbox.app/newznab",
-          "apiPath": "/api",
-          "timeout": 5000,
-          "mediaTypes": [
-            "movie",
-            "series",
-            "anime"
-          ],
-          "searchMode": "both",
-          "paginate": false,
-          "checkOwned": true,
-          "useMultipleInstances": false,
-          "services": [
-            "torbox"
-          ]
-        }
       },
       {
         "type": "torrent-galaxy",
@@ -774,7 +751,6 @@
     "includedStreamTypes": [],
     "requiredStreamTypes": [],
     "preferredStreamTypes": [
-      "usenet",
       "debrid"
     ],
     "excludedEncodes": [],

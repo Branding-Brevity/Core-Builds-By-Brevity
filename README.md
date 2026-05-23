@@ -63,15 +63,15 @@ Streaming shouldn't involve trial and error. These builds are engineered to stri
 
 | Template | Resolution | Docs |
 |---|---|---|
-| [Speed 1080p (EasyNews)](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/EasyNews/core-nexus-speed-1080p.json) | 1080p SDR | [README](Templates/Torbox/Speed/EasyNews/README_speed-1080p.md) |
-| [Speed 4K (EasyNews)](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/EasyNews/core-nexus-speed-4k.json) | 4K HDR | [README](Templates/Torbox/Speed/EasyNews/README_speed-4k.md) |
+| [Speed 1080p (EasyNews)](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/EasyNews/core-nexus-speed-1080p.json) | 1080p SDR | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/EasyNews/README_speed-1080p-easynews.md) |
+| [Speed 4K (EasyNews)](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/EasyNews/core-nexus-speed-4k.json) | 4K HDR | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/EasyNews/README_speed-4k-easynews.md) |
 
 #### TorBox Essential Only (No EasyNews)
 
 | Template | Resolution | Docs |
 |---|---|---|
-| [Speed 1080p](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/TorBox/core-nexus-speed-1080p-torbox.json) | 1080p SDR | [README](Templates/Torbox/Speed/TorBox/README_speed-1080p-torbox.md) |
-| [Speed 4K](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/TorBox/core-nexus-speed-4k-torbox.json) | 4K HDR | [README](Templates/Torbox/Speed/TorBox/README_speed-4k-torbox.md) |
+| [Speed 1080p](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/TorBox/core-nexus-speed-1080p-torbox.json) | 1080p SDR | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/TorBox/README_speed-1080p-torbox.md) |
+| [Speed 4K](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/TorBox/core-nexus-speed-4k-torbox.json) | 4K HDR | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/TorBox/README_speed-4k-torbox.md) |
 
 > Speed templates use 3500ms timeouts, 10 results max, and a 5-key sort. All other Core Builds features (scored regex ranking, Tamtaro ESEs, episode matching, cacheAndPlay) remain intact.
 

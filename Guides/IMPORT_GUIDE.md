@@ -38,7 +38,7 @@ Open one of the following community hosts in your browser. A live status page is
 Navigate to the **Template Import** menu and paste the raw GitHub URL for your chosen template. Raw links follow this pattern:
 
 ```
-https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/main/Templates/Torbox/Dual/core-nexus-4k-dual-core.json
+https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/refs/heads/main/Templates/Torbox/Dual/core-nexus-4k-dual-core.json
 ```
 
 **Full raw URLs:**
@@ -51,7 +51,7 @@ https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/main/T
 | Dual Core 4K | `.../Templates/Torbox/Dual/core-nexus-4k-dual-core.json` |
 | TB Hybrid 1080p | `.../Templates/Hybrid/core-nexus-tb-hybrid-1080p.json` |
 
-*(Prepend `https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/main/` to each path)*
+*(Prepend `https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/refs/heads/main/` to each path)*
 
 ---
 

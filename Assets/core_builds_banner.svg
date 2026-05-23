@@ -1,60 +1,165 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="1200" height="340">
   <defs>
-    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0d1117" />
-      <stop offset="50%" stop-color="#161b22" />
-      <stop offset="100%" stop-color="#090c10" />
+    <!-- Background gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#080b0f"/>
+      <stop offset="50%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#080b0f"/>
     </linearGradient>
-    <linearGradient id="shield-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#58a6ff" />
-      <stop offset="100%" stop-color="#1f6feb" />
+
+    <!-- Cyan glow filter -->
+    <filter id="cyanGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Soft outer glow -->
+    <filter id="outerGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="18" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Red glow -->
+    <filter id="redGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Text glow -->
+    <filter id="textGlow" x="-20%" y="-50%" width="140%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Divider gradient -->
+    <linearGradient id="divGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0"/>
+      <stop offset="30%" style="stop-color:#00d4ff;stop-opacity:0.8"/>
+      <stop offset="70%" style="stop-color:#00d4ff;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#00d4ff;stop-opacity:0"/>
     </linearGradient>
+
+    <!-- Circle clip -->
+    <clipPath id="circleClip">
+      <circle cx="170" cy="170" r="130"/>
+    </clipPath>
   </defs>
-  
-  <rect width="1200" height="400" fill="url(#bg-grad)" rx="16"/>
 
-  <g stroke="#30363d" stroke-width="1" opacity="0.6">
-    <line x1="0" y1="100" x2="1200" y2="100" />
-    <line x1="0" y1="200" x2="1200" y2="200" />
-    <line x1="0" y1="300" x2="1200" y2="300" />
-    <line x1="300" y1="0" x2="300" y2="400" />
-    <line x1="600" y1="0" x2="600" y2="400" />
-    <line x1="900" y1="0" x2="900" y2="400" />
-  </g>
+  <!-- Background -->
+  <rect width="1200" height="340" fill="url(#bgGrad)" rx="12"/>
 
-  <g transform="translate(550, 50) scale(1.5)">
-    <path d="M 33 0 L 0 14.6 L 0 36.6 C 0 54.4 14.1 70.8 33 75.3 C 51.9 70.8 66 54.4 66 36.6 L 66 14.6 L 33 0 Z" fill="none" stroke="url(#shield-grad)" stroke-width="3" stroke-linejoin="round"/>
-    <path d="M 33 10 L 10 20 L 10 36.6 C 10 50 20 62 33 65 C 46 62 56 50 56 36.6 L 56 20 Z" fill="url(#shield-grad)" opacity="0.15"/>
-    <path d="M 33 20 L 22 25 L 22 36.6 C 22 45 26.5 52.5 33 55 C 39.5 52.5 44 45 44 36.6 L 44 25 Z" fill="url(#shield-grad)"/>
+  <!-- Subtle grid lines -->
+  <g opacity="0.04" stroke="#00d4ff" stroke-width="1">
+    <line x1="0" y1="85" x2="1200" y2="85"/>
+    <line x1="0" y1="170" x2="1200" y2="170"/>
+    <line x1="0" y1="255" x2="1200" y2="255"/>
+    <line x1="200" y1="0" x2="200" y2="340"/>
+    <line x1="400" y1="0" x2="400" y2="340"/>
+    <line x1="600" y1="0" x2="600" y2="340"/>
+    <line x1="800" y1="0" x2="800" y2="340"/>
+    <line x1="1000" y1="0" x2="1000" y2="340"/>
   </g>
 
-  <text x="600" y="240" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="52" font-weight="900" fill="#c9d1d9" text-anchor="middle" letter-spacing="4">CORE BUILDS</text>
-  
-  <text x="600" y="285" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" font-weight="600" fill="#8b949e" text-anchor="middle" letter-spacing="2">BY BRANDING_BREVITY</text>
-  
-  <text x="600" y="325" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15" font-weight="500" fill="#58a6ff" text-anchor="middle" letter-spacing="1">FRICTIONLESS AIOSTREAMS CONFIGURATIONS</text>
+  <!-- Ambient glow behind icon -->
+  <circle cx="170" cy="170" r="140" fill="#00d4ff" opacity="0.04" filter="url(#outerGlow)"/>
 
-  <g transform="translate(350, 350)">
-    <rect width="100" height="26" rx="13" fill="#238636" opacity="0.15"/>
-    <rect width="100" height="26" rx="13" fill="none" stroke="#238636" stroke-width="1" opacity="0.5"/>
-    <text x="50" y="17" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#3fb950" text-anchor="middle">TorBox</text>
-  </g>
-  
-  <g transform="translate(470, 350)">
-    <rect width="120" height="26" rx="13" fill="#1f6feb" opacity="0.15"/>
-    <rect width="120" height="26" rx="13" fill="none" stroke="#1f6feb" stroke-width="1" opacity="0.5"/>
-    <text x="60" y="17" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#58a6ff" text-anchor="middle">Real-Debrid</text>
-  </g>
-  
-  <g transform="translate(610, 350)">
-    <rect width="100" height="26" rx="13" fill="#8957e5" opacity="0.15"/>
-    <rect width="100" height="26" rx="13" fill="none" stroke="#8957e5" stroke-width="1" opacity="0.5"/>
-    <text x="50" y="17" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#d2a8ff" text-anchor="middle">Stremio</text>
-  </g>
-  
-  <g transform="translate(730, 350)">
-    <rect width="100" height="26" rx="13" fill="#d29922" opacity="0.15"/>
-    <rect width="100" height="26" rx="13" fill="none" stroke="#d29922" stroke-width="1" opacity="0.5"/>
-    <text x="50" y="17" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#e3b341" text-anchor="middle">WuPlay</text>
-  </g>
+  <!-- Dark icon circle -->
+  <circle cx="170" cy="170" r="128" fill="#0a0c10" stroke="#1a2030" stroke-width="1.5"/>
+
+  <!-- Cyan hexagon outer glow layer -->
+  <polygon points="170,62 255,111 255,209 170,258 85,209 85,111"
+    fill="none" stroke="#00d4ff" stroke-width="2" opacity="0.25" filter="url(#outerGlow)"/>
+
+  <!-- Cyan hexagon -->
+  <polygon points="170,70 248,115 248,205 170,250 92,205 92,115"
+    fill="none" stroke="#00d4ff" stroke-width="14"
+    stroke-linejoin="round" filter="url(#cyanGlow)" opacity="0.95"/>
+
+  <!-- Cyan hexagon inner highlight -->
+  <polygon points="170,70 248,115 248,205 170,250 92,205 92,115"
+    fill="none" stroke="#7eeeff" stroke-width="2"
+    stroke-linejoin="round" opacity="0.4"/>
+
+  <!-- Red/orange diamond glow -->
+  <rect x="126" y="126" width="88" height="88" rx="4" transform="rotate(45 170 170)"
+    fill="#c44020" opacity="0.3" filter="url(#outerGlow)"/>
+
+  <!-- Red/orange diamond -->
+  <rect x="128" y="128" width="84" height="84" rx="3" transform="rotate(45 170 170)"
+    fill="#e05030" filter="url(#redGlow)"/>
+
+  <!-- Diamond highlight -->
+  <rect x="128" y="128" width="84" height="84" rx="3" transform="rotate(45 170 170)"
+    fill="none" stroke="#ff7a5a" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- Diamond inner shadow -->
+  <rect x="134" y="134" width="72" height="72" rx="2" transform="rotate(45 170 170)"
+    fill="#bf4525" opacity="0.4"/>
+
+  <!-- White center dot -->
+  <circle cx="170" cy="170" r="12" fill="white" opacity="0.95"/>
+  <circle cx="170" cy="170" r="12" fill="white" filter="url(#cyanGlow)" opacity="0.3"/>
+
+  <!-- Divider line -->
+  <rect x="338" y="50" width="2" height="240" fill="url(#divGrad)" rx="1"/>
+
+  <!-- CORE BUILDS text -->
+  <text x="385" y="148"
+    font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif"
+    font-size="72" font-weight="800" letter-spacing="-1"
+    fill="#ffffff" filter="url(#textGlow)">CORE</text>
+
+  <text x="385" y="220"
+    font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif"
+    font-size="72" font-weight="800" letter-spacing="-1"
+    fill="#00d4ff" filter="url(#textGlow)">BUILDS</text>
+
+  <!-- Thin accent line under BUILDS -->
+  <rect x="385" y="232" width="340" height="3" rx="1.5" fill="#00d4ff" opacity="0.5"/>
+
+  <!-- by Brevity -->
+  <text x="387" y="275"
+    font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif"
+    font-size="22" font-weight="400" letter-spacing="8"
+    fill="#7eeeff" opacity="0.75">BY BREVITY</text>
+
+  <!-- Right side tagline -->
+  <text x="820" y="145"
+    font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif"
+    font-size="18" font-weight="300" letter-spacing="3"
+    fill="#7eeeff" opacity="0.6" text-anchor="middle">AIOSTREAMS TEMPLATES</text>
+
+  <!-- Tagline separator dots -->
+  <circle cx="730" cy="175" r="2" fill="#00d4ff" opacity="0.4"/>
+  <circle cx="820" cy="175" r="2" fill="#00d4ff" opacity="0.6"/>
+  <circle cx="910" cy="175" r="2" fill="#00d4ff" opacity="0.4"/>
+
+  <text x="820" y="210"
+    font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif"
+    font-size="30" font-weight="700" letter-spacing="1"
+    fill="#e8e8e8" opacity="0.9" text-anchor="middle">Frictionless Streaming</text>
+
+  <text x="820" y="248"
+    font-family="'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif"
+    font-size="16" font-weight="300" letter-spacing="2"
+    fill="#888fa0" opacity="0.8" text-anchor="middle">HIGH QUALITY  ·  DEBRID  ·  TORBOX</text>
+
+  <!-- Corner accent marks -->
+  <path d="M 20 20 L 50 20 L 50 24 L 24 24 L 24 50 L 20 50 Z" fill="#00d4ff" opacity="0.3"/>
+  <path d="M 1180 20 L 1150 20 L 1150 24 L 1176 24 L 1176 50 L 1180 50 Z" fill="#00d4ff" opacity="0.3"/>
+  <path d="M 20 320 L 50 320 L 50 316 L 24 316 L 24 290 L 20 290 Z" fill="#00d4ff" opacity="0.3"/>
+  <path d="M 1180 320 L 1150 320 L 1150 316 L 1176 316 L 1176 290 L 1180 290 Z" fill="#00d4ff" opacity="0.3"/>
 </svg>

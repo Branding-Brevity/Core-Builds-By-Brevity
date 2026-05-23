@@ -15,6 +15,8 @@ Before importing, choose the right build for your setup. If you're running on mu
 | `core-nexus-dual-core-1080p.json` | 1080p SDR | TorBox + Real-Debrid | Low-end devices, dual-cache failover |
 | `core-nexus-4k-dual-core.json` | 4K HDR | TorBox + Real-Debrid | Shield / 4K TVs, maximum coverage |
 | `core-nexus-4k-essential-dual-core.json` | 4K HDR | TorBox Essential + Real-Debrid | Shield / 4K TVs, no Usenet required |
+| `core-nexus-4k-essential-torbox.json` | 4K HDR | TorBox Essential only | Shield / 4K TVs, no Usenet, no secondary service |
+| `core-nexus-1080p-essential-torbox.json` | 1080p SDR | TorBox Essential only | Budget hardware, no Usenet, no secondary service |
 | `core-nexus-tb-hybrid-1080p.json` | 1080p SDR | TorBox + NZBGeek | Users with a Usenet indexer subscription |
 
 > All five templates include the full **12-service roster** pre-loaded. Enable only the services you actually subscribe to — the rest are ignored.

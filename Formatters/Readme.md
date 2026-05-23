@@ -43,7 +43,7 @@ Designed for maximum readability from the couch. The Zenith Diamond formatter us
 
 Built for those who want a stylized, aggressive look to their stream lists. The Auburn Tiger Edition utilizes a custom color palette to make the absolute best cached links jump off the screen. 
 
-![Auburn Tiger Preview](../Assets/auburn_tiger_preview.png)
+![Auburn Tiger Preview](../Assets/auburn_tiger_preview.svg)
 
 **Key Features:**
 * Bold, thematic color coding for quick scanning.

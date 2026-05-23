@@ -23,7 +23,7 @@ Before importing, choose the right build for your setup. If you're running on mu
 
 ## 2️⃣ Open an AIOStreams Host
 
-Open one of the following community hosts in your browser. A live status page is available at [status.dinsden.top](https://status.dinsden.top/status/aiostreams).
+Open one of the following community hosts in your browser. A live status page is available at [docs.aiostreams.viren070.me](https://docs.aiostreams.viren070.me/getting-started/public-instances/).
 
 | Rank | Host | URL |
 |------|------|-----|

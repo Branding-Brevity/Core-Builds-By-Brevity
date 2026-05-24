@@ -61,7 +61,7 @@ Combines TorBox with NZBGeek for maximum source diversity. Shows both cached and
 
 ### ⚡ Speed Tier — Instant Autoplay
 
-Stripped to 4 addons only (Library, TorBox Search, Comet, Zilean) for 2-3 second cached stream delivery. For users who prioritise instant results over maximum coverage.
+Stripped to 4 addons only (Library, Search NZB (TorBox), Comet, Zilean) for 2-3 second cached stream delivery. For users who prioritise instant results over maximum coverage.
 
 #### TorBox Essential + EasyNews
 

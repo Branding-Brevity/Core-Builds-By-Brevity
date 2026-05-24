@@ -2,10 +2,10 @@
   "metadata": {
     "id": "core-nexus-1080p-torbox-exclusive",
     "name": "Core Nexus 1080p Essential",
-    "description": "A full-featured 1080p SDR build for TorBox Essential users. No Usenet access required -- runs entirely on TorBox's torrent cache. Targets WEB-DL and WEBRip sources, blocks BluRay, Remux, 4K, and HDR for reliable playback on budget hardware. File range 1 GB-25 GB. Full addon stack including Comet, Meteor, Zilean, Knaben, and MediaFusion. A single TorBox Essential subscription is all that is required.",
+    "description": "A full-featured 1080p SDR build for TorBox Essential users. No Usenet access required -- runs entirely on TorBox's torrent cache. Targets WEB-DL and WEBRip sources, blocks BluRay, Remux, 4K, and HDR for reliable playback on budget hardware. File range 1 GB-25 GB. Full addon stack including Comet, Meteor, Zilean, Knaben, and. A single TorBox Essential subscription is all that is required.",
     "source": "external",
     "author": "Branding_Brevity",
-    "version": "2.2.0",
+    "version": "2.2.2",
     "category": "Debrid",
     "serviceRequired": false,
     "setToSaveInstallMenu": true
@@ -43,10 +43,11 @@
       "SCR",
       "TS",
       "TC",
-      "Unknown",
       "HC HD-Rip",
       "BluRay",
-      "BluRay REMUX"
+      "BluRay REMUX",
+      "youtube",
+      "YouTube"
     ],
     "includedQualities": [],
     "requiredQualities": [],
@@ -115,7 +116,8 @@
       "DD",
       "AAC",
       "FLAC",
-      "Atmos"
+      "Atmos",
+      "Unknown"
     ],
     "requiredAudioTags": [],
     "preferredAudioTags": [
@@ -152,7 +154,8 @@
     ],
     "includedEncodes": [
       "HEVC",
-      "AVC"
+      "AVC",
+      "Unknown"
     ],
     "requiredEncodes": [],
     "preferredEncodes": [
@@ -160,7 +163,6 @@
       "AVC"
     ],
     "excludedRegexPatterns": [
-      "/\\.(iso|img|bin|dmg|pkg|r\\d{2}|zip|rar|7z|tar|gz|zipx|arj|txt|nfo|html|htm|torrent|jpg|png|pdf|epub|cbz|exe|bat|cmd|scr|msi|ps1|vbs|js|jar|com|pif|reg|dll|sys|lnk|url|uue|sfv|m2ts)$/i",
       "/(\\bAI[ ._-]?(Upscaled?|Enhanced|Remaster(ed)?)?\\b)|(\\b(AIUS|RW|GuyZo|BR-GuyZo)\\b)|(\\b((Upscale)?Re-?graded?)\\b)|(\\b(The[ ._-]?Upscaler)\\b)|(\\b(AI[ ._-]?Enhanced?|UPS(UHD)?|Upscaled?([ ._-]?UHD)?|UpRez)\\b)/i",
       "/(?<=\\b[12]\\d{3}\\b).*\\b(Extras|Bonus|Extended[ ._-]Clip)\\b/i",
       "/(?<=\\bS\\d+\\b).*\\b(Extras|Bonus|Extended[ ._-]Clip)\\b/i",
@@ -170,8 +172,7 @@
       "/\\b(BRiNK|BTM|CHX|CTFOH|d3g|DepraveD|EVO|Feranki1980|FGT|FMD|GHOSTS|HiQVE|iNTENSO|JFF|KC|MeGusta|nhanc3|OFT|PSA|R&H|SasukeducK|SHD|ShieldBearer|TBS|TG|VIDEOHOLE|worldmkv|XLF|Zero00)\\b|Pahe(\\.(ph|in))?\\b/i",
       "/(?<=\\b[12]\\d{3}\\b).*\\b(Sing[-_. ]Along)\\b/i",
       "/^(?!.*\\b((?<!HD[._ -]|HD)DVD|BDRip|720p|MKV|XviD|WMV|d3g|(BD)?REMUX|^(?=.*1080p)(?=.*HEVC)|[xh][-_. ]?26[45]|German.*[DM]L|((?<=\\d{4}).*German.*([DM]L)?)(?=.*\\b(AVC|HEVC|VC[-_. ]?1|MVC|MPEG[-_. ]?2)\\b))\\b)(((?=.*\\b(Blu[-_. ]?ray|BD|HD[-_. ]?DVD)\\b)(?=.*\\b(AVC|HEVC|VC[-_. ]?1|MVC|MPEG[-_. ]?2|BDMV|ISO)\\b))|^((?=.*\\b(((?=.*\\b((.*_)?COMPLETE.*|Dis[ck])\\b)(?=.*(Blu[-_. ]?ray|HD[-_. ]?DVD)))|3D[-_. ]?BD|BR[-_. ]?DISK|Full[-_. ]?Blu[-_. ]?ray|^((?=.*((BD|UHD)[-_. ]?(25|50|66|100|ISO)))))))).*$/i",
-      "/[.]heb\\b|\\[eztvx?[ ._-]?(io|re|to)?\\]|\\[(rarbg|rartv|TGx)\\]|[.]VAV\\b|\\b(ORARBG)\\b/i",
-      "/[.]heb\\b|\\[eztvx?[ ._-]?(io|re|to)?\\]|\\[(rarbg|rartv|TGx)\\]/i"
+      "/[.]heb\\b|\\[eztvx?[ ._-]?(io|re|to)?\\]|\\[(rarbg|rartv|TGx)\\]|[.]VAV\\b|\\b(ORARBG)\\b/i"
     ],
     "preferredRegexPatterns": [
       {
@@ -218,9 +219,7 @@
     "syncedRankedRegexUrls": [],
     "syncedPreferredStreamExpressionUrls": [],
     "syncedExcludedStreamExpressionUrls": [],
-    "syncedIncludedStreamExpressionUrls": [
-      "https://raw.githubusercontent.com/Tam-Taro/SEL-Filtering-and-Sorting/refs/heads/main/AIOStreams-SyncedURLs/Tamtaro-synced-ISEs.json"
-    ],
+    "syncedIncludedStreamExpressionUrls": [],
     "syncedRankedStreamExpressionUrls": [],
     "requiredReleaseGroups": [],
     "enhanceResults": true,
@@ -256,7 +255,7 @@
         "enabled": true
       },
       {
-        "expression": "/*Hard YouTube Kill*/ type(streams, 'youtube')",
+        "expression": "/*Hard YouTube Kill*/ type(streams, 'youtube') or type(streams, 'external') or quality(streams, 'youtube', 'YouTube', 'YOUTUBE') or keyword(streams, 'all', 'youtube.com', 'youtu.be', 'youtu', 'yt.be', 'youtube', 'YouTube', 'YOUTUBE', 'trailer', 'Trailer', 'TRAILER', 'Official Trailer', 'Official Video', 'Watch on YouTube', 'HD Trailer', 'Teaser', 'Promo', 'youtube.com/watch', 'youtube.com/embed')",
         "enabled": true
       },
       {
@@ -321,6 +320,14 @@
       },
       {
         "expression": "/*Unknown Quality*/ count(quality(merge(type(streams, 'p2p', 'http', 'usenet', 'stremio-usenet'), cached(type(streams, 'debrid'))), 'Bluray REMUX','Bluray','WEB-DL','WEBRip','HDRip','HC HD-Rip','DVDRip','HDTV')) > 5 ? negate(merge(library(streams), seadex(streams)), quality(type(streams, 'p2p', 'http', 'usenet', 'stremio-usenet', 'debrid'), 'Unknown')): []",
+        "enabled": true
+      },
+      {
+        "expression": "/*Kill Ambiguous Season Packs*/ (queryType=='series' or queryType=='anime.series') and count(negate(seasonPack(streams, 'onlySeasons'), streams)) > 0 ? seasonPack(streams, 'onlySeasons') : []",
+        "enabled": true
+      },
+      {
+        "expression": "/*Kill Season Packs When Episode Streams Exist*/ (queryType=='series' or queryType=='anime.series') and count(negate(seasonPack(streams, 'seasonPack'), streams)) > 3 ? seasonPack(streams, 'seasonPack') : []",
         "enabled": true
       }
     ],
@@ -684,11 +691,6 @@
         "score": 5
       },
       {
-        "pattern": "/\\b(Uncut|Unrated|Uncensored|AT[-_. ]?X)\\b/i",
-        "name": "Uncensored",
-        "score": 0
-      },
-      {
         "pattern": "/[.]heb\\b|\\[eztvx?[ ._-]?(io|re|to)?\\]|\\[(rarbg|rartv|TGx)\\]|[.]VAV\\b|\\b(ORARBG)\\b/i",
         "name": "Retags (Radarr)",
         "score": -70
@@ -996,7 +998,7 @@
       "condition": "count(cached(resolution(totalStreams, \"1080p\"))) >= 8 and count(cached(releaseGroup(totalStreams, \"CtrlHD\", \"Ember\", \"Judas\", \"Goki\", \"KITSUNE\", \"NOMA\"))) >= 2"
     },
     "groups": {
-      "enabled": true,
+      "enabled": false,
       "groupings": [
         {
           "condition": "count(cached(previousStreams)) < 3",
@@ -1193,31 +1195,21 @@
       "global": {
         "movies": [
           1073741824,
-          60000000000
+          25000000000
         ],
         "series": [
-          536870912,
-          30000000000
+          104857600,
+          15000000000
         ]
       },
       "resolution": {
-        "2160p": {
-          "movies": [
-            5368709120,
-            60000000000
-          ],
-          "series": [
-            1073741824,
-            30000000000
-          ]
-        },
         "1080p": {
           "movies": [
             1073741824,
             25000000000
           ],
           "series": [
-            536870912,
+            157286400,
             15000000000
           ]
         },
@@ -1227,7 +1219,7 @@
             10000000000
           ],
           "series": [
-            134217728,
+            104857600,
             6000000000
           ]
         }
@@ -1253,7 +1245,7 @@
       "subtitles"
     ],
     "statistics": {
-      "enabled": true,
+      "enabled": false,
       "position": "bottom",
       "statsToShow": [
         "addon",
@@ -1339,7 +1331,7 @@
       "enabled": false
     },
     "precacheNextEpisode": true,
-    "precacheSelector": "count(cached(streams)) == 0 ? slice(uncached(type(streams, 'debrid', 'usenet')), 0, 1) : []",
+    "precacheSelector": "[]",
     "precacheSingleStream": true,
     "preloadStreams": {
       "enabled": true,
@@ -1347,6 +1339,11 @@
       "singleStream": true
     },
     "services": [
+      {
+        "id": "torbox",
+        "enabled": true,
+        "credentials": {}
+      },
       {
         "id": "realdebrid",
         "enabled": false,
@@ -1364,11 +1361,6 @@
       },
       {
         "id": "debridlink",
-        "enabled": false,
-        "credentials": {}
-      },
-      {
-        "id": "torbox",
         "enabled": false,
         "credentials": {}
       },
@@ -1415,7 +1407,7 @@
         "enabled": true,
         "options": {
           "name": "Library",
-          "timeout": 3000,
+          "timeout": 2000,
           "resources": [
             "stream",
             "catalog",
@@ -1436,7 +1428,7 @@
         "enabled": true,
         "options": {
           "name": "TorBox Search",
-          "timeout": 4000,
+          "timeout": 3500,
           "sources": [
             "torrent",
             "usenet"
@@ -1453,7 +1445,7 @@
         "enabled": false,
         "options": {
           "name": "StremThru Torz",
-          "timeout": 4000,
+          "timeout": 3500,
           "resources": [
             "stream"
           ],
@@ -1490,7 +1482,7 @@
         "enabled": true,
         "options": {
           "name": "Meteor",
-          "timeout": 5000,
+          "timeout": 4000,
           "yourMedia": {
             "sources": [
               "torrent",
@@ -1512,7 +1504,7 @@
         "enabled": true,
         "options": {
           "name": "Zilean",
-          "timeout": 5000
+          "timeout": 3500
         }
       },
       {
@@ -1521,7 +1513,7 @@
         "enabled": true,
         "options": {
           "name": "SeaDex",
-          "timeout": 5000,
+          "timeout": 3500,
           "mediaTypes": [
             "anime"
           ]
@@ -1534,30 +1526,9 @@
         "enabled": true,
         "options": {
           "name": "Knaben",
-          "timeout": 6000,
+          "timeout": 4500,
           "mediaTypes": [],
           "useMultipleInstances": false
-        },
-        "category": "Debrid"
-      },
-      {
-        "type": "mediafusion",
-        "instanceId": "tam-mf",
-        "enabled": true,
-        "options": {
-          "name": "MediaFusion",
-          "timeout": 5000,
-          "resources": [
-            "stream"
-          ],
-          "useCachedResultsOnly": true,
-          "enableWatchlistCatalogs": false,
-          "downloadViaBrowser": false,
-          "contributorStreams": false,
-          "certificationLevelsFilter": [],
-          "nudityFilter": [],
-          "mediaTypes": [],
-          "url": "https://mediafusion.elfhosted.com"
         },
         "category": "Debrid"
       },
@@ -1567,7 +1538,7 @@
         "enabled": true,
         "options": {
           "name": "OpenSubtitles V3+",
-          "timeout": 4000,
+          "timeout": 3000,
           "resources": [
             "subtitles"
           ],
@@ -1675,9 +1646,15 @@
     "excludeUncachedMode": "or",
     "excludedStreamSources": [
       "YouTube",
-      "AI Enhanced"
+      "AI Enhanced",
+      "youtube",
+      "YOUTUBE",
+      "AI enhanced",
+      "ai enhanced"
     ],
-    "syncedExcludedRegexUrls": [],
+    "syncedExcludedRegexUrls": [
+      "https://raw.githubusercontent.com/Tam-Taro/SEL-Filtering-and-Sorting/refs/heads/main/AIOStreams-SyncedURLs/Tamtaro-synced-excluded-regex.json"
+    ],
     "addonCategoryColors": {
       "Mix": "indigo",
       "Debrid": "emerald",

@@ -1,121 +1,159 @@
-# 📥 Import Guide: Core Nexus Builds
+# 📥 Import Guide — Core Builds by Brevity
 
-This guide covers everything you need to successfully import and finalise your **Core Nexus** configuration. Follow the steps in order and you'll be up and running in under five minutes.
+Everything you need to import and configure your build. Follow the steps in order.
 
 ---
 
 ## 1️⃣ Pick Your Template
 
-Before importing, choose the right build for your setup. If you're running on multiple devices, see the **Device Profiles** section at the bottom of this guide.
+### 🎯 Which Plan Do You Have?
 
-| Template | Resolution | Services | Best For |
-|---|---|---|---|
-| `core-nexus-torbox-exclusive_rpdb.json` | 1080p SDR | TorBox only | Low-end devices, RPDB poster integration |
-| `core-nexus-4k-ht-torbox.json` | 4K HDR | TorBox only | Shield / 4K TVs, home theater |
-| `core-nexus-dual-core-1080p.json` | 1080p SDR | TorBox + Real-Debrid | Low-end devices, dual-cache failover |
-| `core-nexus-4k-dual-core.json` | 4K HDR | TorBox + Real-Debrid | Shield / 4K TVs, maximum coverage |
-| `core-nexus-4k-essential-dual-core.json` | 4K HDR | TorBox Essential + Real-Debrid | Shield / 4K TVs, no Usenet required |
-| `core-nexus-4k-essential-torbox.json` | 4K HDR | TorBox Essential only | Shield / 4K TVs, no Usenet, no secondary service |
-| `core-nexus-1080p-essential-torbox.json` | 1080p SDR | TorBox Essential only | Budget hardware, no Usenet, no secondary service |
-| `core-nexus-tb-hybrid-1080p.json` | 1080p SDR | TorBox + NZBGeek | Users with a Usenet indexer subscription |
-
-> All five templates include the full **12-service roster** pre-loaded. Enable only the services you actually subscribe to — the rest are ignored.
+| I have... | Use this tier |
+|---|---|
+| TorBox Pro | Single or Hybrid |
+| TorBox Essential | Essential or Speed |
+| TorBox Essential + EasyNews | Speed (EasyNews) |
+| TorBox Pro + NZBGeek | Hybrid |
 
 ---
 
-## 2️⃣ Open an AIOStreams Host
+### 📦 Single — TorBox Pro
 
-Open one of the following community hosts in your browser. A live status page is available at [docs.aiostreams.viren070.me](https://docs.aiostreams.viren070.me/getting-started/public-instances/).
+Full addon stack. Usenet included. Best overall coverage.
+
+| Template | Resolution | Best For |
+|---|---|---|
+| [4K Home Theater](https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/refs/heads/main/Templates/Torbox/Single/core-nexus-4k-ht-torbox.json) | 4K HDR | Shield, Apple TV 4K, OLED/QLED |
+| [TorBox Exclusive RPDB](https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/refs/heads/main/Templates/Torbox/Single/core-nexus-torbox-exclusive_rpdb.json) | 1080p SDR | Budget hardware, phones, RPDB art |
+
+---
+
+### 📦 Essential — TorBox Essential
+
+No Usenet required. Torrent cache only.
+
+| Template | Resolution | Best For |
+|---|---|---|
+| [4K Essential](https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/refs/heads/main/Templates/Torbox/Essential/core-nexus-4k-essential-torbox.json) | 4K HDR | Shield, Apple TV 4K |
+| [1080p Essential](https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/refs/heads/main/Templates/Torbox/Essential/core-nexus-1080p-essential-torbox.json) | 1080p SDR | Budget hardware, phones |
+
+---
+
+### 🔀 Hybrid — TorBox Pro + NZBGeek
+
+Adds NZBGeek Usenet indexer for maximum source diversity. Requires a NZBGeek API key — see Step 4.
+
+| Template | Resolution | Best For |
+|---|---|---|
+| [TB Hybrid 1080p](https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/refs/heads/main/Templates/Torbox/Hybrid/core-nexus-tb-hybrid-1080p.json) | 1080p SDR | TorBox Pro + NZBGeek users |
+
+---
+
+### ⚡ Speed — Instant Autoplay (2-3 seconds)
+
+Stripped to 4 addons only. Maximum load speed, no compromise on filtering quality.
+
+#### TorBox Essential + EasyNews
+
+| Template | Resolution |
+|---|---|
+| [Speed 4K (EasyNews)](https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/refs/heads/main/Templates/Torbox/Speed/EasyNews/core-nexus-speed-4k.json) | 4K HDR |
+| [Speed 1080p (EasyNews)](https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/refs/heads/main/Templates/Torbox/Speed/EasyNews/core-nexus-speed-1080p.json) | 1080p SDR |
+
+#### TorBox Essential Only
+
+| Template | Resolution |
+|---|---|
+| [Speed 4K](https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/refs/heads/main/Templates/Torbox/Speed/TorBox/core-nexus-speed-4k-torbox.json) | 4K HDR |
+| [Speed 1080p](https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/refs/heads/main/Templates/Torbox/Speed/TorBox/core-nexus-speed-1080p-torbox.json) | 1080p SDR |
+
+---
+
+### ⚗️ Advanced — TorBox + Real-Debrid
+
+Community-reported as working on WuPlay. Stremio users may see reduced RD results due to RD's May 2026 server-side filter. MediaFlow Proxy recommended — configure in Proxy section after import.
+
+| Template | Resolution |
+|---|---|
+| [4K Dual Core](https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/refs/heads/main/Templates/Torbox/Deprecated/Dual/core-nexus-4k-dual-core.json) | 4K HDR |
+| [Dual Core 1080p](https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/refs/heads/main/Templates/Torbox/Deprecated/Dual/core-nexus-dual-core-1080p.json) | 1080p SDR |
+| [4K Essential + RD](https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/refs/heads/main/Templates/Torbox/Deprecated/Dual/core-nexus-4k-essential-dual-core.json) | 4K HDR |
+
+---
+
+## 2️⃣ Choose a Host
 
 | Rank | Host | URL |
 |------|------|-----|
-| 🥇 | **ElfHosted** | `https://aiostreams.elfhosted.com` |
-| 🥈 | **Yeb's** | `https://aiostreams.fortheweak.cloud` |
-| 🥉 | **Midnight's** | `https://aiostreamsfortheweebsstable.midnightignite.me` |
-| 4 | **Viren's** | `https://aiostreams.viren070.me` |
-| 5 | **Kuu's** | `https://aiostreams.stremio.ru` |
-| 6 | **ATBP Hosting** | `https://aio.atbphosting.com` |
-| 7 | **Omni's** | `https://aiostreams.12312023.xyz` |
+| 🥇 | **ElfHosted** | [aiostreams.elfhosted.com](https://aiostreams.elfhosted.com/stremio/configure) |
+| 🥈 | **Yeb's** | [aiostreams.fortheweak.cloud](https://aiostreams.fortheweak.cloud/stremio/configure) |
+| 🥉 | **Midnight's** | [aiostreamsfortheweebsstable.midnightignite.me](https://aiostreamsfortheweebsstable.midnightignite.me/stremio/configure) |
+| 4 | **Viren's** | [aiostreams.viren070.me](https://aiostreams.viren070.me/stremio/configure) |
+| 5 | **Kuu's** | [aiostreams.stremio.ru](https://aiostreams.stremio.ru/stremio/configure) |
+| 6 | **ATBP** | [aio.atbphosting.com](https://aio.atbphosting.com/stremio/configure) |
+| 7 | **Omni's** | [aiostreams.12312023.xyz](https://aiostreams.12312023.xyz/stremio/configure) |
 
-Navigate to the **Template Import** menu and paste the raw GitHub URL for your chosen template. Raw links follow this pattern:
-
-```
-https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/refs/heads/main/Templates/Torbox/Dual/core-nexus-4k-dual-core.json
-```
-
-**Full raw URLs:**
-
-| Template | Raw URL |
-|---|---|
-| TorBox Exclusive (RPDB) | `.../Templates/Torbox/Single/core-nexus-torbox-exclusive_rpdb.json` |
-| 4K HT TorBox | `.../Templates/Torbox/Single/core-nexus-4k-ht-torbox.json` |
-| Dual Core 1080p | `.../Templates/Torbox/Dual/core-nexus-dual-core-1080p.json` |
-| Dual Core 4K | `.../Templates/Torbox/Dual/core-nexus-4k-dual-core.json` |
-| TB Hybrid 1080p | `.../Templates/Hybrid/core-nexus-tb-hybrid-1080p.json` |
-
-*(Prepend `https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/refs/heads/main/` to each path)*
+Full list: [docs.aiostreams.viren070.me](https://docs.aiostreams.viren070.me/getting-started/public-instances/)
 
 ---
 
-## 3️⃣ Enable Your Services
+## 3️⃣ Import the Template
 
-All 12 debrid services are pre-loaded in every template, all set to **disabled by default**. Toggle on only the services you subscribe to — everything else stays off and is ignored.
+1. Open your chosen AIOStreams host
+2. Navigate to **Templates** → **Import**
+3. Paste the raw URL from the table above (the template names link directly to the raw URL)
+4. Click **Load Template**
 
-**Available services:** TorBox · Real-Debrid · AllDebrid · Premiumize · DebridLink · Offcloud · Put.io · EasyNews · EasyDebrid · PikPak · Seedr · Debrider
-
-> 💡 **4K Essential Dual Core** is identical to the flagship 4K Dual Core but with Usenet removed. Use this if you are on the TorBox Essential plan which does not include Usenet access. All 4K quality targets, RD scrub, and SeaDex enforcement are unchanged.
-
-> 💡 For the **TB Hybrid** template, you will also need a **NZBGeek API key** to activate the Usenet indexer tier. If you don't have one, every other addon in the template still works without it.
-
-> ⚠️ **TB Hybrid — Extra Step Required:** The NZBGeek API key cannot be entered in the credentials modal above. After clicking **Load Template** and saving, go to the **Addons** section, find the **NZBGeek** preset, and paste your API key there. NZBGeek will return no results until this is done. Your NZBGeek API key is found in your account settings at [nzbgeek.info](https://nzbgeek.info).
+> 💡 **Re-importing resets service toggles.** Your API keys are preserved but service enabled states return to template defaults. Re-enable your services after each re-import.
 
 ---
 
-### 🔀 TB Hybrid — NZBGeek Additional Setup
+## 4️⃣ Enable Your Services
 
-The NZBGeek API key **cannot** be entered in the standard credentials modal — AIOStreams only shows recognised debrid services and TMDB in that screen. NZBGeek is a newznab addon and requires a separate step after the template loads.
+**TorBox is pre-enabled.** Enter your API key in the Services section.
 
-**After clicking Load Template and saving:**
+All other services are pre-loaded in the 12-service roster but toggled off — enable only what you subscribe to:
 
-1. Stay on your AIOStreams dashboard and scroll to the **Addons** section
-2. Find the **NZBGeek** addon in the list
-3. Click the ⚙️ settings icon next to it
-4. Replace the placeholder text with your actual NZBGeek API key
-   - Your NZBGeek API key is found at [nzbgeek.info](https://nzbgeek.info) → Account → API Key
-5. Click **Save**
+`TorBox` · `Real-Debrid` · `AllDebrid` · `Premiumize` · `DebridLink` · `Offcloud` · `Put.io` · `EasyNews` · `EasyDebrid` · `PikPak` · `Seedr` · `Debrider`
 
-> ⚠️ Until the API key is entered, NZBGeek will be active but return no results. Every other addon in the hybrid template — TorBox Search, Comet, Meteor, Zilean, Knaben, MediaFusion — works immediately without it.
+### Hybrid Template — NZBGeek Setup
 
-> 💡 **TVDB has been removed** from all Core Nexus templates. If the field appears, leave it blank.
+NZBGeek is a Usenet indexer addon, not a debrid service — its API key is entered separately in the **Addons** section, not the Services modal.
 
----
+1. Load the template and save
+2. Scroll to **Addons → NZBGeek → ⚙️**
+3. Paste your API key from [nzbgeek.info](https://nzbgeek.info) → Account → API Key
+4. Save
 
-## 4️⃣ Save & Install
-
-Once your services are configured, click **Save** at the bottom of the screen. AIOStreams will generate a unique manifest URL for your build.
-
-**For Stremio:** Click the **Install** button that appears after saving. Stremio will open and prompt you to confirm.
-
-**For WuPlay:** Copy the generated manifest URL, open your WuPlay configurer, navigate to **Add-ons**, and paste the link to finalise your setup.
+NZBGeek returns no results until this is done. All other addons work immediately.
 
 ---
 
-## 📱 Device Profiles — Multi-Device Households
+## 5️⃣ Save & Install
 
-AIOStreams cannot detect what device is making a request — every device looks identical to the server. The recommended approach for households with mixed devices is **two separate Stremio accounts**:
+1. Click **Save** at the bottom of the configuration screen
+2. AIOStreams generates a unique manifest URL
 
-### 🔵 Low-End Account
-*Phones · Tablets · Budget Android TV · Projectors*
+**Stremio:** Click **Install** — Stremio opens and prompts confirmation.
 
-Sign into this account on low-end devices and install a **1080p SDR** template. The 1080p builds cap bitrate, block BluRay/Remux, and strip HDR/DV tags — safe for any hardware.
-
-### 🟣 High-End Account
-*Nvidia Shield · 4K OLED/QLED TVs · Apple TV 4K*
-
-Sign into this account on high-end devices and install a **4K Unleashed** template. The 4K builds allow Remux, DV, HDR10+, TrueHD, and Atmos — maximum quality with no caps.
-
-Both accounts use the same debrid credentials. Stremio addons sync per-account, so each device gets exactly the right streams.
+**WuPlay:** Copy the manifest URL, open WuPlay configurer → **Add-ons** → paste the URL.
 
 ---
 
-*Return to the [Main README](../README.md)*
+## 📱 Multi-Device Households
+
+AIOStreams cannot detect which device is making a request. For households with a mix of devices, use **two separate Stremio accounts:**
+
+**Low-End Account** — phones, tablets, budget TVs
+→ 1080p SDR template — compatible with any hardware
+
+**High-End Account** — Shield, 4K OLED, Apple TV 4K
+→ 4K template — Remux, DV, HDR10+, TrueHD, Atmos
+
+Both accounts use the same debrid credentials. Addons sync per-account.
+
+See [DEVICE_PROFILES.md](DEVICE_PROFILES.md) for full setup.
+
+---
+
+*[README](../README.md) · [CHANGELOG](../CHANGELOG.md) · [Troubleshooting](TROUBLESHOOTING.md)*

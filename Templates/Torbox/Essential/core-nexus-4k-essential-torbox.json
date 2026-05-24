@@ -1080,14 +1080,7 @@
     },
     "groups": {
       "enabled": false,
-      "groupings": [
-        {
-          "condition": "count(cached(previousStreams)) < 3",
-          "addons": [
-            "tam-mf"
-          ]
-        }
-      ]
+      "groupings": []
     },
     "sortCriteria": {
       "global": [

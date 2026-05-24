@@ -1,13 +1,13 @@
 # Core Nexus Speed 4K
-**Version:** 2.2.0 · **Services:** TorBox Essential only · **Resolution:** 4K HDR
+**Version:** 2.2.6 · **Plan:** TorBox Essential only · **Resolution:** 4K HDR
 
-> Speed-first 4K, single service. Library, TorBox Search, Comet, and Zilean only. Cached 4K results in 2-3 seconds. Dolby Vision, TrueHD, full REMUX up to 150 GB. No secondary service required.
+> Speed-first 4K, single service. 4 addons, 3500ms timeouts, 2-3 second cached stream delivery. Dolby Vision, TrueHD/Atmos, SeaDex enforced. No secondary service required.
 
 ---
 
 ## Designed For
 
-TorBox Essential users who want 4K quality and instant load speed without a secondary debrid service. Shield, Apple TV 4K, high-end OLED/QLED displays. No EasyNews subscription needed.
+TorBox Essential users who want 4K quality and instant load speed without a second subscription. Shield, Apple TV 4K, OLED/QLED displays.
 
 ---
 
@@ -16,33 +16,22 @@ TorBox Essential users who want 4K quality and instant load speed without a seco
 | Category | Targets | Blocks |
 |---|---|---|
 | **Resolution** | 2160p, 1080p | 1440p, Unknown |
-| **Quality** | BluRay REMUX, BluRay, WEB-DL, WEBRip | CAM, SCR, TS, TC, HC HD-Rip |
 | **Visual** | DV, HDR+DV, HDR10+, HDR10, HDR, HLG, SDR | 3D, H-OU, H-SBS |
-| **Audio** | Atmos, DTS:X, TrueHD, DTS-HD MA | -- |
-| **Channels** | 7.1 preferred, 5.1 fallback | -- |
-| **Streams** | Cached only | P2P, uncached, YouTube |
-
----
-
-## File Size Limits
-
-| Resolution | Movies | Series |
-|---|---|---|
-| **Global** | 5 GB -- 150 GB | 1 GB -- 80 GB |
-| **2160p** | 5 GB -- 150 GB | 1 GB -- 80 GB |
-| **1080p** | 1 GB -- 30 GB | 512 MB -- 20 GB |
+| **Audio** | Atmos, DTS:X, TrueHD, DTS-HD MA, DTS, DD+, DD, AAC | — |
+| **Channels** | 7.1 preferred, 5.1 fallback | — |
+| **Streams** | Cached only | P2P, uncached, YouTube, external |
 
 ---
 
 ## Addons
 
-| Addon | Purpose | State |
+| Addon | Timeout | Purpose |
 |---|---|---|
-| Library | Personal debrid library -- first priority, instant | On |
-| TorBox Search | TorBox native search -- torrent index | On |
-| Comet | Fastest external debrid scraper | On |
-| Zilean | DMM hashlist -- fast hash-based debrid lookup | On |
-| OpenSubtitles V3+ | Hash-matched subtitle search | On |
+| Library | 2000ms | Personal TorBox cached history — instant |
+| TorBox Search | 3500ms | Direct TorBox torrent index |
+| Comet | 3500ms | Fastest external debrid scraper |
+| Zilean | 3500ms | DMM hashlist — fast hash lookup |
+| OpenSubtitles V3+ | 3500ms | Subtitle matching |
 
 ---
 
@@ -50,16 +39,12 @@ TorBox Essential users who want 4K quality and instant load speed without a seco
 
 | Setting | Value |
 |---|---|
-| Services | TorBox Essential only (all 12 opt-in) |
-| Stream types | Debrid only -- Usenet excluded |
-| Timeouts | 3500ms across all addons |
-| Result limit | 10 global · 4 per resolution |
-| Sort keys | 5 -- cached > expression > quality > regexScore > seeders |
+| Services | TorBox Essential (pre-enabled), 11 others opt-in |
+| Stream types | Debrid only |
+| Timeouts | 3500ms flat |
+| Result limits | 10 global · 4 per resolution |
+| Sort keys | 5 (cached › expression › quality › regexScore › seeders) |
 | SeaDex best-only | On (anime) |
-| Scored regex ranking | 149 patterns (full 4K set) |
-| Tamtaro ESEs | Full inline set -- no synced URL needed |
-| Episode matching | Strict |
-| cacheAndPlay | Off (no Usenet) |
 
 ---
 
@@ -71,4 +56,4 @@ https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/refs/h
 
 ---
 
-*Part of [Core Builds by Brevity](https://github.com/Branding-Brevity/Core-Builds-By-Brevity) -- [Import Guide](../../../Guides/IMPORT_GUIDE.md) -- [Changelog](../../../CHANGELOG.md)*
+*[Core Builds by Brevity](https://github.com/Branding-Brevity/Core-Builds-By-Brevity) · [Import Guide](../../Guides/IMPORT_GUIDE.md) · [Changelog](../../CHANGELOG.md)*

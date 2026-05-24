@@ -39,7 +39,7 @@ TorBox Essential plan users who want 4K quality without a TorBox Pro upgrade or 
 | Addon | Timeout | Purpose |
 |---|---|---|
 | Library | 2000ms | Personal TorBox cached history — instant |
-| TorBox Search | 3500ms | Direct TorBox torrent index |
+| Search NZB (TorBox) | 3500ms | TorBox Newznab API — torrent + usenet index |
 | Comet | 4000ms | Fast debrid scraper |
 | Meteor | 4000ms | Comprehensive VOD scraper |
 | Zilean | 3500ms | DMM hashlist lookup |
@@ -71,4 +71,4 @@ https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/refs/h
 
 ---
 
-*[Core Builds by Brevity](https://github.com/Branding-Brevity/Core-Builds-By-Brevity) · [Import Guide](../../Guides/IMPORT_GUIDE.md) · [Changelog](../../CHANGELOG.md)*
+*[Core Builds by Brevity](https://github.com/Branding-Brevity/Core-Builds-By-Brevity) · [Import Guide](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Guides/IMPORT_GUIDE.md) · [Changelog](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/CHANGELOG.md)*

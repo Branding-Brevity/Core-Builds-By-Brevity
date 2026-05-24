@@ -222,8 +222,8 @@
     "syncedIncludedStreamExpressionUrls": [],
     "syncedRankedStreamExpressionUrls": [],
     "requiredReleaseGroups": [],
-    "enhanceResults": true,
-    "enhancePosters": true,
+    "enhanceResults": false,
+    "enhancePosters": false,
     "includeSeederRange": [
       0,
       1000
@@ -1332,7 +1332,7 @@
     },
     "precacheNextEpisode": true,
     "precacheSelector": "[]",
-    "precacheSingleStream": true,
+    "precacheSingleStream": false,
     "preloadStreams": {
       "enabled": true,
       "selector": "slice(cached(streams), 0, 1)",

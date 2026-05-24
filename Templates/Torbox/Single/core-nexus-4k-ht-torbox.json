@@ -222,8 +222,8 @@
     ],
     "syncedRankedStreamExpressionUrls": [],
     "requiredReleaseGroups": [],
-    "enhanceResults": true,
-    "enhancePosters": true,
+    "enhanceResults": false,
+    "enhancePosters": false,
     "includeSeederRange": [
       0,
       1000
@@ -1490,7 +1490,7 @@
     },
     "precacheNextEpisode": true,
     "precacheSelector": "count(cached(streams)) == 0 ? slice(uncached(type(streams, 'debrid', 'usenet')), 0, 1) : []",
-    "precacheSingleStream": true,
+    "precacheSingleStream": false,
     "preloadStreams": {
       "enabled": true,
       "selector": "slice(cached(streams), 0, 2)",

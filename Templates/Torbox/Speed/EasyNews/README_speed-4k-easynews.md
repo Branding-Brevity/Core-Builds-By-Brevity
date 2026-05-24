@@ -1,7 +1,7 @@
 # Core Nexus Speed 4K (EasyNews)
 **Version:** 2.2.6 · **Plan:** TorBox Essential + EasyNews · **Resolution:** 4K HDR
 
-> Speed-first 4K. Stripped to 4 addons — Library, TorBox Search, Comet, Zilean — for 2-3 second cached stream delivery. Dolby Vision, TrueHD/Atmos, SeaDex enforced. Requires TorBox Essential and an active EasyNews subscription.
+> Speed-first 4K. Stripped to 4 addons — Library, Search NZB (TorBox), Comet, Zilean — for 2-3 second cached stream delivery. Dolby Vision, TrueHD/Atmos, SeaDex enforced. Requires TorBox Essential and an active EasyNews subscription.
 
 ---
 
@@ -28,7 +28,7 @@ Users who want 4K quality and instant load times over maximum source coverage. S
 | Addon | Timeout | Purpose |
 |---|---|---|
 | Library | 2000ms | Personal TorBox cached history — instant |
-| TorBox Search | 3500ms | Direct TorBox torrent + usenet index |
+| Search NZB (TorBox) | 3500ms | TorBox Newznab API — torrent + usenet index |
 | Comet | 3500ms | Fastest external debrid scraper |
 | Zilean | 3500ms | DMM hashlist — fast hash lookup |
 | OpenSubtitles V3+ | 3500ms | Subtitle matching |
@@ -55,4 +55,4 @@ https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/refs/h
 
 ---
 
-*[Core Builds by Brevity](https://github.com/Branding-Brevity/Core-Builds-By-Brevity) · [Import Guide](../../Guides/IMPORT_GUIDE.md) · [Changelog](../../CHANGELOG.md)*
+*[Core Builds by Brevity](https://github.com/Branding-Brevity/Core-Builds-By-Brevity) · [Import Guide](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Guides/IMPORT_GUIDE.md) · [Changelog](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/CHANGELOG.md)*

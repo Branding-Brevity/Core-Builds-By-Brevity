@@ -27,7 +27,7 @@ TorBox Essential users who want instant stream loading without a second subscrip
 | Addon | Timeout | Purpose |
 |---|---|---|
 | Library | 2000ms | Personal TorBox cached history — instant |
-| TorBox Search | 3500ms | Direct TorBox torrent index |
+| Search NZB (TorBox) | 3500ms | TorBox Newznab API — torrent + usenet index |
 | Comet | 3500ms | Fastest external debrid scraper |
 | Zilean | 3500ms | DMM hashlist — fast hash lookup |
 | OpenSubtitles V3+ | 3500ms | Subtitle matching |
@@ -55,4 +55,4 @@ https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/refs/h
 
 ---
 
-*[Core Builds by Brevity](https://github.com/Branding-Brevity/Core-Builds-By-Brevity) · [Import Guide](../../Guides/IMPORT_GUIDE.md) · [Changelog](../../CHANGELOG.md)*
+*[Core Builds by Brevity](https://github.com/Branding-Brevity/Core-Builds-By-Brevity) · [Import Guide](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Guides/IMPORT_GUIDE.md) · [Changelog](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/CHANGELOG.md)*

@@ -6,6 +6,18 @@ All notable changes to the **Core Builds** templates and formatters will be docu
 
 ---
 
+## [2.2.8] - 2026-05-24
+
+### Fixed
+- **`enhancePosters` disabled (All Templates):** Was set to `true` — disabled across all 12 templates. Poster enhancement adds unnecessary processing overhead and conflicts with RPDB poster service already configured.
+- **`enhanceResults` disabled (All Templates):** Was set to `true` — disabled across all 12 templates. Stream result enhancement was adding latency without meaningful benefit for debrid-focused builds.
+- **`precacheSingleStream` disabled (All Templates):** Hidden option was set to `true` — disabled across all 12 templates. This was silently initiating background single-stream pre-caches without user awareness, bypassing the `precacheSelector: []` setting.
+
+### Changed
+- **"TorBox Search" renamed to "Search NZB (TorBox)" in all documentation.** The official TorBox Stremio addon has been retired. The addon used in all Core Builds templates is AIOStreams' built-in `torbox-search` preset which queries TorBox's Newznab API endpoint directly — functionally a Newznab/NZB search, not the retired official addon. All README files and the homepage updated to reflect this accurately.
+
+---
+
 ## [2.2.7] - 2026-05-24
 
 ### Changed
@@ -82,6 +94,18 @@ All notable changes to the **Core Builds** templates and formatters will be docu
 
 ### Removed
 - **MediaFusion (All Templates):** Removed from all 18 templates. MediaFusion's public ElfHosted instance is currently broken and returning inconsistent or empty results. The addon slot has been freed -- users who self-host a working MediaFusion instance can re-add it manually in their addon settings.
+
+---
+
+## [2.2.8] - 2026-05-24
+
+### Fixed
+- **`enhancePosters` disabled (All Templates):** Was set to `true` — disabled across all 12 templates. Poster enhancement adds unnecessary processing overhead and conflicts with RPDB poster service already configured.
+- **`enhanceResults` disabled (All Templates):** Was set to `true` — disabled across all 12 templates. Stream result enhancement was adding latency without meaningful benefit for debrid-focused builds.
+- **`precacheSingleStream` disabled (All Templates):** Hidden option was set to `true` — disabled across all 12 templates. This was silently initiating background single-stream pre-caches without user awareness, bypassing the `precacheSelector: []` setting.
+
+### Changed
+- **"TorBox Search" renamed to "Search NZB (TorBox)" in all documentation.** The official TorBox Stremio addon has been retired. The addon used in all Core Builds templates is AIOStreams' built-in `torbox-search` preset which queries TorBox's Newznab API endpoint directly — functionally a Newznab/NZB search, not the retired official addon. All README files and the homepage updated to reflect this accurately.
 
 ---
 

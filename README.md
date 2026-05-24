@@ -46,8 +46,8 @@ No secondary debrid service required. TorBox Pro builds include Usenet. TorBox E
 |---|---|---|---|---|
 | [TorBox Exclusive (RPDB)](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Single/core-nexus-torbox-exclusive_rpdb.json) | Pro | 1080p SDR | Budget hardware, RPDB poster art | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Single/README_torbox-exclusive-rpdb.md) |
 | [4K Home Theater](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Single/core-nexus-4k-ht-torbox.json) | Pro | 4K HDR | Shield, Apple TV 4K, full HT setup | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Single/README_4k-ht-torbox.md) |
-| [1080p Essential](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Essential/core-nexus-1080p-essential-torbox.json) | Essential | 1080p SDR | Budget hardware, no Usenet needed | — |
-| [4K Essential](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Essential/core-nexus-4k-essential-torbox.json) | Essential | 4K HDR | Shield, Apple TV 4K, no Usenet needed | — |
+| [1080p Essential](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Essential/core-nexus-1080p-essential-torbox.json) | Essential | 1080p SDR | Budget hardware, no Usenet needed | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Essential/README_1080p-essential-torbox.md) |
+| [4K Essential](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Essential/core-nexus-4k-essential-torbox.json) | Essential | 4K HDR | Shield, Apple TV 4K, no Usenet needed | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Essential/README_4k-essential-torbox.md) |
 
 ### 🔀 Hybrid — TorBox Pro + Usenet Indexer
 

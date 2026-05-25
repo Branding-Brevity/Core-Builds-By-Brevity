@@ -15,8 +15,31 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Run Status Script
-        run: python update_status.py
+      - name: Generate Status Table
+        shell: python
+        run: |
+          import urllib.request
+          import os
+
+          instances = {
+            "ElfHosted": "https://aiostreams.elfhosted.com",
+            "Yeb's": "https://aiostreams.fortheweak.cloud",
+            "Midnight's": "https://aiostreamsfortheweebsstable.midnightignite.me"
+          }
+          
+          status_report = "# Instance Status\n\n| Instance | Status |\n|---|---|\n"
+          
+          for name, url in instances.items():
+            try:
+              code = urllib.request.urlopen(url, timeout=5).getcode()
+              status = "🟢 Online" if code == 200 else "🟡 Degraded"
+            except:
+              status = "🔴 Offline"
+            status_report += f"| {name} | {status} |\n"
+
+          # This line actually executes the logic and writes to the file
+          with open('STATUS.md', 'w') as f:
+            f.write(status_report)
 
       - name: Commit and Push
         run: |

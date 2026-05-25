@@ -47,8 +47,7 @@
 
 </p>
 
-
-
+### 🟢 Check [Live Instance Status](STATUS.md)
 
 **Core Builds** is a collection of highly optimised, frictionless AIOStreams templates — engineered to serve only the highest quality compatible streams, strip out unplayable clutter, and work reliably across every host and device.
 

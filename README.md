@@ -254,4 +254,53 @@ Core-Builds-By-Brevity/
 ├── 📁 Assets/
 ├── 📁 Formatters/              Core Zenith Diamond, Core Clean Stream
 ├── 📁 Guides/                  Import, Formatter, Device Profiles, Advanced, Reset, Troubleshooting
-├── 📁 Regex/     
+├── 📁 Regex/                   Hosted scored regex patterns
+├── 📁 Templates/
+│   └── 📁 Torbox/
+│       ├── 📁 Single/          TorBox Pro — full addon stack
+│       ├── 📁 Essential/       TorBox Essential — no Usenet required
+│       ├── 📁 Hybrid/          TorBox Pro + Usenet Indexer
+│       ├── 📁 Speed/           Instant autoplay — 4 addons only
+│       │   ├── 📁 EasyNews/    TorBox Essential + EasyNews
+│       │   └── 📁 TorBox/      TorBox Essential only
+│       ├── 📁 Deprecated/      No longer maintained
+│       │   └── 📁 Dual/        Old TorBox + Real-Debrid builds
+│       └── 📁 Nightly/         Live-synced — nightly hosts only
+│           ├── 📁 Single/
+│           ├── 📁 Hybrid/
+│           └── 📁 Deprecated/
+│               └── 📁 Dual/
+├── CHANGELOG.md
+└── README.md
+```
+
+---
+
+## 💬 Don't See What You Need?
+
+Open a request and we'll look into it.
+
+**Include:** your debrid service(s), target resolution, hardware, and any specific requirements.
+
+- **GitHub Issues** → [Open a Template Request](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/issues/new?labels=template+request&title=Template+Request:+)
+- **Discord** → AIOStreams community server
+
+---
+
+## 📜 Version & Stability
+
+> Versions prior to `1.1.2` are **unstable**. Current version: **`v2.2.6`** (Universal) / **`v2.1.8-nightly`** (Nightly).
+
+[Full CHANGELOG](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/CHANGELOG.md)
+
+---
+
+## ☕ Support the Project
+
+If these templates have leveled up your setup, consider buying me a coffee.
+
+[![Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/branding_brevity/?hidefeed=true&widget=true&embed=true)
+
+---
+
+*Built and maintained by Brevity.*

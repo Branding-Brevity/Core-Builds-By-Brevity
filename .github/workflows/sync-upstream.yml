@@ -1,0 +1,93 @@
+name: Sync Upstream Rules
+
+on:
+  schedule:
+    # Runs at 00:00 every Sunday
+    - cron: '0 0 * * 0'
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  sync-upstream:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Fetch and Format Upstream JSON
+        run: |
+          import json
+          import urllib.request
+          import sys
+          import os
+
+          # Map the raw upstream URLs to your local repository paths
+          # Update these URLs to the exact raw JSON links for Vidhin05 and Tamtaro
+          sources = {
+              "https://raw.githubusercontent.com/vidhin05/aiostreams-ranked-regex/main/ranked-expressions.json": "Regex/excluded-regex-patterns.json",
+              "https://raw.githubusercontent.com/tamtaro/aiostreams-expressions/main/excluded-stream-expressions.json": "Regex/tamtaro-ese.json",
+              "https://raw.githubusercontent.com/tamtaro/aiostreams-expressions/main/preferred-stream-expressions.json": "Regex/tamtaro-pse.json"
+          }
+
+          errors = 0
+          
+          for url, local_path in sources.items():
+              try:
+                  print(f"Fetching {url}...")
+                  # Use a generic User-Agent to prevent 403 blocks from raw.githubusercontent
+                  req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (Core-Builds-Sync)'})
+                  
+                  with urllib.request.urlopen(req) as response:
+                      data = json.loads(response.read().decode('utf-8'))
+
+                  # Ensure the target directory exists
+                  os.makedirs(os.path.dirname(local_path), exist_ok=True)
+
+                  # Save locally with standard 2-space indentation
+                  with open(local_path, 'w', encoding='utf-8') as f:
+                      json.dump(data, f, indent=2)
+                      
+                  print(f"✅ Successfully updated {local_path}")
+                  
+              except json.JSONDecodeError:
+                  print(f"❌ [ERROR] Failed to decode JSON from {url}")
+                  errors += 1
+              except Exception as e:
+                  print(f"❌ [ERROR] Failed to fetch {url}: {str(e)}")
+                  errors += 1
+
+          if errors > 0:
+              print(f"\n🚨 Sync failed: {errors} file(s) could not be processed.")
+              sys.exit(1)
+          else:
+              print("\n🎉 All upstream files synced and formatted successfully.")
+        shell: python
+
+      - name: Check for Changes
+        id: check_changes
+        run: |
+          if [[ -n "$(git status --porcelain Regex/)" ]]; then
+            echo "changes_detected=true" >> $GITHUB_OUTPUT
+            echo "Changes found in upstream rules."
+          else
+            echo "changes_detected=false" >> $GITHUB_OUTPUT
+            echo "No changes detected. Rules are up to date."
+          fi
+
+      - name: Create Pull Request
+        if: steps.check_changes.outputs.changes_detected == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: sync upstream Vidhin05 and Tamtaro rules"
+          title: "🔄 Sync Upstream Regex & Expressions"
+          body: |
+            Automated sync of rule sets from upstream repositories (Vidhin05 & Tamtaro).
+            
+            This PR ensures your `Regex/` directory stays current with the latest community-scored parameters. Please review the file diffs before merging to ensure upstream changes do not conflict with the Core Builds logic.
+          branch: "sync-upstream-rules"
+          base: "main"
+          labels: "automated-pr, regex"

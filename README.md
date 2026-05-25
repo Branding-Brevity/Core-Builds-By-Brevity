@@ -235,12 +235,15 @@ Full walkthrough in the [Import Guide](https://github.com/Branding-Brevity/Core-
 | Guide | Description |
 |---|---|
 | [📖 Complete Guide](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Guides/README.md) | All guides in one page — start here |
-| [📥 Import](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Guides/README.md#1--importing-a-template) | Import templates, enter credentials, install in Stremio or WuPlay |
-| [🎨 Formatters](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Guides/README.md#2--formatters) | Install and switch formatters |
-| [📱 Device Profiles](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Guides/README.md#3--device-profiles) | Multi-device household setup |
-| [🛠️ Advanced Editing](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Guides/README.md#4--advanced-editing) | Raw JSON editing and SEL syntax |
-| [🔄 Reset](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Guides/README.md#5--resetting-your-instance) | Soft reset, hard reset, password recovery |
-| [❓ Troubleshooting](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Guides/README.md#6--troubleshooting) | Common errors and quick fixes |
+| [🗺️ Which Template?](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Guides/README.md#1--which-template-should-i-use) | Decision guide — find the right build for your setup |
+| [📥 Import](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Guides/README.md#2--importing-a-template) | Import templates, enter credentials, install in Stremio or WuPlay |
+| [🎨 Formatters](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Guides/README.md#3--formatters) | Install and switch formatters |
+| [📱 Device Profiles](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Guides/README.md#4--device-profiles) | Multi-device household setup |
+| [🎮 Stremio vs WuPlay](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Guides/README.md#5--stremio-vs-wuplay) | Platform differences, RD behaviour, which to use |
+| [🛠️ Advanced Editing](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Guides/README.md#6--advanced-editing) | Raw JSON editing and SEL syntax |
+| [🔄 Reset](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Guides/README.md#7--resetting-your-instance) | Soft reset, hard reset, password recovery |
+| [❓ Troubleshooting](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Guides/README.md#8--troubleshooting) | Common errors and quick fixes |
+| [💬 FAQ](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Guides/README.md#9--faq) | Quick answers to the most common questions |
 
 ---
 

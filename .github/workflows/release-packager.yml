@@ -1,0 +1,41 @@
+name: Package Release Assets
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  package-and-upload:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Required to upload assets to the release
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Prepare Release Archive
+        run: |
+          echo "Packaging Core Builds release: ${{ github.event.release.tag_name }}"
+          
+          # Create a clean staging directory
+          mkdir core-builds-release
+          
+          # Copy only the files users actually need to import
+          cp -r Templates core-builds-release/
+          cp -r Formatters core-builds-release/
+          cp README.md core-builds-release/
+          cp CHANGELOG.md core-builds-release/
+          
+          # Remove the 'Deprecated' folder from the release zip so new users don't use old Dual Cores
+          rm -rf core-builds-release/Templates/Torbox/Deprecated
+          
+          # Zip the contents
+          cd core-builds-release
+          zip -r ../Core-Builds-${{ github.event.release.tag_name }}.zip ./*
+          cd ..
+
+      - name: Upload Zip to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: Core-Builds-${{ github.event.release.tag_name }}.zip

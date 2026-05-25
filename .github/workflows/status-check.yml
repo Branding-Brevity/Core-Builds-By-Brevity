@@ -15,39 +15,21 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Generate Status Table
-        shell: python
-        run: |
-          import urllib.request
-          import os
-
-          instances = {
-            "ElfHosted": "https://aiostreams.elfhosted.com",
-            "Yeb's": "https://aiostreams.fortheweak.cloud",
-            "Midnight's": "https://aiostreamsfortheweebsstable.midnightignite.me"
-          }
-          
-          status_report = "# Instance Status\n\n| Instance | Status |\n|---|---|\n"
-          
-          for name, url in instances.items():
-            try:
-              code = urllib.request.urlopen(url, timeout=5).getcode()
-              status = "🟢 Online" if code == 200 else "🟡 Degraded"
-            except:
-              status = "🔴 Offline"
-            status_report += f"| {name} | {status} |\n"
-
-          # This line actually executes the logic and writes to the file
-          with open('STATUS.md', 'w') as f:
-            f.write(status_report)
+      - name: Run Status Update
+        run: python3 update_status.py
 
       - name: Commit and Push
         run: |
+          # Ensure git is configured
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Check for changes
           if [[ -n "$(git status --porcelain STATUS.md)" ]]; then
             git add STATUS.md
             git commit -m "chore: update status report"
             git push
+          else
+            echo "No changes to status report."
           fi
           

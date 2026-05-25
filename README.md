@@ -159,6 +159,7 @@ See the [Formatter Guide](https://github.com/Branding-Brevity/Core-Builds-By-Bre
 
 ### 1. Choose a Host
 
+
 | Rank | Host | URL | Notes |
 |------|------|-----|-------|
 | 🥇 | **ElfHosted** | [aiostreams.elfhosted.com](https://aiostreams.elfhosted.com/stremio/configure) | Most stable. Debrid-only on public instance — suits these templates perfectly. |

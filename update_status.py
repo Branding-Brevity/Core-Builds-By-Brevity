@@ -18,3 +18,4 @@ for name, url in instances.items():
 
 with open('STATUS.md', 'w') as f:
     f.write(status_report)
+    

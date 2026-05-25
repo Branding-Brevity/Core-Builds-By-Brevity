@@ -119,12 +119,19 @@ See the [Device Profiles Guide](https://github.com/Branding-Brevity/Core-Builds-
 
 ## 🎨 Custom Formatters
 
-| Formatter | Style |
-|---|---|
-| **💎 Core Zenith Diamond** | Emoji-coded badges, smallcaps text. Service pool, resolution, quality, audio, SEADEX / OWNED / LIBRARY flags. |
-| **📺 Core Clean Stream** | Minimal plain text. Matches native Stremio card layout. No emojis, no smallcaps. |
+Swap between visual styles instantly without changing your template. All formatters are imported via the AIOStreams **Formatter → Import** menu.
 
-See the [Formatter Guide](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Guides/FORMATTER_GUIDE.md) for installation.
+| Formatter | Style | Raw URL |
+|---|---|---|
+| **🌌 Omni Diamond Hybrid** | The flagship. Advanced edition, network, and repack tags. Usenet failover indicators. Maximum metadata density. | [Download](https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/refs/heads/main/Formatters/Omni_Diamond_Hybrid.json) |
+| **💎 Core Zenith Diamond** | Emoji-coded badges, smallcaps text. Resolution, quality, audio, SEADEX / OWNED / LIBRARY flags. | [Download](https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/refs/heads/main/Formatters/Core_Zenith_Diamond.json) |
+| **🌙 Midnight Slate** | Dark, geometric, understated. `✦`/`✧` cached indicators, lowercase metadata, geometric symbols throughout. | [Download](https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/refs/heads/main/Formatters/Midnight_Slate.json) |
+| **📺 Core Clean Stream** | Minimal plain text. Matches native Stremio card layout. No emojis, no smallcaps. | [Download](https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/refs/heads/main/Formatters/Core_Clean_Stream.json) |
+| **🐅 Auburn Tiger Edition** | Community formatter by RB3. High-contrast orange and navy geometric separators. | Available in `Community-Templates/RB3/` |
+
+> ⚠️ Always use the raw download links above. Copying from the GitHub file view causes a "Failed to parse JSON" error on import.
+
+See the [Formatter Guide](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Guides/README.md#2--formatters) for full installation steps.
 
 ---
 

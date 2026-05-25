@@ -9,8 +9,6 @@
     <img   <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/tags">
     <img src="https://img.shields.io/github/v/tag/Branding-Brevity/Core-Builds-By-Brevity?style=for-the-badge&label=LATEST&logo=github&logoColor=white&labelColor=1a1f27&color=00d4ff" alt="Latest Version"/>
   </a>
-
-  </a>
   <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/releases/latest">
     <img src="https://img.shields.io/github/v/release/Branding-Brevity/Core-Builds-By-Brevity?style=for-the-badge&label=RELEASE&logo=github&logoColor=white&labelColor=1a1f27&color=00d4ff" alt="Latest Release"/>
   </a>

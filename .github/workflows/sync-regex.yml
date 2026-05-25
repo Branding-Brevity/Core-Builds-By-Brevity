@@ -1,0 +1,70 @@
+name: Sync Upstream Regex
+
+on:
+  schedule:
+    # Runs at 00:00 every Sunday
+    - cron: '0 0 * * 0'
+  workflow_dispatch: # Allows you to run it manually from the Actions tab
+
+jobs:
+  sync-regex:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Fetch Latest Vidhin05 Ranked Expressions
+        run: |
+          # Define the target URL (Replace with Vidhin05's actual raw JSON URL)
+          UPSTREAM_URL="https://raw.githubusercontent.com/vidhin05/aiostreams-ranked-regex/main/ranked-expressions.json"
+          
+          # Download the new file into a temporary location
+          curl -sL $UPSTREAM_URL -o temp-regex.json
+
+      - name: Process and Format JSON
+        run: |
+          import json, sys
+
+          try:
+            # Open the downloaded file
+            with open('temp-regex.json', 'r') as f:
+              new_data = json.load(f)
+              
+            # Ensure we maintain any custom formatting you use (e.g. 2-space indent)
+            with open('Regex/excluded-regex-patterns.json', 'w') as f:
+              json.dump(new_data, f, indent=2)
+              
+          except json.JSONDecodeError:
+            print("Failed to decode upstream JSON. Aborting sync.")
+            sys.exit(1)
+        shell: python
+
+      - name: Check for Changes
+        id: check_changes
+        run: |
+          if [[ -n "$(git status --porcelain Regex/excluded-regex-patterns.json)" ]]; then
+            echo "changes_detected=true" >> $GITHUB_OUTPUT
+            echo "Changes found in regex definitions."
+          else
+            echo "changes_detected=false" >> $GITHUB_OUTPUT
+            echo "No changes detected. Regex is up to date."
+          fi
+
+      - name: Create Pull Request
+        if: steps.check_changes.outputs.changes_detected == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: sync upstream Vidhin05 regex patterns"
+          title: "🔄 Sync Upstream Regex Patterns"
+          body: |
+            Automated sync of `excluded-regex-patterns.json` from the upstream Vidhin05 repository.
+            
+            Please review the changes to ensure they align with the Core Builds philosophy before merging.
+          branch: "sync-upstream-regex"
+          base: "main"
+          labels: "automated-pr, regex"

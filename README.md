@@ -44,61 +44,11 @@ For users pairing TorBox with a dedicated Usenet indexer for maximum source dive
 
 ---
 
-<details>
-<summary><strong>🔧 Click to expand: Under the Hood (Technical Specifications)</strong></summary>
+## 📖 Quick Links & Guides
 
-### All Templates
-* **Tamtaro SEL stack:** Live-synced excluded stream expressions, preferred stream expressions, and excluded regex via Tamtaro's GitHub URLs. Stays current without manual updates.
-* **Vidhin05 ranked regex + expressions:** Release group scoring and ranking pulled from Vidhin05's maintained lists.
-* **Hard CAM & YouTube kill:** Wipes CAM, SCR, TS, TC, HC HD-Rip, and AI-enhanced YouTube links.
-* **Tamtaro deduplicator:** Full smartDetect config with 13 attributes: size, resolution, quality, visualTags, audioTags, audioChannels, languages, encode, edition, network, remastered, bitrate, releaseGroup.
-* **Audio sort corrected:** All templates correctly sort lossless audio (7.1 > 5.1 > 2.0).
-* **Series sort rebuilt:** Fully specified sort stacks per resolution tier.
-
-### 4K Templates Only
-* **SeaDex best-release enforced:** `seadexBestOnly: true` ensures only the definitive best encode is served for anime. Quality over compatibility on high-end hardware.
-* **Size range 5 GB–150 GB:** Floor prevents mislabelled junk, ceiling accommodates full BluRay REMUX.
-* **Visual tag priority:** DV → HDR+DV → HDR10+ → HDR10 → HDR → HLG → SDR.
-* **Audio priority:** TrueHD → Atmos → DTS:X → DTS-HD MA → FLAC.
-
-### 1080p Templates Only
-* **4K and HDR fully excluded:** 2160p, 1440p, DV, HDR10+, HDR10, HDR, HLG all blocked.
-* **BluRay and Remux blocked:** Too large and often unplayable on budget hardware.
-* **Size range 1 GB–25 GB:** Tight ceiling prevents oversized files on hardware with limited buffering headroom.
-
-</details>
-
-<details>
-<summary><strong>📱 Click to expand: Device Profiles & Custom Formatters</strong></summary>
-
-### Device Profiles (Multi-Device Setup)
-AIOStreams can't detect what device is requesting a stream. The cleanest workaround for mixed households is two separate Stremio accounts:
-* 🔵 **Low-End Account** → install a 1080p SDR template on phones, tablets, budget TVs.
-* 🟣 **High-End Account** → install a 4K template on Shield, Apple TV 4K, OLED/QLED sets.
-
-### Custom Formatters
-* 💎 **Core Zenith Diamond** — Information-dense, emoji-coded badges, smallcaps text. Shows service pool, resolution, quality, audio, special flags, and a 4-line metadata description.
-* 📺 **Core Clean Stream** — Minimal plain-text formatter matching native Stremio card layout. No emojis, no smallcaps.
-
-</details>
-
-<details>
-<summary><strong>📖 Click to expand: Directory & Guides</strong></summary>
-
-* **[Import Guide](Guides/IMPORT_GUIDE.md):** How to import templates, enter credentials, and install in Stremio or WuPlay.
-* **[Formatter Guide](Guides/FORMATTER_GUIDE.md):** Installing and switching visual formatters.
-* **[Device Profiles](Guides/DEVICE_PROFILES.md):** Multi-device household setup.
-* **[Advanced Editing](Guides/ADVANCED_EDITING.md):** Raw JSON editing, valid enum values, SEL syntax rules.
-* **[Troubleshooting](Guides/TROUBLESHOOTING.md):** Common errors and quick fixes.
-
-</details>
-
----
-
-## ☕ Support the Project
-
-If these templates have levelled up your home theater or Stremio setup and saved you from buffering headaches, consider buying me a coffee. Your support fuels the late-night testing and continuous updates.
-
-[![Ko-fi](https://img.shields.io/badge/DONATE-Ko--fi-ff5f5f?style=for-the-badge&logo=ko-fi&logoColor=white&labelColor=1a1f27)](https://ko-fi.com/branding_brevity)
-
-*Built and maintained by Brevity.*
+| Guide | Description |
+| :--- | :--- |
+| **[Import Guide](Guides/IMPORT_GUIDE.md)** | How to import templates, enter credentials, and install. |
+| **[Formatter Guide](Guides/FORMATTER_GUIDE.md)** | Installing and switching between visual formatters. |
+| **[Device Profiles](Guides/DEVICE_PROFILES.md)** | Setting up multi-device households (Low-end vs High-end). |
+| **[Advanced Editing](Guides/ADVANCED_EDITING.md)** | Raw JSON

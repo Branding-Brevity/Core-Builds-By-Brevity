@@ -1,0 +1,61 @@
+name: Check Instance Status
+
+on:
+  schedule:
+    # Runs every 30 minutes
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+jobs:
+  check-status:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Ping Instances and Update Status
+        run: |
+          import urllib.request, re
+
+          # List of instances to monitor
+          instances = {
+            "ElfHosted": "https://aiostreams.elfhosted.com",
+            "Yeb's": "https://aiostreams.fortheweak.cloud",
+            "Midnight's": "https://aiostreamsfortheweebsstable.midnightignite.me"
+          }
+          
+          status_report = "| Instance | Status |\n|---|---|\n"
+          
+          for name, url in instances.items():
+            try:
+              code = urllib.request.urlopen(url, timeout=5).getcode()
+              status = "🟢 Online" if code == 200 else "🟡 Degraded"
+            except:
+              status = "🔴 Offline"
+            status_report += f"| {name} | {status} |\n"
+
+          # Update the README.md file
+          with open('README.md', 'r') as f:
+            content = f.read()
+
+          # Replace the status table section using regex
+          new_content = re.sub(r'.*', 
+                               f'\n{status_report}', 
+                               content, flags=re.DOTALL)
+                               
+          with open('README.md', 'w') as f:
+            f.write(new_content)
+        shell: python
+
+      - name: Commit and Push if changed
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.index "github-actions[bot]@users.noreply.github.com"
+          if [[ -n "$(git status --porcelain README.md)" ]]; then
+            git add README.md
+            git commit -m "chore: auto-update instance status"
+            git push
+          fi

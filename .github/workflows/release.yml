@@ -1,0 +1,52 @@
+name: Auto Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  release:
+    name: Create Release & Attach Templates
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate all JSON files
+        run: |
+          import json, pathlib, sys
+          errors = []
+          for f in pathlib.Path('.').rglob('*.json'):
+            if '.github' in str(f):
+              continue
+            try:
+              json.load(open(f))
+            except json.JSONDecodeError as e:
+              errors.append(f"{f}: {e}")
+          if errors:
+            print('\n'.join(errors))
+            sys.exit(1)
+          print(f"All JSON files valid.")
+        shell: python
+
+      - name: Collect template assets
+        run: |
+          mkdir -p release_assets
+          find Templates/ -name "*.json" -exec cp {} release_assets/ \;
+          find Formatters/ -name "*.json" -exec cp {} release_assets/ \;
+          echo "Assets collected:"
+          ls release_assets/
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: release_assets/*
+          generate_release_notes: false
+          body: |
+            See [CHANGELOG.md](https://github.com/${{ github.repository }}/blob/main/CHANGELOG.md) for full release notes.
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

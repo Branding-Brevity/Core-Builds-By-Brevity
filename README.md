@@ -3,7 +3,6 @@
     <img src="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/raw/refs/heads/main/Assets/core_builds_banner.svg" alt="Core Builds Banner" width="100%"/>
   </a>
 </p>
-### 🟢 Live Instance Status
 
 <p align="center">
   <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/actions/workflows/validate.yml">

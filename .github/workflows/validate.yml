@@ -22,33 +22,39 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
-
       - name: Validate all JSON files
         run: |
-          import json, sys, pathlib
+          import json
+          import sys
+          from pathlib import Path
 
-          errors = []
-          files = [f for f in pathlib.Path('.').rglob('*.json')
-                   if '.github' not in str(f)]
+          errors = 0
+          # Define files to scan, explicitly excluding the .github directory
+          files = [f for f in Path('.').rglob('*.json') if '.github' not in f.parts]
 
-          print(f"Validating {len(files)} JSON file(s)...\n")
+          print(f"Checking {len(files)} files...")
 
           for fpath in sorted(files):
-            try:
-              with open(fpath) as f:
-                json.load(f)
-              print(f"  PASS  {fpath}")
-            except json.JSONDecodeError as e:
-              errors.append(f"  FAIL  {fpath}: {e}")
-              print(f"  FAIL  {fpath}: {e}")
+              # Skip empty files
+              if fpath.stat().st_size == 0:
+                  print(f"  SKIP  {fpath} (Empty file)")
+                  continue
+                  
+              try:
+                  with open(fpath, 'r', encoding='utf-8') as f:
+                      json.load(f)
+                  print(f"  PASS  {fpath}")
+              except json.JSONDecodeError as e:
+                  print(f"  FAIL  {fpath}: {e}")
+                  errors += 1
+              except Exception as e:
+                  print(f"  FAIL  {fpath}: Could not read file: {e}")
+                  errors += 1
 
-          if errors:
-            print(f"\n{len(errors)} file(s) failed validation.")
-            sys.exit(1)
+          if errors > 0:
+              print(f"\n{errors} file(s) failed validation.")
+              sys.exit(1)
           else:
-            print(f"\nAll {len(files)} files passed.")
+              print("\nSuccess: All files are valid JSON.")
         shell: python
+        

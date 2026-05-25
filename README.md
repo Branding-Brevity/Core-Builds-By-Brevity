@@ -19,16 +19,36 @@
   </a>
 </p>
 
-
 <p align="center">
-  <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Guides/README.md">📖 Complete Guide</a> &nbsp;·&nbsp;
-  <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Guides/README.md#1--importing-a-template">📥 Import</a> &nbsp;·&nbsp;
-  <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Guides/README.md#2--formatters">🎨 Formatters</a> &nbsp;·&nbsp;
-  <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Guides/README.md#3--device-profiles">📱 Device Profiles</a> &nbsp;·&nbsp;
-  <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Guides/README.md#4--advanced-editing">🛠️ Advanced</a> &nbsp;·&nbsp;
-  <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Guides/README.md#5--resetting-your-instance">🔄 Reset</a> &nbsp;·&nbsp;
-  <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Guides/README.md#6--troubleshooting">❓ Troubleshooting</a>
+
+  <!-- Row 1: Templates -->
+  <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/tree/refs/heads/main/Templates/Torbox/Single"><img src="https://img.shields.io/badge/Single-TorBox_Pro-00d4ff?style=for-the-badge&labelColor=0d1117" alt="Single"/></a>
+  <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/tree/refs/heads/main/Templates/Torbox/Essential"><img src="https://img.shields.io/badge/Essential-TorBox_Essential-00d4ff?style=for-the-badge&labelColor=0d1117" alt="Essential"/></a>
+  <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/tree/refs/heads/main/Templates/Torbox/Hybrid"><img src="https://img.shields.io/badge/Hybrid-TorBox_+_NZBGeek-00d4ff?style=for-the-badge&labelColor=0d1117" alt="Hybrid"/></a>
+  <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/tree/refs/heads/main/Templates/Torbox/Speed"><img src="https://img.shields.io/badge/Speed-Instant_Autoplay-e05030?style=for-the-badge&labelColor=0d1117" alt="Speed"/></a>
+
 </p>
+<p align="center">
+
+  <!-- Row 2: Resources -->
+  <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/tree/refs/heads/main/Formatters"><img src="https://img.shields.io/badge/Formatters-Visual_Layouts-7eeeff?style=for-the-badge&labelColor=0d1117" alt="Formatters"/></a>
+  <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/tree/refs/heads/main/Guides"><img src="https://img.shields.io/badge/Guides-Full_Documentation-7eeeff?style=for-the-badge&labelColor=0d1117" alt="Guides"/></a>
+  <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/tree/refs/heads/main/Community--Templates"><img src="https://img.shields.io/badge/Community-Templates-7eeeff?style=for-the-badge&labelColor=0d1117" alt="Community"/></a>
+  <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/tree/refs/heads/main/Templates/Torbox/Nightly"><img src="https://img.shields.io/badge/Nightly-Live_Synced-888fa0?style=for-the-badge&labelColor=0d1117" alt="Nightly"/></a>
+
+</p>
+<p align="center">
+
+  <!-- Row 3: Docs -->
+  <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/CHANGELOG.md"><img src="https://img.shields.io/badge/Changelog-v2.2.8-888fa0?style=for-the-badge&labelColor=0d1117" alt="Changelog"/></a>
+  <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Guides/README.md#1--importing-a-template"><img src="https://img.shields.io/badge/Import_Guide-Get_Started-2ea44f?style=for-the-badge&labelColor=0d1117" alt="Import Guide"/></a>
+  <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Guides/README.md#6--troubleshooting"><img src="https://img.shields.io/badge/Troubleshooting-Quick_Fixes-ff5f5f?style=for-the-badge&labelColor=0d1117" alt="Troubleshooting"/></a>
+  <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/tree/refs/heads/main/Templates/Torbox/Deprecated/Dual"><img src="https://img.shields.io/badge/Advanced-TorBox_+_RD-475569?style=for-the-badge&labelColor=0d1117" alt="Advanced"/></a>
+
+</p>
+
+
+
 
 **Core Builds** is a collection of highly optimised, frictionless AIOStreams templates — engineered to serve only the highest quality compatible streams, strip out unplayable clutter, and work reliably across every host and device.
 

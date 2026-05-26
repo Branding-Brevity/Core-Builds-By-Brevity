@@ -1,0 +1,19 @@
+name-template: 'Core Build v$RESOLVED_VERSION'
+tag-template: 'v$RESOLVED_VERSION'
+categories:
+  - title: '🚀 Features & Templates'
+    labels:
+      - 'enhancement'
+      - 'feature'
+  - title: '🐛 Bug Fixes & Regex Tweaks'
+    labels:
+      - 'bug'
+      - 'fix'
+  - title: '🧰 Maintenance'
+    labels:
+      - 'chore'
+      - 'documentation'
+change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+template: |
+  ## What's Changed
+  $CHANGES

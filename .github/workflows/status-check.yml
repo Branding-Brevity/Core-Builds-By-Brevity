@@ -1,0 +1,40 @@
+name: Check Instance Status
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+jobs:
+  update-status:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run Status Checker
+        run: python3 scripts/status_check.py
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Stage the file
+          git add STATUS.md
+          
+          # Only commit if there are actual changes
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: update status report"
+            
+            # Sync with remote before pushing
+            git pull --rebase origin main
+            git push origin main
+          else
+            echo "No changes detected."
+          fi

@@ -1,0 +1,32 @@
+name: Stale Issue Sweeper
+
+on:
+  schedule:
+    # Runs every day at midnight UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+
+    steps:
+      - uses: actions/stale@v9
+        with:
+          # The timeline
+          days-before-stale: 14
+          days-before-close: 7
+          
+          # The labels applied by the bot
+          stale-issue-label: 'stale'
+          
+          # The automated messages
+          stale-issue-message: 'Hey there! 👋 This issue has been open for 14 days with no activity. It has been marked as stale and will be closed in 7 days if no further updates are provided. If you still need help, just leave a comment!'
+          close-issue-message: 'This issue was closed because it has been stalled for 7 additional days with no activity. Feel free to open a new issue if the problem persists!'
+          
+          # Exclude issues that you are actively working on (add labels here if needed)
+          exempt-issue-labels: 'pinned, enhancement, work-in-progress'
+          

@@ -1,0 +1,54 @@
+name: Issue Auto-Responder
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  auto-reply:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    
+    steps:
+      - name: Scan and Respond to Deprecated Issues
+        uses: actions/github-script@v7
+        with:
+          script: |
+            // Safely grab the title and body of the new issue in lowercase
+            const issueBody = context.payload.issue.body ? context.payload.issue.body.toLowerCase() : '';
+            const issueTitle = context.payload.issue.title.toLowerCase();
+            
+            // The trigger words the bot will look for
+            const keywords = ['dual core', 'dual-core', 'invalid character', 'proxy', 'real-debrid'];
+            
+            // Check if any keyword exists in the title or body
+            const containsKeyword = keywords.some(keyword => issueTitle.includes(keyword) || issueBody.includes(keyword));
+            
+            if (containsKeyword) {
+              const replyBody = `Hey there! 👋\n\nIt looks like you might be asking about the **Dual Core** templates or encountering the "Invalid character" proxy error.\n\n⚠️ **Please note: The Dual Core (TorBox + Real-Debrid) templates have been deprecated.** Due to recent API changes, these builds are no longer supported, will fail to import, and will cause playback stuttering.\n\n**To fix your setup immediately:**\n1. Delete the failed template from your AIOStreams dashboard.\n2. Import our supported TorBox-exclusive builds instead:\n   - **[4K Home Theater (TorBox Pro)](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Single/core-nexus-4k-ht-torbox.json)**\n   - **[1080p Exclusive (TorBox Pro)](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Single/core-nexus-torbox-exclusive_rpdb.json)**\n\n*I am an automated bot, and I am closing this issue since it relates to deprecated files. If you need help with the active builds, feel free to open a new issue!*`;
+              
+              // 1. Post the canned response
+              await github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: replyBody
+              });
+              
+              // 2. Tag the issue with a label
+              await github.rest.issues.addLabels({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                labels: ['deprecated', 'auto-resolved']
+              });
+              
+              // 3. Close the issue automatically
+              await github.rest.issues.update({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                state: 'closed'
+              });
+            }

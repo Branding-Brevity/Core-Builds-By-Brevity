@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  update-status:
+  check-status:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -17,24 +17,42 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Run Status Checker
-        run: python3 scripts/status_check.py
+      - name: Ping Instances and Update Status
+        shell: python
+        run: |
+          import urllib.request
+          instances = {
+            "ElfHosted": "https://aiostreams.elfhosted.com",
+            "Yeb's": "https://aiostreams.fortheweak.cloud",
+            "Midnight's": "https://aiostreamsfortheweebsstable.midnightignite.me"
+          }
+          status_report = "# Instance Status\n\n| Instance | Status |\n|---|---|\n"
+          for name, url in instances.items():
+            try:
+              code = urllib.request.urlopen(url, timeout=5).getcode()
+              status = "🟢 Online" if code == 200 else "🟡 Degraded"
+            except:
+              status = "🔴 Offline"
+            status_report += f"| {name} | {status} |\n"
+          
+          with open('STATUS.md', 'w') as f:
+            f.write(status_report)
 
       - name: Commit and Push
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
-          # Stage the file
+          # Add the safe status file
           git add STATUS.md
           
-          # Only commit if there are actual changes
+          # Check if there are actual changes
           if ! git diff --cached --quiet; then
-            git commit -m "chore: update status report"
-            
-            # Sync with remote before pushing
+            git commit -m "chore: auto-update instance status"
+            # Fixes the rejected error by syncing with remote before pushing
             git pull --rebase origin main
             git push origin main
           else
-            echo "No changes detected."
+            echo "No changes to commit"
           fi
+          

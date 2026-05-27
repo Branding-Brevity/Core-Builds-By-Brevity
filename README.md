@@ -26,6 +26,7 @@
   <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/tree/refs/heads/main/Templates/Torbox/Essential"><img src="https://img.shields.io/badge/Essential-TorBox_Essential-00d4ff?style=for-the-badge&labelColor=0d1117" alt="Essential"/></a>
   <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/tree/refs/heads/main/Templates/Torbox/Hybrid"><img src="https://img.shields.io/badge/Hybrid-TorBox_+_NZBGeek-00d4ff?style=for-the-badge&labelColor=0d1117" alt="Hybrid"/></a>
   <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/tree/refs/heads/main/Templates/Torbox/Speed"><img src="https://img.shields.io/badge/Speed-Instant_Autoplay-e05030?style=for-the-badge&labelColor=0d1117" alt="Speed"/></a>
+  <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/tree/refs/heads/main/Templates/Torbox/Anime"><img src="https://img.shields.io/badge/Anime-SeaDex_%2B_AnimeTosho-ff6b9d?style=for-the-badge&labelColor=0d1117" alt="Anime"/></a>
 
 </p>
 <p align="center">

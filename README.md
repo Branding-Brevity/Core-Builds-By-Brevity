@@ -40,7 +40,7 @@
 <p align="center">
 
   <!-- Row 3: Docs -->
-  <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/CHANGELOG.md"><img src="https://img.shields.io/badge/Changelog-v2.2.8-888fa0?style=for-the-badge&labelColor=0d1117" alt="Changelog"/></a>
+  <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/CHANGELOG.md"><img src="https://img.shields.io/badge/Changelog-v2.2.9-888fa0?style=for-the-badge&labelColor=0d1117" alt="Changelog"/></a>
   <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Guides/README.md#1--importing-a-template"><img src="https://img.shields.io/badge/Import_Guide-Get_Started-2ea44f?style=for-the-badge&labelColor=0d1117" alt="Import Guide"/></a>
   <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Guides/README.md#6--troubleshooting"><img src="https://img.shields.io/badge/Troubleshooting-Quick_Fixes-ff5f5f?style=for-the-badge&labelColor=0d1117" alt="Troubleshooting"/></a>
   <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/tree/refs/heads/main/Templates/Torbox/Deprecated/Dual"><img src="https://img.shields.io/badge/Advanced-TorBox_+_RD-475569?style=for-the-badge&labelColor=0d1117" alt="Advanced"/></a>
@@ -64,9 +64,9 @@ Templates are grouped by service combination and use case. Every template includ
 The dual-core JSON files remain in the repository for advanced users willing to configure MediaFlow Proxy and accept the trade-offs, but no further bug fixes or feature updates will be issued for them. They will be removed in a future release.
 
 **Recommended migration paths:**
-- 4K Dual Core users → [Core Nexus 4K Home Theater](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Single/core-nexus-4k-ht-torbox.json) (TorBox Pro)
-- Dual Core 1080p users → [Core Nexus TorBox Exclusive RPDB](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Single/core-nexus-torbox-exclusive_rpdb.json) (TorBox Pro)
-- 4K Essential + RD users → [Core Nexus 4K Essential](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Essential/core-nexus-4k-essential-torbox.json) (TorBox Essential)
+- 4K Dual Core users → [Core Nexus Core Nexus 4K Pro](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Single/core-nexus-4k-ht-torbox.json) (TorBox Pro)
+- Dual Core 1080p users → [Core Nexus Core Nexus Stream](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Single/core-nexus-torbox-exclusive_rpdb.json) (TorBox Pro)
+- Core Nexus 4K Essential + RD users → [Core Nexus Core Nexus 4K Essential](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Essential/core-nexus-4k-essential-torbox.json) (TorBox Essential)
 
 ### 📦 Single Service — TorBox Only
 
@@ -74,10 +74,10 @@ No secondary debrid service required. TorBox Pro builds include Usenet. TorBox E
 
 | Template | Plan | Resolution | Best For | Docs |
 |---|---|---|---|---|
-| [TorBox Exclusive (RPDB)](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Single/core-nexus-torbox-exclusive_rpdb.json) | Pro | 1080p SDR | Budget hardware, RPDB poster art | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Single/README_torbox-exclusive-rpdb.md) |
-| [4K Home Theater](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Single/core-nexus-4k-ht-torbox.json) | Pro | 4K HDR | Shield, Apple TV 4K, full HT setup | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Single/README_4k-ht-torbox.md) |
-| [1080p Essential](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Essential/core-nexus-1080p-essential-torbox.json) | Essential | 1080p SDR | Budget hardware, no Usenet needed | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Essential/README_1080p-essential-torbox.md) |
-| [4K Essential](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Essential/core-nexus-4k-essential-torbox.json) | Essential | 4K HDR | Shield, Apple TV 4K, no Usenet needed | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Essential/README_4k-essential-torbox.md) |
+| [Core Nexus Stream](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Single/core-nexus-torbox-exclusive_rpdb.json) | Pro | 1080p SDR | Budget hardware, RPDB poster art | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Single/README_torbox-exclusive-rpdb.md) |
+| [Core Nexus 4K Pro](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Single/core-nexus-4k-ht-torbox.json) | Pro | 4K HDR | Shield, Apple TV 4K, full HT setup | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Single/README_4k-ht-torbox.md) |
+| [Core Nexus Essential](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Essential/core-nexus-1080p-essential-torbox.json) | Essential | 1080p SDR | Budget hardware, no Usenet needed | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Essential/README_1080p-essential-torbox.md) |
+| [Core Nexus 4K Essential](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Essential/core-nexus-4k-essential-torbox.json) | Essential | 4K HDR | Shield, Apple TV 4K, no Usenet needed | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Essential/README_4k-essential-torbox.md) |
 
 ### 🔀 Hybrid — TorBox Pro + Usenet Indexer
 
@@ -85,27 +85,36 @@ Combines TorBox with NZBGeek for maximum source diversity. Shows both cached and
 
 | Template | Resolution | Best For | Docs |
 |---|---|---|---|
-| [TB Hybrid 1080p](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Hybrid/core-nexus-tb-hybrid-1080p.json) | 1080p SDR | TorBox Pro + NZBGeek subscribers | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Hybrid/README_tb-hybrid-1080p.md) |
+| [Core Nexus Hybrid](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Hybrid/core-nexus-tb-hybrid-1080p.json) | 1080p SDR | TorBox Pro + NZBGeek subscribers | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Hybrid/README_tb-hybrid-1080p.md) |
 
 > ⚠️ Requires a **NZBGeek API key** — enter it in the Addons section after loading. See the [Import Guide](Guides/IMPORT_GUIDE.md) for the setup step.
 
+
+### 🎌 Anime — Dedicated Anime Builds
+
+Dedicated anime template with SeaDex best-release enforcement, AnimeTosho, and anime-appropriate audio/visual priorities. FLAC/AAC over Atmos, SDR-first, 1080p WEB-DL priority.
+
+| Template | Plan | Resolution | Best For | Docs |
+|---|---|---|---|---|
+| [Core Nexus Anime](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Anime/core-nexus-anime.json) | Essential | 1080p + 4K | Seasonal anime, movies, full series | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Anime/README_anime.md) |
+
 ### ⚡ Speed Tier — Instant Autoplay
 
-Stripped to 4 addons only (Library, Search NZB (TorBox), Comet, Zilean) for 2-3 second cached stream delivery. For users who prioritise instant results over maximum coverage.
+Optimised for fast cached stream delivery. Zilean first for instant hashlist lookups, Comet for depth. Knaben and Meteor included for coverage. For users who prioritise instant results over maximum coverage.
 
 #### TorBox Essential + EasyNews
 
 | Template | Resolution | Docs |
 |---|---|---|
-| [Speed 1080p (EasyNews)](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/EasyNews/core-nexus-speed-1080p.json) | 1080p SDR | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/EasyNews/README_speed-1080p-easynews.md) |
-| [Speed 4K (EasyNews)](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/EasyNews/core-nexus-speed-4k.json) | 4K HDR | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/EasyNews/README_speed-4k-easynews.md) |
+| [Core Nexus Speed+](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/EasyNews/core-nexus-speed-1080p.json) | 1080p SDR | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/EasyNews/README_speed-1080p-easynews.md) |
+| [Core Nexus Speed 4K+](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/EasyNews/core-nexus-speed-4k.json) | 4K HDR | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/EasyNews/README_speed-4k-easynews.md) |
 
 #### TorBox Essential Only
 
 | Template | Resolution | Docs |
 |---|---|---|
-| [Speed 1080p](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/TorBox/core-nexus-speed-1080p-torbox.json) | 1080p SDR | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/TorBox/README_speed-1080p-torbox.md) |
-| [Speed 4K](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/TorBox/core-nexus-speed-4k-torbox.json) | 4K HDR | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/TorBox/README_speed-4k-torbox.md) |
+| [Core Nexus Speed](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/TorBox/core-nexus-speed-1080p-torbox.json) | 1080p SDR | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/TorBox/README_speed-1080p-torbox.md) |
+| [Core Nexus Speed 4K](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/TorBox/core-nexus-speed-4k-torbox.json) | 4K HDR | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/TorBox/README_speed-4k-torbox.md) |
 
 > Speed templates use 3500ms timeouts, 10 results max, and a 5-key sort. All Core Builds features (scored regex ranking, Tamtaro ESEs, episode matching) remain intact.
 
@@ -143,6 +152,7 @@ Swap between visual styles instantly without changing your template. All formatt
 | Formatter | Style | Raw URL |
 |---|---|---|
 | **🌌 Omni Diamond Hybrid** | The flagship. Advanced edition, network, and repack tags. Usenet failover indicators. Maximum metadata density. | [Download](https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/refs/heads/main/Formatters/Omni_Diamond_Hybrid.json) |
+| **🖥️ Core Nexus Uniform** | Clean, emoji-coded. Resolution + service badge in title. Instant/Uncached status, SE score, release group, video/audio/language/file rows. | [Download](https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/refs/heads/main/Formatters/Core_Nexus_Uniform_Formatter.json) |
 | **💎 Core Zenith Diamond** | Emoji-coded badges, smallcaps text. Resolution, quality, audio, SEADEX / OWNED / LIBRARY flags. | [Download](https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/refs/heads/main/Formatters/Core_Zenith_Diamond.json) |
 | **🌙 Midnight Slate** | Dark, geometric, understated. `✦`/`✧` cached indicators, lowercase metadata, geometric symbols throughout. | [Download](https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/refs/heads/main/Formatters/Midnight_Slate.json) |
 | **📺 Core Clean Stream** | Minimal plain text. Matches native Stremio card layout. No emojis, no smallcaps. | [Download](https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/refs/heads/main/Formatters/Core_Clean_Stream.json) |
@@ -200,8 +210,8 @@ Full walkthrough in the [Import Guide](https://github.com/Branding-Brevity/Core-
 - **`regexScore` + `streamExpressionScore` in sort** — Release group ranking and expression scoring both feed into final stream ordering.
 - **Exact title, year, and episode matching** — Strict mode on all three. No wrong-year, wrong-title, or wrong-episode results.
 - **Full 12-service roster** — All opt-in. Enable only what you subscribe to.
-- **Tamtaro deduplicator** — SmartDetect aggressive with filename, infoHash, and smartDetect keys.
-- **Tamtaro ESEs inline** — Full set including Low Seeders, Extra Cached HQ/LQ, Extra Uncached, Unknown Resolution, Unknown Quality — no whitelist needed.
+- **Deduplicator** — SmartDetect aggressive with filename, infoHash, and smartDetect keys.
+- **Core Builds Filtering System** — Custom ESE/PSE/ISE set built in-house. CAM Kill, YouTube Kill, 3D Kill, Season Pack Guard. Hosted in `Filtering/` — no external whitelist dependency.
 - **`hideErrors: true`** — Error and info streams hidden from the list.
 - **`bitrate.useMetadataRuntime: true`** — Accurate runtime-based bitrate calculation.
 - **`seasonEpisodeMatching`** — Strict mode, covers movie, series, and anime.
@@ -251,7 +261,8 @@ Full walkthrough in the [Import Guide](https://github.com/Branding-Brevity/Core-
 ```
 Core-Builds-By-Brevity/
 ├── 📁 Assets/
-├── 📁 Formatters/              Core Zenith Diamond, Core Clean Stream
+├── 📁 Filtering/               Core Builds ESEs, PSEs, ISEs
+├── 📁 Formatters/              Core Nexus Uniform, Core Zenith Diamond, Core Clean Stream
 ├── 📁 Guides/                  Import, Formatter, Device Profiles, Advanced, Reset, Troubleshooting
 ├── 📁 Regex/                   Hosted scored regex patterns
 ├── 📁 Templates/
@@ -259,7 +270,8 @@ Core-Builds-By-Brevity/
 │       ├── 📁 Single/          TorBox Pro — full addon stack
 │       ├── 📁 Essential/       TorBox Essential — no Usenet required
 │       ├── 📁 Hybrid/          TorBox Pro + Usenet Indexer
-│       ├── 📁 Speed/           Instant autoplay — 4 addons only
+│       ├── 📁 Anime/           Dedicated anime builds
+│       ├── 📁 Speed/           Instant autoplay — optimised addon stack
 │       │   ├── 📁 EasyNews/    TorBox Essential + EasyNews
 │       │   └── 📁 TorBox/      TorBox Essential only
 │       ├── 📁 Deprecated/      No longer maintained
@@ -288,7 +300,7 @@ Open a request and we'll look into it.
 
 ## 📜 Version & Stability
 
-> Versions prior to `1.1.2` are **unstable**. Current version: **`v2.2.6`** (Universal) / **`v2.1.8-nightly`** (Nightly).
+> Versions prior to `1.1.2` are **unstable**. Current version: **`v2.2.9`** (Universal) (Nightly).
 
 [Full CHANGELOG](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/CHANGELOG.md)
 

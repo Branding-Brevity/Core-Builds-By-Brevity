@@ -5,56 +5,123 @@ on:
     paths:
       - 'Templates/**/*.json'
       - 'Formatters/**/*.json'
-      - 'Regex/**/*.json'
+      - 'Filtering/**/*.json'
   pull_request:
     paths:
       - 'Templates/**/*.json'
       - 'Formatters/**/*.json'
-      - 'Regex/**/*.json'
+      - 'Filtering/**/*.json'
       - 'Community-Templates/**/*.json'
 
 jobs:
-  validate-json:
-    name: Validate JSON Files
+  validate:
+    name: Validate JSON Templates
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Validate all JSON files
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Validate JSON + template integrity
+        shell: python
         run: |
-          import json
-          import sys
-          from pathlib import Path
+          import json, sys, pathlib
 
-          errors = 0
-          # Define files to scan, explicitly excluding the .github directory
-          files = [f for f in Path('.').rglob('*.json') if '.github' not in f.parts]
+          VALID_FORMATTER_IDS = {
+            'custom', 'tamtaro', 'prism', 'gdrive',
+            'lightgdrive', 'minimalisticgdrive', 'torrentio', 'torbox'
+          }
 
-          print(f"Checking {len(files)} files...")
+          errors = []
+          warnings = []
+          files = [
+            f for f in pathlib.Path('.').rglob('*.json')
+            if '.github' not in str(f)
+          ]
+
+          print(f"Scanning {len(files)} JSON file(s)...\n")
 
           for fpath in sorted(files):
-              # Skip empty files
-              if fpath.stat().st_size == 0:
-                  print(f"  SKIP  {fpath} (Empty file)")
-                  continue
-                  
-              try:
-                  with open(fpath, 'r', encoding='utf-8') as f:
-                      json.load(f)
-                  print(f"  PASS  {fpath}")
-              except json.JSONDecodeError as e:
-                  print(f"  FAIL  {fpath}: {e}")
-                  errors += 1
-              except Exception as e:
-                  print(f"  FAIL  {fpath}: Could not read file: {e}")
-                  errors += 1
+            # 1. Valid JSON
+            try:
+              with open(fpath) as f:
+                data = json.load(f)
+            except json.JSONDecodeError as e:
+              errors.append(f"{fpath}: Invalid JSON — {e}")
+              continue
 
-          if errors > 0:
-              print(f"\n{errors} file(s) failed validation.")
-              sys.exit(1)
+            # Only deep-validate template files
+            if 'Templates' not in str(fpath) and 'Community-Templates' not in str(fpath):
+              print(f"  PASS (json)   {fpath}")
+              continue
+
+            c = data.get('config', {})
+            fname = str(fpath)
+
+            # 2. formatter.id valid
+            fmt_id = c.get('formatter', {}).get('id')
+            if fmt_id and fmt_id not in VALID_FORMATTER_IDS:
+              errors.append(f"{fpath}: formatter.id '{fmt_id}' invalid — must be one of {VALID_FORMATTER_IDS}")
+
+            # 3. All presets have instanceId
+            for i, p in enumerate(c.get('presets', [])):
+              if not p.get('instanceId'):
+                errors.append(f"{fpath}: presets[{i}] ({p.get('type','?')}) missing instanceId")
+
+            # 4. All presets have timeout in options
+            for i, p in enumerate(c.get('presets', [])):
+              if 'timeout' not in p.get('options', {}):
+                errors.append(f"{fpath}: presets[{i}] ({p.get('type','?')}) missing options.timeout")
+
+            # 5. No invalid SEL functions
+            bad_fns = ['not(', 'or(', 'keyword(', 'language(']
+            all_exprs = (
+              c.get('excludedStreamExpressions', []) +
+              c.get('preferredStreamExpressions', []) +
+              c.get('includedStreamExpressions', [])
+            )
+            for ese in all_exprs:
+              expr = ese.get('expression', '')
+              for bad in bad_fns:
+                if bad in expr and bad != 'not(' :  # negate() is correct, not() is not
+                  errors.append(f"{fpath}: ESE/PSE/ISE uses invalid SEL function '{bad}' — use negate()")
+              if 'not(' in expr and 'negate(' not in expr:
+                errors.append(f"{fpath}: ESE/PSE/ISE uses not() — use negate() instead")
+
+            # 6. preferredResolutions subset of includedResolutions
+            incl = set(c.get('includedResolutions', []))
+            pref = c.get('preferredResolutions', [])
+            extras = [r for r in pref if r not in incl and incl]
+            if extras:
+              warnings.append(f"{fpath}: preferredResolutions has entries not in includedResolutions: {extras}")
+
+            # 7. addonName present
+            if not c.get('addonName'):
+              warnings.append(f"{fpath}: addonName is missing")
+
+            # 8. metadata.version present
+            if not data.get('metadata', {}).get('version'):
+              warnings.append(f"{fpath}: metadata.version is missing")
+
+            status = "FAIL" if any(str(fpath) in e for e in errors) else "PASS"
+            print(f"  {status}   {fpath}")
+
+          print()
+          if warnings:
+            print(f"⚠️  {len(warnings)} warning(s):")
+            for w in warnings:
+              print(f"  {w}")
+            print()
+
+          if errors:
+            print(f"❌ {len(errors)} error(s):")
+            for e in errors:
+              print(f"  {e}")
+            sys.exit(1)
           else:
-              print("\nSuccess: All files are valid JSON.")
-        shell: python
-        
+            print(f"✅ All {len(files)} files passed.")

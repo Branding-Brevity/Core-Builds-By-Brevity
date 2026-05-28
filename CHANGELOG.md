@@ -1,3 +1,9 @@
+## [Unreleased]
+
+*Nothing pending.*
+
+---
+
 ## [2.3.0] - 2026-05-28
 
 ### Added

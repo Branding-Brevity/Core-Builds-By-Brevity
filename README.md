@@ -12,7 +12,7 @@
     <img src="https://img.shields.io/github/v/release/Branding-Brevity/Core-Builds-By-Brevity?style=for-the-badge&label=RELEASE&logo=github&logoColor=white&labelColor=1a1f27&color=00d4ff" alt="Latest Release"/>
   </a>
   <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/stargazers">
-    <img src="https://img.shields.io/github/stars/Branding-Brevity/Core-Builds-By-Brevity?style=for-the-badge&label=STARS&logo=github&logoColor=white&labelColor=1a1f27&color=00d4ff" alt="Stars"/>
+    <img src="https://img.shields.io/github/stars/Branding-Brevity/Core-Builds-By-Brevity?style=for-the-badge&label=STARS&logo=github&logoColor=white&labelColor=1a1f27&color=00d4ff&cacheSeconds=3600" alt="Stars"/>
   </a>
   <a href="https://ko-fi.com/branding_brevity">
     <img src="https://img.shields.io/badge/DONATE-Ko--fi-ff5f5f?style=for-the-badge&logo=ko-fi&logoColor=white&labelColor=1a1f27" alt="Donate"/>

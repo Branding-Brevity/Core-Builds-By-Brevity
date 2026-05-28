@@ -42,7 +42,7 @@ jobs:
           ls release_assets/
 
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           files: release_assets/*
           generate_release_notes: false

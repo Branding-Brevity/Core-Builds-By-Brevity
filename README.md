@@ -172,17 +172,19 @@ See the [Formatter Guide](https://github.com/Branding-Brevity/Core-Builds-By-Bre
 
 ### 1. Choose a Host
 
-| Rank | Host | URL | Notes |
-|------|------|-----|-------|
-| 🥇 | **ElfHosted** | [aiostreams.elfhosted.com](https://aiostreams.elfhosted.com/stremio/configure) | Most stable. Debrid-only on public instance — suits these templates perfectly. |
-| 🥈 | **Yeb's** | [aiostreams.fortheweak.cloud](https://aiostreams.fortheweak.cloud/stremio/configure) | AIOStreams Discord admin. Also offers [Nightly](https://aiostreams-nightly.fortheweak.cloud/stremio/configure). |
-| 🥉 | **Midnight's** | [aiostreamsfortheweebsstable.midnightignite.me](https://aiostreamsfortheweebsstable.midnightignite.me/stremio/configure) | TorBox community manager. Also offers [Nightly](https://aiostreamsfortheweebs.midnightignite.me/stremio/configure). |
-| 4 | **Viren's** | [aiostreams.viren070.me](https://aiostreams.viren070.me/stremio/configure) | Developer's own instance. Nightly only. |
-| 5 | **Kuu's** | [aiostreams.stremio.ru](https://aiostreams.stremio.ru/stremio/configure) | Also offers [Nightly](https://aiostreams-nightly.stremio.ru/stremio/configure). |
-| 6 | **ATBP Hosting** | [aio.atbphosting.com](https://aio.atbphosting.com/stremio/configure) | Community instance. |
-| 7 | **Omni's** | [aiostreams.12312023.xyz](https://aiostreams.12312023.xyz/stremio/configure) | Community instance. |
+> 🟢 **[Live instance status →](./STATUS.md)** — auto-updated every 30 minutes
 
-Full instance list: [docs.aiostreams.viren070.me](https://docs.aiostreams.viren070.me/getting-started/public-instances/)
+| Host | Notes | Configure |
+|---|---|---|
+| 🥇 **ElfHosted** | Most stable. Debrid-only — perfect for Core Builds. | [Open](https://aiostreams.elfhosted.com/stremio/configure) |
+| 🥈 **Yeb's** | AIOStreams Discord admin. Stable + [Nightly](https://aiostreams-nightly.fortheweak.cloud/stremio/configure). | [Open](https://aiostreams.fortheweak.cloud/stremio/configure) |
+| 🥉 **Midnight's** | TorBox community manager. Stable + [Nightly](https://aiostreamsfortheweebs.midnightignite.me/stremio/configure). | [Open](https://aiostreamsfortheweebsstable.midnightignite.me/stremio/configure) |
+| 4 **Kuu's** | Community-run. Stable + [Nightly](https://aiostreams-nightly.stremio.ru/stremio/configure). | [Open](https://aiostreams.stremio.ru/stremio/configure) |
+| 5 **ATBP Hosting** | Community-run. | [Open](https://aio.atbphosting.com/stremio/configure) |
+| 6 **Omni's** | Community-run. | [Open](https://aiostreams.12312023.xyz/stremio/configure) |
+| 🌙 **Viren's** | Developer's own — Nightly only. | [Open](https://aiostreams.viren070.me/stremio/configure) |
+
+Full list + uptime history: [STATUS.md](./STATUS.md)
 
 ### 2. Import a Template
 

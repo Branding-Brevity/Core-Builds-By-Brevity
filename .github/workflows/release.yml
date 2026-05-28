@@ -2,7 +2,7 @@ name: Package Release Assets
 
 on:
   release:
-    types: [published]
+    types: [created]   # fires on draft creation — before publish, while still mutable
 
 jobs:
   package-and-upload:
@@ -15,21 +15,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Collect template + formatter assets
+      - name: Prepare release archive
         run: |
           mkdir -p release_assets
           find Templates/ -name "*.json" ! -path "*/Deprecated/*" -exec cp {} release_assets/ \;
           find Formatters/ -name "*.json" -exec cp {} release_assets/ \;
-          echo "Assets collected:"
-          ls release_assets/
-
-      - name: Zip all assets
-        run: |
           cd release_assets
           zip -r ../Core-Builds-${{ github.event.release.tag_name }}.zip .
           cd ..
+          echo "Assets ready:"
+          ls release_assets/
 
-      - name: Upload assets to release
+      - name: Upload zip to GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           files: |

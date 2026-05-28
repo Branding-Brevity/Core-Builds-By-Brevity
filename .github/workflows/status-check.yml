@@ -13,46 +13,22 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Ping Instances and Update Status
-        shell: python
-        run: |
-          import urllib.request
-          instances = {
-            "ElfHosted": "https://aiostreams.elfhosted.com",
-            "Yeb's": "https://aiostreams.fortheweak.cloud",
-            "Midnight's": "https://aiostreamsfortheweebsstable.midnightignite.me"
-          }
-          status_report = "# Instance Status\n\n| Instance | Status |\n|---|---|\n"
-          for name, url in instances.items():
-            try:
-              code = urllib.request.urlopen(url, timeout=5).getcode()
-              status = "🟢 Online" if code == 200 else "🟡 Degraded"
-            except:
-              status = "🔴 Offline"
-            status_report += f"| {name} | {status} |\n"
-          
-          with open('STATUS.md', 'w') as f:
-            f.write(status_report)
+      - name: Ping instances and update STATUS.md
+        run: python .github/scripts/status_check.py STATUS.md
 
-      - name: Commit and Push
+      - name: Commit and push if changed
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          
-          # Add the safe status file
           git add STATUS.md
-          
-          # Check if there are actual changes
           if ! git diff --cached --quiet; then
-            git commit -m "chore: auto-update instance status"
-            # Fixes the rejected error by syncing with remote before pushing
+            git commit -m "chore: auto-update instance status [skip ci]"
             git pull --rebase origin main
             git push origin main
           else
             echo "No changes to commit"
           fi
-          

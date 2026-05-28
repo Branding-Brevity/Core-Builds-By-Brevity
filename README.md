@@ -20,6 +20,16 @@
 </p>
 
 <p align="center">
+  <a href="https://torbox.app/subscription?referral=d1ccddb0-f094-45ca-b52b-942a2635855e">
+    <img src="https://img.shields.io/badge/TorBox-Get_15_days_free_with_code_d1ccddb0-f97316?style=for-the-badge&logo=thunder&logoColor=white&labelColor=1a1f27" alt="TorBox Referral"/>
+  </a>
+</p>
+
+> 🚀 **These templates are built for [TorBox](https://torbox.app/subscription?referral=d1ccddb0-f094-45ca-b52b-942a2635855e).** Sign up with referral code **`d1ccddb0-f094-45ca-b52b-942a2635855e`** and get **15 extra days free** on any plan — and support this project.
+
+---
+
+<p align="center">
 
   <!-- Row 1: Templates -->
   <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/tree/refs/heads/main/Templates/Torbox/Single"><img src="https://img.shields.io/badge/Single-TorBox_Pro-00d4ff?style=for-the-badge&labelColor=0d1117" alt="Single"/></a>
@@ -65,9 +75,9 @@ Templates are grouped by service combination and use case. Every template includ
 The dual-core JSON files remain in the repository for advanced users willing to configure MediaFlow Proxy and accept the trade-offs, but no further bug fixes or feature updates will be issued for them. They will be removed in a future release.
 
 **Recommended migration paths:**
-- 4K Dual Core users → [Core Nexus Core Nexus 4K Pro](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Single/core-nexus-4k-ht-torbox.json) (TorBox Pro)
-- Dual Core 1080p users → [Core Nexus Core Nexus Stream](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Single/core-nexus-torbox-exclusive_rpdb.json) (TorBox Pro)
-- Core Nexus 4K Essential + RD users → [Core Nexus Core Nexus 4K Essential](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Essential/core-nexus-4k-essential-torbox.json) (TorBox Essential)
+- 4K Dual Core users → [Core Nexus 4K Pro](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Single/core-nexus-4k-ht-torbox.json) (TorBox Pro)
+- Dual Core 1080p users → [Core Nexus Stream](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Single/core-nexus-torbox-exclusive_rpdb.json) (TorBox Pro)
+- 4K Essential + RD users → [Core Nexus 4K Essential](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/main/Templates/Torbox/Essential/core-nexus-4k-essential-torbox.json) (TorBox Essential)
 
 ### 📦 Single Service — TorBox Only
 

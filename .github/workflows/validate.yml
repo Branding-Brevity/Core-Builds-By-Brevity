@@ -20,10 +20,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
@@ -37,8 +37,11 @@ jobs:
             'lightgdrive', 'minimalisticgdrive', 'torrentio', 'torbox'
           }
 
-          errors = []
+          INVALID_SEL = ['or(', 'keyword(', 'language(']
+
+          errors   = []
           warnings = []
+
           files = [
             f for f in pathlib.Path('.').rglob('*.json')
             if '.github' not in str(f)
@@ -47,39 +50,57 @@ jobs:
           print(f"Scanning {len(files)} JSON file(s)...\n")
 
           for fpath in sorted(files):
-            # 1. Valid JSON
+
+            # ── 1. Valid JSON ───────────────────────────────────────────────
             try:
               with open(fpath) as f:
                 data = json.load(f)
             except json.JSONDecodeError as e:
               errors.append(f"{fpath}: Invalid JSON — {e}")
+              print(f"  FAIL (json)  {fpath}")
               continue
 
             # Only deep-validate template files
-            if 'Templates' not in str(fpath) and 'Community-Templates' not in str(fpath):
-              print(f"  PASS (json)   {fpath}")
+            is_template = (
+              'Templates' in str(fpath) or
+              'Community-Templates' in str(fpath)
+            )
+            if not is_template:
+              print(f"  PASS (json)  {fpath}")
               continue
 
-            c = data.get('config', {})
-            fname = str(fpath)
+            c    = data.get('config', {})
+            meta = data.get('metadata', {})
+            fail = False
 
-            # 2. formatter.id valid
+            # ── 2. formatter.id valid ───────────────────────────────────────
             fmt_id = c.get('formatter', {}).get('id')
             if fmt_id and fmt_id not in VALID_FORMATTER_IDS:
-              errors.append(f"{fpath}: formatter.id '{fmt_id}' invalid — must be one of {VALID_FORMATTER_IDS}")
+              errors.append(
+                f"{fpath}: formatter.id '{fmt_id}' invalid — "
+                f"must be one of {sorted(VALID_FORMATTER_IDS)}"
+              )
+              fail = True
 
-            # 3. All presets have instanceId
+            # ── 3. All presets have instanceId ──────────────────────────────
             for i, p in enumerate(c.get('presets', [])):
               if not p.get('instanceId'):
-                errors.append(f"{fpath}: presets[{i}] ({p.get('type','?')}) missing instanceId")
+                errors.append(
+                  f"{fpath}: presets[{i}] ({p.get('type','?')}) "
+                  f"missing instanceId"
+                )
+                fail = True
 
-            # 4. All presets have timeout in options
+            # ── 4. All presets have timeout ─────────────────────────────────
             for i, p in enumerate(c.get('presets', [])):
               if 'timeout' not in p.get('options', {}):
-                errors.append(f"{fpath}: presets[{i}] ({p.get('type','?')}) missing options.timeout")
+                errors.append(
+                  f"{fpath}: presets[{i}] ({p.get('type','?')}) "
+                  f"missing options.timeout"
+                )
+                fail = True
 
-            # 5. No invalid SEL functions
-            bad_fns = ['not(', 'or(', 'keyword(', 'language(']
+            # ── 5. No invalid SEL functions ─────────────────────────────────
             all_exprs = (
               c.get('excludedStreamExpressions', []) +
               c.get('preferredStreamExpressions', []) +
@@ -87,30 +108,44 @@ jobs:
             )
             for ese in all_exprs:
               expr = ese.get('expression', '')
-              for bad in bad_fns:
-                if bad in expr and bad != 'not(' :  # negate() is correct, not() is not
-                  errors.append(f"{fpath}: ESE/PSE/ISE uses invalid SEL function '{bad}' — use negate()")
+              for bad in INVALID_SEL:
+                if bad in expr:
+                  errors.append(
+                    f"{fpath}: expression uses invalid SEL '{bad}'"
+                  )
+                  fail = True
+              # not() check — must not appear unless inside negate()
               if 'not(' in expr and 'negate(' not in expr:
-                errors.append(f"{fpath}: ESE/PSE/ISE uses not() — use negate() instead")
+                errors.append(
+                  f"{fpath}: expression uses not() — use negate()"
+                )
+                fail = True
 
-            # 6. preferredResolutions subset of includedResolutions
+            # ── 6. preferredResolutions ⊆ includedResolutions ──────────────
             incl = set(c.get('includedResolutions', []))
-            pref = c.get('preferredResolutions', [])
-            extras = [r for r in pref if r not in incl and incl]
-            if extras:
-              warnings.append(f"{fpath}: preferredResolutions has entries not in includedResolutions: {extras}")
+            if incl:
+              extras = [
+                r for r in c.get('preferredResolutions', [])
+                if r not in incl
+              ]
+              if extras:
+                warnings.append(
+                  f"{fpath}: preferredResolutions has entries "
+                  f"not in includedResolutions: {extras}"
+                )
 
-            # 7. addonName present
+            # ── 7. addonName present ────────────────────────────────────────
             if not c.get('addonName'):
-              warnings.append(f"{fpath}: addonName is missing")
+              warnings.append(f"{fpath}: addonName missing")
 
-            # 8. metadata.version present
-            if not data.get('metadata', {}).get('version'):
-              warnings.append(f"{fpath}: metadata.version is missing")
+            # ── 8. metadata.version present ────────────────────────────────
+            if not meta.get('version'):
+              warnings.append(f"{fpath}: metadata.version missing")
 
-            status = "FAIL" if any(str(fpath) in e for e in errors) else "PASS"
-            print(f"  {status}   {fpath}")
+            status = 'FAIL' if fail else 'PASS'
+            print(f"  {status}         {fpath}")
 
+          # ── Summary ────────────────────────────────────────────────────────
           print()
           if warnings:
             print(f"⚠️  {len(warnings)} warning(s):")

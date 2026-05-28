@@ -36,6 +36,6 @@ jobs:
           cd ..
 
       - name: Upload Zip to GitHub Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           files: Core-Builds-${{ github.event.release.tag_name }}.zip

@@ -1,41 +1,17 @@
-template-pro:
-  - changed-files:
-    - any-glob-to-any-file: 'Templates/Torbox/Single/**'
+name: Label Pull Requests
 
-template-essential:
-  - changed-files:
-    - any-glob-to-any-file: 'Templates/Torbox/Essential/**'
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
 
-template-hybrid:
-  - changed-files:
-    - any-glob-to-any-file: 'Templates/Torbox/Hybrid/**'
-
-template-anime:
-  - changed-files:
-    - any-glob-to-any-file: 'Templates/Torbox/Anime/**'
-
-template-speed:
-  - changed-files:
-    - any-glob-to-any-file: 'Templates/Torbox/Speed/**'
-
-filtering:
-  - changed-files:
-    - any-glob-to-any-file: 'Filtering/**'
-
-formatter:
-  - changed-files:
-    - any-glob-to-any-file: 'Formatters/**'
-
-documentation:
-  - changed-files:
-    - any-glob-to-any-file:
-      - '*.md'
-      - 'Guides/**'
-
-community:
-  - changed-files:
-    - any-glob-to-any-file: 'Community-Templates/**'
-
-infrastructure:
-  - changed-files:
-    - any-glob-to-any-file: '.github/**'
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/labeler@v5
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          configuration-path: .github/labeler.yml

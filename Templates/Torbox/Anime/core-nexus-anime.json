@@ -4,7 +4,7 @@
     "name": "Core Nexus Anime",
     "description": "Dedicated anime template. SeaDex best releases · Dual audio · Nyaa-sourced · Sub + Dub aware. TorBox Essential.",
     "author": "Branding-Brevity",
-    "version": "2.2.9",
+    "version": "2.3.0",
     "sourceUrl": "https://github.com/Branding-Brevity/Core-Builds-By-Brevity",
     "changelogUrl": "https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/main/CHANGELOG.md"
   },
@@ -257,14 +257,7 @@
     "preferredResolutions": [
       "1080p",
       "2160p",
-      "720p",
-      "576p",
-      "480p",
-      "360p",
-      "240p",
-      "144p",
-      "Unknown",
-      "1440p"
+      "720p"
     ],
     "preferredVisualTags": [
       "SDR",
@@ -518,6 +511,40 @@
         }
       }
     },
-    "showP2PStreams": false
+    "showP2PStreams": false,
+    "titleMatching": {
+      "enabled": true,
+      "mode": "contains",
+      "similarityThreshold": 0.85,
+      "requestTypes": [],
+      "addons": []
+    },
+    "yearMatching": {
+      "enabled": true,
+      "strict": false,
+      "useInitialAirDate": true,
+      "tolerance": 2,
+      "requestTypes": [],
+      "addons": []
+    },
+    "seasonEpisodeMatching": {
+      "enabled": true,
+      "strict": true,
+      "requestTypes": [],
+      "addons": []
+    },
+    "deduplicator": {
+      "enabled": true,
+      "excludeAddons": [],
+      "multiGroupBehaviour": "aggressive",
+      "keys": [
+        "filename",
+        "infoHash",
+        "smartDetect"
+      ],
+      "cached": "single_result",
+      "uncached": "disabled",
+      "p2p": "disabled"
+    }
   }
 }

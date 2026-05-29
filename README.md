@@ -9,7 +9,7 @@
     <img src="https://img.shields.io/github/actions/workflow/status/Branding-Brevity/Core-Builds-By-Brevity/validate.yml?style=for-the-badge&label=BUILD&logo=github&logoColor=white&labelColor=1a1f27&color=2ea44f" alt="Build Status"/>
   </a>
   <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/releases/latest">
-    <img src="https://img.shields.io/github/v/release/Branding-Brevity/Core-Builds-By-Brevity?style=for-the-badge&label=RELEASE&logo=github&logoColor=white&labelColor=1a1f27&color=00d4ff" alt="Latest Release"/>
+    <img src="https://badgen.net/github/release/Branding-Brevity/Core-Builds-By-Brevity?style=flat-square&label=RELEASE&color=00d4ff&labelColor=1a1f27" alt="Latest Release"/>
   </a>
   <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/stargazers">
     <img src="https://badgen.net/github/stars/Branding-Brevity/Core-Builds-By-Brevity?style=flat-square&label=STARS&color=00d4ff&labelColor=1a1f27" alt="Stars"/>

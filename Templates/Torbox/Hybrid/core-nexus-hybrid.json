@@ -58,22 +58,23 @@
       "1080p",
       "720p"
     ],
-    "excludedQualities": [],
+    "excludedQualities": [
+      "CAM",
+      "SCR",
+      "TS",
+      "TC",
+      "HC HD-Rip",
+      "DVDRip",
+      "HDTV",
+      "HDRip",
+      "BluRay REMUX"
+    ],
     "includedQualities": [],
     "requiredQualities": [],
     "preferredQualities": [
       "WEB-DL",
       "WEBRip",
       "BluRay",
-      "BluRay REMUX",
-      "HDRip",
-      "HC HD-Rip",
-      "DVDRip",
-      "HDTV",
-      "SCR",
-      "TC",
-      "TS",
-      "CAM",
       "Unknown"
     ],
     "excludedLanguages": [],
@@ -140,15 +141,8 @@
       "DD+",
       "DD",
       "AAC",
-      "DTS",
-      "DTS-HD",
-      "DTS-ES",
-      "DTS-HD MA",
-      "TrueHD",
-      "Atmos",
-      "FLAC",
-      "DTS:X",
-      "OPUS"
+      "OPUS",
+      "DTS"
     ],
     "excludedAudioChannels": [
       "6.1",

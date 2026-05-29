@@ -31,6 +31,19 @@
 
 ---
 
+## 🌍 Community Templates
+
+Community-contributed templates. Not part of the Core Builds suite — maintained by their authors.
+
+| Template | Author | Plan | Resolution | Notes | Docs |
+|---|---|---|---|---|---|
+| [Prism TorBox Essential 1080p](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Community-Templates/prism-torbox-essential-1080p.json) | MightyIcyy | Essential | 1080p | Lightweight WEB-DL/BluRay, minimal addon stack | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Community-Templates/README_prism-torbox-essential-1080p.md) |
+| [Core Nexus Kids (Swedish)](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Community-Templates/core-nexus-kids-swedish.json) | snusgeneralen | TorBox Pro | 1080p | Swedish-only kids content · NZBGeek + NinjaCentral | — |
+
+> Want your template listed? Open a PR to `Community-Templates/` with your JSON and a README.
+
+---
+
 ## 🤖 Transparency
 
 The templates in this project were **created from scratch** and debugged with the help of AI tooling. The GitHub infrastructure — documentation, workflows, and automation — was set up with AI assistance.
@@ -59,7 +72,7 @@ Every template has been personally tested and validated by the author.
 <p align="center">
 
   <!-- Row 3: Docs -->
-  <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/CHANGELOG.md"><img src="https://img.shields.io/badge/Changelog-v2.3.0-888fa0?style=for-the-badge&labelColor=0d1117" alt="Changelog"/></a>
+  <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/CHANGELOG.md"><img src="https://img.shields.io/badge/Changelog-v2.4.0-888fa0?style=for-the-badge&labelColor=0d1117" alt="Changelog"/></a>
   <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Guides/README.md#1--importing-a-template"><img src="https://img.shields.io/badge/Import_Guide-Get_Started-2ea44f?style=for-the-badge&labelColor=0d1117" alt="Import Guide"/></a>
   <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Guides/README.md#6--troubleshooting"><img src="https://img.shields.io/badge/Troubleshooting-Quick_Fixes-ff5f5f?style=for-the-badge&labelColor=0d1117" alt="Troubleshooting"/></a>
   <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/tree/refs/heads/main/Templates/Torbox/Deprecated/Dual"><img src="https://img.shields.io/badge/Advanced-TorBox_+_RD-475569?style=for-the-badge&labelColor=0d1117" alt="Advanced"/></a>
@@ -76,7 +89,7 @@ Templates are grouped by service combination and use case. Every template includ
 
 ### ⚠️ Dual Service — TorBox Pro + Real-Debrid `[DEPRECATED]`
 
-> **No longer actively maintained as of v2.3.0.** Real-Debrid's May 2026 keyword filter combined with MediaFlow proxy requirements made dual-service builds inherently fragile and unreliable. Use a TorBox-only template instead (Single, Essential, or Speed tier).
+> **No longer actively maintained as of v2.4.0.** Real-Debrid's May 2026 keyword filter combined with MediaFlow proxy requirements made dual-service builds inherently fragile and unreliable. Use a TorBox-only template instead (Single, Essential, or Speed tier).
 
 The dual-core JSON files remain in the repository for advanced users willing to configure MediaFlow Proxy and accept the trade-offs, but no further bug fixes or feature updates will be issued for them. They will be removed in a future release.
 
@@ -133,13 +146,13 @@ Optimised for fast cached stream delivery. Zilean first for instant hashlist loo
 | [Core Nexus Speed](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/TorBox/core-nexus-speed.json) | 1080p SDR | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/TorBox/README_speed-1080p-torbox.md) |
 | [Core Nexus Speed 4K](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/TorBox/core-nexus-speed-4k.json) | 4K HDR | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Templates/Torbox/Speed/TorBox/README_speed-4k-torbox.md) |
 
-> Speed templates put Zilean first (2000ms) for instant cached lookups, Comet second (5000ms) for depth. Result limit 10 global / 4 per resolution. All Core Builds features — release group scoring, Core Builds ESEs, title/episode matching — remain intact.
+> Speed templates show **cached streams only** for instant play. If you see zero results, the content isn't cached in TorBox yet — try a popular title first to confirm setup. Result limit 10 global / 4 per resolution. For full stream coverage on all content, use Core Nexus Essential instead.
 
 ### 🌙 Nightly Versions
 
 Nightly versions of all standard templates are available with live-synced Tamtaro SEL stack and Vidhin05 ranked expressions. **Nightly and whitelisted AIOStreams hosts only** — will fail to import on stable instances.
 
-Find them in `Templates/Torbox/Nightly/` — named to match the v2.3.0 standard builds.
+Find them in `Templates/Torbox/Nightly/` — named to match the v2.4.0 standard builds.
 
 ---
 
@@ -225,7 +238,7 @@ Full walkthrough in the [Import Guide](https://github.com/Branding-Brevity/Core-
 - **Exact title, year, and episode matching** — Strict mode on all three. No wrong-year, wrong-title, or wrong-episode results.
 - **Full 12-service roster** — All opt-in. Enable only what you subscribe to.
 - **Deduplicator** — SmartDetect aggressive with filename, infoHash, and smartDetect keys.
-- **Core Builds Filtering System** — Custom ESE/PSE/ISE set built in-house. CAM Kill, YouTube Kill, 3D Kill, Season Pack Guard. Hosted in `Filtering/` — no external whitelist dependency.
+- **Core Builds Filtering System** — Custom ESE/PSE/ISE set built in-house. Plus tier-specific audio PSEs — 4K: Atmos first, 1080p: DD+ first, Speed: DD+/DD/AAC, Anime: FLAC first. CAM Kill, YouTube Kill, 3D Kill, Season Pack Guard. Hosted in `Filtering/` — no external whitelist dependency.
 - **`hideErrors: true`** — Error and info streams hidden from the list.
 - **`bitrate.useMetadataRuntime: true`** — Accurate runtime-based bitrate calculation.
 - **`seasonEpisodeMatching`** — Strict mode, covers movie, series, and anime.
@@ -315,7 +328,7 @@ Open a request and we'll look into it.
 
 ## 📜 Version & Stability
 
-> Current version: **`v2.3.0`**. Versions prior to `v1.1.2` are unstable and unsupported.
+> Current version: **`v2.4.0`**. Versions prior to `v1.1.2` are unstable and unsupported.
 
 [Full CHANGELOG](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/CHANGELOG.md)
 

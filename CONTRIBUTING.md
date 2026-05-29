@@ -4,6 +4,14 @@ Thanks for wanting to contribute. Here's how to get involved without breaking an
 
 ---
 
+## 🤖 AI Tools
+
+AI assistance is welcome when contributing. The templates in this project were created from scratch and debugged with AI help — the GitHub setup was also AI-assisted.
+
+If you used AI to help debug or document a template, that's fine. What matters is that **you created it yourself and have tested it** on a real AIOStreams instance before submitting.
+
+---
+
 ## 🐛 Reporting Bugs
 
 Use the **Bug Report** issue template. The more detail the better — platform, host, template version, and what you expected vs what happened. Screenshots of the scrape summary are especially helpful.

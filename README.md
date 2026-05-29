@@ -29,6 +29,14 @@
 
 ---
 
+---
+
+## 🤖 Transparency
+
+The templates in this project were **created from scratch** and debugged with the help of AI tooling. The GitHub infrastructure — documentation, workflows, and automation — was set up with AI assistance.
+
+Every template has been personally tested and validated by the author.
+
 <p align="center">
 
   <!-- Row 1: Templates -->
@@ -320,5 +328,6 @@ If these templates have leveled up your setup, consider buying me a coffee.
 [![Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/branding_brevity/?hidefeed=true&widget=true&embed=true)
 
 ---
+
 
 *Built and maintained by Brevity.*

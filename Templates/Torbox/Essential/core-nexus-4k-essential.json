@@ -59,7 +59,16 @@
       "1080p",
       "720p"
     ],
-    "excludedQualities": [],
+    "excludedQualities": [
+      "CAM",
+      "SCR",
+      "TS",
+      "TC",
+      "HC HD-Rip",
+      "DVDRip",
+      "HDTV",
+      "HDRip"
+    ],
     "includedQualities": [],
     "requiredQualities": [],
     "preferredQualities": [
@@ -67,14 +76,6 @@
       "BluRay",
       "WEB-DL",
       "WEBRip",
-      "HDRip",
-      "HC HD-Rip",
-      "DVDRip",
-      "HDTV",
-      "SCR",
-      "TC",
-      "TS",
-      "CAM",
       "Unknown"
     ],
     "excludedLanguages": [],

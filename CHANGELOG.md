@@ -4,7 +4,59 @@
 
 ---
 
-## [2.3.0] - 2026-05-28
+## [2.4.0] - 2026-05-29
+
+### Added
+- **Tier-specific audio PSEs** — All 10 templates include inline audio stream expressions scored per tier. 4K: Atmos → TrueHD → DTS-HD MA → DTS:X → DD+ → DTS → DD → AAC. 1080p: DD+ → DTS-HD MA → Atmos → DTS → DD → AAC. Speed: DD+ → DD → AAC → DTS. Anime: FLAC → AAC → OPUS → DD+ → DTS → DD.
+- **`metadata.changelog` embedded** — All 10 templates now carry an inline changelog array. AIOStreams shows in-app update notifications to users when a new version is detected. Users no longer need to check GitHub to know what changed.
+- **`metadata.changelogUrl`** — Added to all templates pointing to the GitHub CHANGELOG.md as a fallback changelog source.
+- **`metadata.sourceUrl`** — Confirmed on all 10 templates, pointing to the GitHub repo.
+- **`precacheNextEpisode`, `preloadStreams`, `dynamicAddonFetching`, `checkOwned`** — Added to Anime template (was missing all four — built from scratch).
+- **`cacheAndPlay` + torrent** — `'torrent'` added alongside `'usenet'` on Pro and Hybrid. TorBox now auto-caches uncached debrid torrents on click, not just Usenet NZBs.
+- **Community template** — `core-nexus-kids-swedish.json` built for community member. Swedish-only, TorBox Pro + NZBGeek + NinjaCentral. `requiredLanguages: ['Swedish', 'Nordic', 'Multi', 'Dubbed', 'Unknown']`. `onlyShowCachedStreams: False` required for Usenet NZBs to appear.
+- **Core Cipher** — Personal build created and hardware-optimised for Dangbei L007CM projector + JBL Bar 2.0 soundbar. TorBox Pro + NZBGeek + Debridio. Tuned audio (DD+/DD/AAC only — no Atmos/DTS-HD MA), AV1 unlocked (hardware decode supported), 2.0 channel stereo enforced.
+- **`preferredSubtitles`** — `['English']` on all templates. Anime template: `['English', 'Japanese']`. v2.28 feature now utilised.
+- **`digitalReleaseFilter`** — Tolerance standardised to 14 days across all 10 templates (was 7). Release date metadata is frequently off by 1–2 weeks; 14 days prevents false positives on legitimate releases near their digital drop window.
+- **Debridio addon** — Added to Core Cipher via `debridio` preset type with API key placeholder.
+- **GitHub automations** — `labeler.yml`, `stale.yml`, `welcome.yml`, `link-checker.yml`, `status-check.yml`, `status_check.py`, `PULL_REQUEST_TEMPLATE.md`, `dependabot.yml`, `CODEOWNERS`, `LICENSE`, `.gitignore` — full community-ready infrastructure.
+- **STATUS.md** — Live host status file with `<!-- STATUS_STABLE_START/END -->` and `<!-- STATUS_NIGHTLY_START/END -->` markers. Auto-updated every hour by `status-check.yml` workflow.
+
+### Changed
+- **Sort order** — `streamExpressionScore` moved to position 3 (was 6+), `audioTag` moved to position 6 (was 9) on all 10 templates. Audio PSE scores now directly influence stream ranking.
+- **`stremthruTorz` re-enabled** — Correct Torznab URL (`https://stremthru.13377001.xyz/v0/torznab`) confirmed from Tamtaro v1.5.0. Was disabled due to false Italian language parsing bug. Now active on all 5 quality templates.
+- **MediaFusion enabled** on Anime template (was missing entirely).
+- **Result limits raised** — 4K Pro/Hybrid: 20→30. 4K Essential: 20→25. Essential/Stream: 15→25. Anime: 20→30. Speed unchanged at 10.
+- **`autoPlay` enabled** — All 10 templates (was `False`). Method: `matchingFile` with resolution + quality + encode + audioTags attributes.
+- **`excludedResolutions`** — `1440p` added everywhere. Rare format consuming result slots.
+- **`preferredResolutions`** trimmed to exact match of `includedResolutions` on all templates.
+- **`autoRemoveDownloads: False`** set explicitly.
+- **Timeouts** — `library: 2000ms`, `zilean: 2000ms`, `seadex: 3000ms`, `opensubtitles: 3500ms`, `knaben: 4500ms`.
+- **Preset order** research-backed: `library → zilean → stremthruTorz → meteor → comet → mediafusion → knaben → torrent-galaxy`.
+- **`onlyShowCachedStreams`** corrected — Pro, Stream, Essential, 4K Essential templates were incorrectly `True`. Now `False` on all quality templates. Speed tier remains `True` (intentional).
+- **Template filenames renamed** — Full v2.3.0 naming system (4K Pro, Stream, Hybrid, Essential, Speed, Speed+, Anime).
+- **`cacheAndPlay.streamTypes`** — Added `'torrent'` to Pro and Hybrid templates.
+
+### Fixed
+- **`onlyShowCachedStreams: True` on quality templates** — was silently hiding all uncached streams. New content returned "no streams" even with valid scrapers.
+- **Anime template missing sort criteria** — `sortCriteria` was entirely absent. Streams returned in arbitrary scraper order.
+- **`animeTosho` and `nekobt` import warnings** — Set to `enabled: False` (opt-in). Not available on all instances.
+- **NZBGeek URL empty** — Newznab preset had API key but no `url` field. Queries silently failing. Fixed to `https://api.nzbgeek.info`.
+- **`queryType` ESE invalid syntax** — Compound SEL expression removed from Anime template.
+- **Stars badge** — Switched from shields.io (token pool errors) to `badgen.net`. Consistent display.
+- **`release.yml` trigger** — Changed from `types: [published]` (too late — release immutable) to `types: [created]` (fires on draft creation before publish).
+- **`softprops/action-gh-release@v3`** — Doesn't exist. Downgraded to confirmed `@v2`.
+- **`dependabot.yml` label error** — Removed `labels: [dependencies]` (label didn't exist in repo).
+- **`status-check.yml` frequency** — Reduced from every 30 min to hourly. Was using ~1,440 Action minutes/month (72% of free tier). Now ~720 minutes/month.
+
+### Research Validated
+- **Groups vs `dynamicAddonFetching`** — Tamtaro confirmed using ESEs (not Groups) for filtering. The AIOStreams community documented Groups as requiring manual tuning that's "basically impossible to do perfectly." `dynamicAddonFetching` is the validated simpler alternative — our implementation is correct.
+- **`keyword()` SEL** — Valid in v2.29.6+ but not on all public instances. Skipped to maintain compatibility.
+- **`nRegexScore` ESE** — Tamtaro switched to this approach but exact SEL syntax unconfirmed from public sources. Skipped to avoid breaking ESE pipeline.
+- **STore preset** — Confirmed as first addon in Tamtaro's debrid stack but preset type string unconfirmed. Skipped until confirmed.
+
+---
+
+## [2.3.0] - 2026-05-28 - 2026-05-28
 
 ### Added
 - **Title Matching** — enabled across all 10 templates. Mode: `contains`, threshold `0.85`. Filters streams whose detected title doesn't match the requested content. Requires TMDB token (already present as `<template_placeholder>`).

@@ -5,7 +5,7 @@
     "description": "A full-featured 4K build for TorBox Essential users. No Usenet access required -- runs entirely on TorBox's torrent cache.",
     "source": "external",
     "author": "Branding-Brevity",
-    "version": "2.4.0",
+    "version": "2.4.1",
     "category": "Debrid",
     "serviceRequired": false,
     "setToSaveInstallMenu": true,
@@ -235,7 +235,7 @@
     "seederRangeTypes": [],
     "ageRangeTypes": [],
     "digitalReleaseFilter": {
-      "enabled": true,
+      "enabled": false,
       "tolerance": 14,
       "requestTypes": [
         "movie",
@@ -1939,13 +1939,13 @@
     "titleMatching": {
       "enabled": true,
       "mode": "contains",
-      "similarityThreshold": 0.85,
+      "similarityThreshold": 0.75,
       "requestTypes": [],
       "addons": []
     },
     "seasonEpisodeMatching": {
       "enabled": true,
-      "strict": true,
+      "strict": false,
       "requestTypes": [],
       "addons": []
     },
@@ -2240,8 +2240,10 @@
     "mergedCatalogs": [],
     "externalDownloads": false,
     "cacheAndPlay": {
-      "enabled": false,
-      "streamTypes": []
+      "enabled": true,
+      "streamTypes": [
+        "torrent"
+      ]
     },
     "autoRemoveDownloads": false,
     "checkOwned": true,

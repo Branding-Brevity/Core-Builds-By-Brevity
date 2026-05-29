@@ -4,9 +4,26 @@
     "name": "Core Nexus Anime",
     "description": "Dedicated anime template. SeaDex best releases · Dual audio · Nyaa-sourced · Sub + Dub aware. TorBox Essential.",
     "author": "Branding-Brevity",
-    "version": "2.3.0",
+    "version": "2.4.0",
     "sourceUrl": "https://github.com/Branding-Brevity/Core-Builds-By-Brevity",
-    "changelogUrl": "https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/main/CHANGELOG.md"
+    "changelogUrl": "https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/refs/heads/main/CHANGELOG.md",
+    "changelog": [
+      {
+        "version": "2.4.0",
+        "date": "2026-05-29",
+        "content": "### Added\n- Tier-specific audio PSEs across all templates\n- `precacheNextEpisode`, `preloadStreams`, `dynamicAddonFetching`, `checkOwned` added to Anime template\n- `cacheAndPlay` now caches both Usenet and torrents on Pro/Hybrid\n\n### Changed\n- Sort order: `audioTag` moved to position 6, `streamExpressionScore` to position 3\n- Result limits raised across all quality templates\n- `digitalReleaseFilter` tolerance standardised to 14 days\n- `stremthruTorz` re-enabled with correct Torznab URL\n- `autoPlay` enabled on all templates\n\n### Fixed\n- `onlyShowCachedStreams: True` on quality templates was hiding all uncached streams\n- Anime template missing sort criteria\n- `autoRemoveDownloads` not set on Anime template"
+      },
+      {
+        "version": "2.3.0",
+        "date": "2026-05-28",
+        "content": "### Added\n- Core Nexus Anime template\n- Core Builds Filtering System (`Filtering/`)\n- Core Nexus Uniform Formatter\n- Title, Year, Season/Episode matching on all templates\n- Deduplicator with smartDetect\n\n### Fixed\n- `formatter.id` invalid value\n- `instanceId` missing on all presets\n- `timeout` missing from preset options\n- `opensubtitles-v3-plus` language format\n- `queryType` ESE invalid syntax\n\n### Changed\n- Template naming overhaul — all 10 renamed\n- Addon sequence research-backed\n- SeaDex isolated to Anime template"
+      },
+      {
+        "version": "2.2.9",
+        "date": "2026-05-27",
+        "content": "### Added\n- Core Nexus Anime template\n- Core Builds ESE/PSE/ISE filtering system\n\n### Changed\n- Template naming system introduced\n- MediaFusion added to quality templates\n- `not()` → `negate()` across all expressions"
+      }
+    ]
   },
   "config": {
     "addonName": "Core Nexus Anime",
@@ -103,6 +120,15 @@
         "instanceId": "40be0e1e-70fb-4fc7-af75-37ce874cb892"
       },
       {
+        "type": "zilean",
+        "enabled": true,
+        "options": {
+          "name": "Zilean",
+          "timeout": 3500
+        },
+        "instanceId": "f7083d27-a799-46df-a2cf-ed27bac3010f"
+      },
+      {
         "type": "seadex",
         "enabled": true,
         "options": {
@@ -113,6 +139,73 @@
           ]
         },
         "instanceId": "76ea77ca-cc91-439c-9e56-3bec8f115606"
+      },
+      {
+        "type": "meteor",
+        "enabled": true,
+        "options": {
+          "name": "Meteor",
+          "timeout": 4000,
+          "yourMedia": {
+            "sources": [
+              "torrent",
+              "webdl"
+            ],
+            "showStreams": true,
+            "enabled": true
+          },
+          "usenet": {
+            "enabled": false,
+            "customSearchEngines": true
+          }
+        },
+        "instanceId": "60f24567-7539-4a79-afe1-e8fb2ffd3c13"
+      },
+      {
+        "type": "comet",
+        "enabled": true,
+        "options": {
+          "name": "Comet",
+          "timeout": 4000,
+          "resources": [
+            "stream"
+          ],
+          "mediaTypes": [
+            "movie",
+            "series",
+            "anime"
+          ],
+          "scrapeDebridAccountTorrents": true
+        },
+        "instanceId": "0a1bc005-3cad-44d6-a403-06ff7ad6764f"
+      },
+      {
+        "type": "mediafusion",
+        "enabled": true,
+        "instanceId": "2b4a42a6-f640-4906-9363-98761da35325",
+        "options": {
+          "timeout": 5000,
+          "name": "MediaFusion"
+        }
+      },
+      {
+        "type": "knaben",
+        "enabled": true,
+        "options": {
+          "name": "Knaben",
+          "timeout": 4500,
+          "mediaTypes": [],
+          "useMultipleInstances": false
+        },
+        "instanceId": "3ed67194-98ad-438e-b6be-67aaed730115"
+      },
+      {
+        "type": "torrent-galaxy",
+        "enabled": true,
+        "instanceId": "d0ab7d2b-269b-4aa1-8696-f286186a2951",
+        "options": {
+          "timeout": 4000
+        }
       },
       {
         "type": "animeTosho",
@@ -137,65 +230,6 @@
           ]
         },
         "instanceId": "2f483075-def2-461c-8657-ccb2e02c5e90"
-      },
-      {
-        "type": "zilean",
-        "enabled": true,
-        "options": {
-          "name": "Zilean",
-          "timeout": 3500
-        },
-        "instanceId": "f7083d27-a799-46df-a2cf-ed27bac3010f"
-      },
-      {
-        "type": "comet",
-        "enabled": true,
-        "options": {
-          "name": "Comet",
-          "timeout": 4000,
-          "resources": [
-            "stream"
-          ],
-          "mediaTypes": [
-            "movie",
-            "series",
-            "anime"
-          ],
-          "scrapeDebridAccountTorrents": true
-        },
-        "instanceId": "0a1bc005-3cad-44d6-a403-06ff7ad6764f"
-      },
-      {
-        "type": "meteor",
-        "enabled": true,
-        "options": {
-          "name": "Meteor",
-          "timeout": 4000,
-          "yourMedia": {
-            "sources": [
-              "torrent",
-              "webdl"
-            ],
-            "showStreams": true,
-            "enabled": true
-          },
-          "usenet": {
-            "enabled": false,
-            "customSearchEngines": true
-          }
-        },
-        "instanceId": "60f24567-7539-4a79-afe1-e8fb2ffd3c13"
-      },
-      {
-        "type": "knaben",
-        "enabled": true,
-        "options": {
-          "name": "Knaben",
-          "timeout": 4500,
-          "mediaTypes": [],
-          "useMultipleInstances": false
-        },
-        "instanceId": "3ed67194-98ad-438e-b6be-67aaed730115"
       },
       {
         "type": "opensubtitles-v3-plus",
@@ -252,7 +286,8 @@
       "480p",
       "360p",
       "240p",
-      "144p"
+      "144p",
+      "1440p"
     ],
     "preferredResolutions": [
       "1080p",
@@ -377,6 +412,30 @@
     ],
     "preferredStreamExpressions": [
       {
+        "expression": "/* CB | Audio S-Tier | FLAC */  audioTag(streams, 'FLAC')",
+        "enabled": true
+      },
+      {
+        "expression": "/* CB | Audio A-Tier | AAC */   audioTag(streams, 'AAC')",
+        "enabled": true
+      },
+      {
+        "expression": "/* CB | Audio A-Tier | OPUS */  audioTag(streams, 'OPUS')",
+        "enabled": true
+      },
+      {
+        "expression": "/* CB | Audio B-Tier | DD+ */   audioTag(streams, 'DD+')",
+        "enabled": true
+      },
+      {
+        "expression": "/* CB | Audio B-Tier | DTS */   audioTag(streams, 'DTS')",
+        "enabled": true
+      },
+      {
+        "expression": "/* CB | Audio C-Tier | DD */    audioTag(streams, 'DD')",
+        "enabled": true
+      },
+      {
         "expression": "/* CB Anime S-Tier | 1080p WEB-DL · FLAC */ resolution(audioTag(quality(streams, 'WEB-DL'), 'FLAC'), '1080p')",
         "enabled": true
       },
@@ -430,8 +489,8 @@
     "syncedPreferredStreamExpressionUrls": [],
     "syncedExcludedRegexUrls": [],
     "resultLimits": {
-      "global": 20,
-      "resolution": 8,
+      "global": 30,
+      "resolution": 12,
       "mode": "conjunctive"
     },
     "cacheAndPlay": {
@@ -545,6 +604,691 @@
       "cached": "single_result",
       "uncached": "disabled",
       "p2p": "disabled"
-    }
+    },
+    "sortCriteria": {
+      "global": [
+        {
+          "key": "cached",
+          "direction": "desc"
+        },
+        {
+          "key": "streamExpressionMatched",
+          "direction": "desc"
+        },
+        {
+          "key": "streamExpressionScore",
+          "direction": "desc"
+        },
+        {
+          "key": "resolution",
+          "direction": "desc"
+        },
+        {
+          "key": "quality",
+          "direction": "desc"
+        },
+        {
+          "key": "audioTag",
+          "direction": "desc"
+        },
+        {
+          "key": "audioChannel",
+          "direction": "desc"
+        },
+        {
+          "key": "language",
+          "direction": "desc"
+        },
+        {
+          "key": "visualTag",
+          "direction": "desc"
+        },
+        {
+          "key": "regexScore",
+          "direction": "desc"
+        },
+        {
+          "key": "library",
+          "direction": "desc"
+        },
+        {
+          "key": "seeders",
+          "direction": "desc"
+        },
+        {
+          "key": "size",
+          "direction": "desc"
+        }
+      ],
+      "movies": [
+        {
+          "key": "cached",
+          "direction": "desc"
+        },
+        {
+          "key": "streamExpressionMatched",
+          "direction": "desc"
+        },
+        {
+          "key": "streamExpressionScore",
+          "direction": "desc"
+        },
+        {
+          "key": "library",
+          "direction": "desc"
+        },
+        {
+          "key": "resolution",
+          "direction": "desc"
+        },
+        {
+          "key": "quality",
+          "direction": "desc"
+        },
+        {
+          "key": "regexScore",
+          "direction": "desc"
+        },
+        {
+          "key": "visualTag",
+          "direction": "desc"
+        },
+        {
+          "key": "audioTag",
+          "direction": "desc"
+        },
+        {
+          "key": "audioChannel",
+          "direction": "desc"
+        },
+        {
+          "key": "language",
+          "direction": "desc"
+        },
+        {
+          "key": "seeders",
+          "direction": "desc"
+        },
+        {
+          "key": "size",
+          "direction": "desc"
+        }
+      ],
+      "series": [
+        {
+          "key": "cached",
+          "direction": "desc"
+        },
+        {
+          "key": "streamExpressionMatched",
+          "direction": "desc"
+        },
+        {
+          "key": "streamExpressionScore",
+          "direction": "desc"
+        },
+        {
+          "key": "library",
+          "direction": "desc"
+        },
+        {
+          "key": "resolution",
+          "direction": "desc"
+        },
+        {
+          "key": "quality",
+          "direction": "desc"
+        },
+        {
+          "key": "regexScore",
+          "direction": "desc"
+        },
+        {
+          "key": "visualTag",
+          "direction": "desc"
+        },
+        {
+          "key": "audioTag",
+          "direction": "desc"
+        },
+        {
+          "key": "audioChannel",
+          "direction": "desc"
+        },
+        {
+          "key": "language",
+          "direction": "desc"
+        },
+        {
+          "key": "seeders",
+          "direction": "desc"
+        },
+        {
+          "key": "size",
+          "direction": "desc"
+        }
+      ],
+      "anime": [
+        {
+          "key": "cached",
+          "direction": "desc"
+        },
+        {
+          "key": "streamExpressionMatched",
+          "direction": "desc"
+        },
+        {
+          "key": "streamExpressionScore",
+          "direction": "desc"
+        },
+        {
+          "key": "library",
+          "direction": "desc"
+        },
+        {
+          "key": "resolution",
+          "direction": "desc"
+        },
+        {
+          "key": "quality",
+          "direction": "desc"
+        },
+        {
+          "key": "regexScore",
+          "direction": "desc"
+        },
+        {
+          "key": "visualTag",
+          "direction": "desc"
+        },
+        {
+          "key": "audioTag",
+          "direction": "desc"
+        },
+        {
+          "key": "audioChannel",
+          "direction": "desc"
+        },
+        {
+          "key": "language",
+          "direction": "desc"
+        },
+        {
+          "key": "seeders",
+          "direction": "desc"
+        },
+        {
+          "key": "size",
+          "direction": "desc"
+        }
+      ],
+      "cached": [
+        {
+          "key": "cached",
+          "direction": "desc"
+        },
+        {
+          "key": "streamExpressionMatched",
+          "direction": "desc"
+        },
+        {
+          "key": "streamExpressionScore",
+          "direction": "desc"
+        },
+        {
+          "key": "library",
+          "direction": "desc"
+        },
+        {
+          "key": "resolution",
+          "direction": "desc"
+        },
+        {
+          "key": "quality",
+          "direction": "desc"
+        },
+        {
+          "key": "regexScore",
+          "direction": "desc"
+        },
+        {
+          "key": "visualTag",
+          "direction": "desc"
+        },
+        {
+          "key": "audioTag",
+          "direction": "desc"
+        },
+        {
+          "key": "audioChannel",
+          "direction": "desc"
+        },
+        {
+          "key": "language",
+          "direction": "desc"
+        },
+        {
+          "key": "seeders",
+          "direction": "desc"
+        },
+        {
+          "key": "size",
+          "direction": "desc"
+        }
+      ],
+      "uncached": [
+        {
+          "key": "cached",
+          "direction": "desc"
+        },
+        {
+          "key": "streamExpressionMatched",
+          "direction": "desc"
+        },
+        {
+          "key": "streamExpressionScore",
+          "direction": "desc"
+        },
+        {
+          "key": "library",
+          "direction": "desc"
+        },
+        {
+          "key": "resolution",
+          "direction": "desc"
+        },
+        {
+          "key": "quality",
+          "direction": "desc"
+        },
+        {
+          "key": "regexScore",
+          "direction": "desc"
+        },
+        {
+          "key": "visualTag",
+          "direction": "desc"
+        },
+        {
+          "key": "audioTag",
+          "direction": "desc"
+        },
+        {
+          "key": "audioChannel",
+          "direction": "desc"
+        },
+        {
+          "key": "language",
+          "direction": "desc"
+        },
+        {
+          "key": "seeders",
+          "direction": "desc"
+        },
+        {
+          "key": "size",
+          "direction": "desc"
+        }
+      ],
+      "cachedMovies": [
+        {
+          "key": "cached",
+          "direction": "desc"
+        },
+        {
+          "key": "streamExpressionMatched",
+          "direction": "desc"
+        },
+        {
+          "key": "streamExpressionScore",
+          "direction": "desc"
+        },
+        {
+          "key": "library",
+          "direction": "desc"
+        },
+        {
+          "key": "resolution",
+          "direction": "desc"
+        },
+        {
+          "key": "quality",
+          "direction": "desc"
+        },
+        {
+          "key": "regexScore",
+          "direction": "desc"
+        },
+        {
+          "key": "visualTag",
+          "direction": "desc"
+        },
+        {
+          "key": "audioTag",
+          "direction": "desc"
+        },
+        {
+          "key": "audioChannel",
+          "direction": "desc"
+        },
+        {
+          "key": "language",
+          "direction": "desc"
+        },
+        {
+          "key": "seeders",
+          "direction": "desc"
+        },
+        {
+          "key": "size",
+          "direction": "desc"
+        }
+      ],
+      "uncachedMovies": [
+        {
+          "key": "cached",
+          "direction": "desc"
+        },
+        {
+          "key": "streamExpressionMatched",
+          "direction": "desc"
+        },
+        {
+          "key": "streamExpressionScore",
+          "direction": "desc"
+        },
+        {
+          "key": "library",
+          "direction": "desc"
+        },
+        {
+          "key": "resolution",
+          "direction": "desc"
+        },
+        {
+          "key": "quality",
+          "direction": "desc"
+        },
+        {
+          "key": "regexScore",
+          "direction": "desc"
+        },
+        {
+          "key": "visualTag",
+          "direction": "desc"
+        },
+        {
+          "key": "audioTag",
+          "direction": "desc"
+        },
+        {
+          "key": "audioChannel",
+          "direction": "desc"
+        },
+        {
+          "key": "language",
+          "direction": "desc"
+        },
+        {
+          "key": "seeders",
+          "direction": "desc"
+        },
+        {
+          "key": "size",
+          "direction": "desc"
+        }
+      ],
+      "cachedSeries": [
+        {
+          "key": "cached",
+          "direction": "desc"
+        },
+        {
+          "key": "streamExpressionMatched",
+          "direction": "desc"
+        },
+        {
+          "key": "streamExpressionScore",
+          "direction": "desc"
+        },
+        {
+          "key": "library",
+          "direction": "desc"
+        },
+        {
+          "key": "resolution",
+          "direction": "desc"
+        },
+        {
+          "key": "quality",
+          "direction": "desc"
+        },
+        {
+          "key": "regexScore",
+          "direction": "desc"
+        },
+        {
+          "key": "visualTag",
+          "direction": "desc"
+        },
+        {
+          "key": "audioTag",
+          "direction": "desc"
+        },
+        {
+          "key": "audioChannel",
+          "direction": "desc"
+        },
+        {
+          "key": "language",
+          "direction": "desc"
+        },
+        {
+          "key": "seeders",
+          "direction": "desc"
+        },
+        {
+          "key": "size",
+          "direction": "desc"
+        }
+      ],
+      "uncachedSeries": [
+        {
+          "key": "cached",
+          "direction": "desc"
+        },
+        {
+          "key": "streamExpressionMatched",
+          "direction": "desc"
+        },
+        {
+          "key": "streamExpressionScore",
+          "direction": "desc"
+        },
+        {
+          "key": "library",
+          "direction": "desc"
+        },
+        {
+          "key": "resolution",
+          "direction": "desc"
+        },
+        {
+          "key": "quality",
+          "direction": "desc"
+        },
+        {
+          "key": "regexScore",
+          "direction": "desc"
+        },
+        {
+          "key": "visualTag",
+          "direction": "desc"
+        },
+        {
+          "key": "audioTag",
+          "direction": "desc"
+        },
+        {
+          "key": "audioChannel",
+          "direction": "desc"
+        },
+        {
+          "key": "language",
+          "direction": "desc"
+        },
+        {
+          "key": "seeders",
+          "direction": "desc"
+        },
+        {
+          "key": "size",
+          "direction": "desc"
+        }
+      ],
+      "cachedAnime": [
+        {
+          "key": "cached",
+          "direction": "desc"
+        },
+        {
+          "key": "streamExpressionMatched",
+          "direction": "desc"
+        },
+        {
+          "key": "streamExpressionScore",
+          "direction": "desc"
+        },
+        {
+          "key": "library",
+          "direction": "desc"
+        },
+        {
+          "key": "resolution",
+          "direction": "desc"
+        },
+        {
+          "key": "quality",
+          "direction": "desc"
+        },
+        {
+          "key": "regexScore",
+          "direction": "desc"
+        },
+        {
+          "key": "visualTag",
+          "direction": "desc"
+        },
+        {
+          "key": "audioTag",
+          "direction": "desc"
+        },
+        {
+          "key": "audioChannel",
+          "direction": "desc"
+        },
+        {
+          "key": "language",
+          "direction": "desc"
+        },
+        {
+          "key": "seeders",
+          "direction": "desc"
+        },
+        {
+          "key": "size",
+          "direction": "desc"
+        }
+      ],
+      "uncachedAnime": [
+        {
+          "key": "cached",
+          "direction": "desc"
+        },
+        {
+          "key": "streamExpressionMatched",
+          "direction": "desc"
+        },
+        {
+          "key": "streamExpressionScore",
+          "direction": "desc"
+        },
+        {
+          "key": "library",
+          "direction": "desc"
+        },
+        {
+          "key": "resolution",
+          "direction": "desc"
+        },
+        {
+          "key": "quality",
+          "direction": "desc"
+        },
+        {
+          "key": "regexScore",
+          "direction": "desc"
+        },
+        {
+          "key": "visualTag",
+          "direction": "desc"
+        },
+        {
+          "key": "audioTag",
+          "direction": "desc"
+        },
+        {
+          "key": "audioChannel",
+          "direction": "desc"
+        },
+        {
+          "key": "language",
+          "direction": "desc"
+        },
+        {
+          "key": "seeders",
+          "direction": "desc"
+        },
+        {
+          "key": "size",
+          "direction": "desc"
+        }
+      ]
+    },
+    "autoPlay": {
+      "enabled": true,
+      "method": "matchingFile",
+      "attributes": [
+        "resolution",
+        "quality",
+        "audioTags"
+      ]
+    },
+    "autoRemoveDownloads": false,
+    "precacheNextEpisode": true,
+    "preloadStreams": {
+      "enabled": true,
+      "selector": "slice(cached(streams), 0, 1)",
+      "singleStream": true
+    },
+    "dynamicAddonFetching": {
+      "enabled": true,
+      "condition": "count(cached(resolution(totalStreams, \"1080p\"))) >= 6"
+    },
+    "checkOwned": true,
+    "digitalReleaseFilter": {
+      "enabled": true,
+      "tolerance": 14,
+      "requestTypes": [
+        "movie",
+        "series",
+        "anime"
+      ],
+      "addons": []
+    },
+    "preferredSubtitles": [
+      "English",
+      "Japanese"
+    ]
   }
 }

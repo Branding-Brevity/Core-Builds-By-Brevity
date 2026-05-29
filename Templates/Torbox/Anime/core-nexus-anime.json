@@ -352,20 +352,21 @@
     "preferredQualities": [
       "WEB-DL",
       "WEBRip",
-      "BluRay REMUX",
       "BluRay",
-      "HDRip",
-      "HC HD-Rip",
-      "DVDRip",
-      "HDTV",
-      "SCR",
-      "TC",
-      "TS",
-      "CAM",
+      "BluRay REMUX",
       "Unknown"
     ],
     "includedQualities": [],
-    "excludedQualities": [],
+    "excludedQualities": [
+      "CAM",
+      "SCR",
+      "TS",
+      "TC",
+      "HC HD-Rip",
+      "DVDRip",
+      "HDTV",
+      "HDRip"
+    ],
     "requiredQualities": [],
     "requiredLanguages": [
       "Japanese",

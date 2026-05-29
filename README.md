@@ -38,7 +38,7 @@ Community-contributed templates. Not part of the Core Builds suite — maintaine
 | Template | Author | Plan | Resolution | Notes | Docs |
 |---|---|---|---|---|---|
 | [Prism TorBox Essential 1080p](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Community-Templates/prism-torbox-essential-1080p.json) | MightyIcyy | Essential | 1080p | Lightweight WEB-DL/BluRay, minimal addon stack | [README](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Community-Templates/README_prism-torbox-essential-1080p.md) |
-| [Core Nexus Kids (Swedish)](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Community-Templates/core-nexus-kids-swedish.json) | snusgeneralen | TorBox Pro | 1080p | Swedish-only kids content · NZBGeek + NinjaCentral | — |
+| RB3 TB+RD Streams | RB3 | TorBox + RD | 1080p/4K | TorBox + Real Debrid dual debrid setup | — |
 
 > Want your template listed? Open a PR to `Community-Templates/` with your JSON and a README.
 
@@ -72,7 +72,7 @@ Every template has been personally tested and validated by the author.
 <p align="center">
 
   <!-- Row 3: Docs -->
-  <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/CHANGELOG.md"><img src="https://img.shields.io/badge/Changelog-v2.4.0-888fa0?style=for-the-badge&labelColor=0d1117" alt="Changelog"/></a>
+  <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/CHANGELOG.md"><img src="https://img.shields.io/badge/Changelog-v2.4.1-888fa0?style=for-the-badge&labelColor=0d1117" alt="Changelog"/></a>
   <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Guides/README.md#1--importing-a-template"><img src="https://img.shields.io/badge/Import_Guide-Get_Started-2ea44f?style=for-the-badge&labelColor=0d1117" alt="Import Guide"/></a>
   <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/Guides/README.md#6--troubleshooting"><img src="https://img.shields.io/badge/Troubleshooting-Quick_Fixes-ff5f5f?style=for-the-badge&labelColor=0d1117" alt="Troubleshooting"/></a>
   <a href="https://github.com/Branding-Brevity/Core-Builds-By-Brevity/tree/refs/heads/main/Templates/Torbox/Deprecated/Dual"><img src="https://img.shields.io/badge/Advanced-TorBox_+_RD-475569?style=for-the-badge&labelColor=0d1117" alt="Advanced"/></a>
@@ -89,7 +89,7 @@ Templates are grouped by service combination and use case. Every template includ
 
 ### ⚠️ Dual Service — TorBox Pro + Real-Debrid `[DEPRECATED]`
 
-> **No longer actively maintained as of v2.4.0.** Real-Debrid's May 2026 keyword filter combined with MediaFlow proxy requirements made dual-service builds inherently fragile and unreliable. Use a TorBox-only template instead (Single, Essential, or Speed tier).
+> **No longer actively maintained as of v2.4.1.** Real-Debrid's May 2026 keyword filter combined with MediaFlow proxy requirements made dual-service builds inherently fragile and unreliable. Use a TorBox-only template instead (Single, Essential, or Speed tier).
 
 The dual-core JSON files remain in the repository for advanced users willing to configure MediaFlow Proxy and accept the trade-offs, but no further bug fixes or feature updates will be issued for them. They will be removed in a future release.
 
@@ -152,7 +152,7 @@ Optimised for fast cached stream delivery. Zilean first for instant hashlist loo
 
 Nightly versions of all standard templates are available with live-synced Tamtaro SEL stack and Vidhin05 ranked expressions. **Nightly and whitelisted AIOStreams hosts only** — will fail to import on stable instances.
 
-Find them in `Templates/Torbox/Nightly/` — named to match the v2.4.0 standard builds.
+Find them in `Templates/Torbox/Nightly/` — named to match the v2.4.1 standard builds.
 
 ---
 
@@ -328,7 +328,7 @@ Open a request and we'll look into it.
 
 ## 📜 Version & Stability
 
-> Current version: **`v2.4.0`**. Versions prior to `v1.1.2` are unstable and unsupported.
+> Current version: **`v2.4.1`**. Versions prior to `v1.1.2` are unstable and unsupported.
 
 [Full CHANGELOG](https://github.com/Branding-Brevity/Core-Builds-By-Brevity/blob/refs/heads/main/CHANGELOG.md)
 

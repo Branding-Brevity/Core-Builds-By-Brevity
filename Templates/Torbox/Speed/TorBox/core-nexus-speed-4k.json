@@ -238,18 +238,9 @@
       }
     },
     "preferredQualities": [
-      "BluRay REMUX",
-      "BluRay",
       "WEB-DL",
       "WEBRip",
-      "HDRip",
-      "HC HD-Rip",
-      "DVDRip",
-      "HDTV",
-      "SCR",
-      "TC",
-      "TS",
-      "CAM",
+      "BluRay",
       "Unknown"
     ],
     "preferredResolutions": [
@@ -257,7 +248,17 @@
       "1080p",
       "720p"
     ],
-    "excludedQualities": [],
+    "excludedQualities": [
+      "CAM",
+      "SCR",
+      "TS",
+      "TC",
+      "HC HD-Rip",
+      "DVDRip",
+      "HDTV",
+      "HDRip",
+      "BluRay REMUX"
+    ],
     "excludedVisualTags": [
       "3D",
       "H-OU",

@@ -4,6 +4,76 @@
 
 ---
 
+## [2.4.4] - 2026-05-30
+
+### Added
+- **Tamtaro ISEs embedded** — All 6 Tamtaro ISEs now embedded directly in every template: `Part of Tamtaro SEL Setup`, `ISE v1.2.3*`, `Library`, `SeaDex` (anime-only), `digitalRelease Bypass`, `0Cached`. Synced URLs were not loading on some instances — direct embedding guarantees they fire.
+- **Tamtaro standard ESEs embedded** — All 20 Tamtaro v1.2.8 standard ESEs embedded alongside Core Builds' 4 kill ESEs (24 total). Key additions: `Low SEL Score`, `Final Limit (All)`, `Extra Cached (HQ/LQ)`, `G's Low Bitrate`, `Bad 4K Anime`, `Upscaled 4K`, `Kill Dead Uncached Torrents`, `RD Copyright (per DMM)`, `Bad NZBs`.
+- **Tamtaro excluded regex** — File archive pattern exclusion (`.iso`, `.img`, `.zip`, `.rar`, `.nfo` etc.) added to `excludedRegexPatterns` across all templates.
+
+### Fixed
+- **Formatter not applying** — Root cause of all "no formatting" reports. `formatter.definitions.overrides['core-nexus']` was not being resolved by AIOStreams. Correct structure is `formatter.definitions.name` and `formatter.definitions.description` directly. Core Syntax formatter now embedded correctly across all 10 templates.
+- **`excludedResolutions` removing 50 valid streams** — `'Unknown'` was in `excludedResolutions`, silently dropping every stream where the scraper didn't tag a resolution. These are often legitimate releases with missing metadata. Removed from all templates.
+- **`CB | Cached Streams Priority` ISE** — This ISE (`cached(streams)`) was acting as a final whitelist, restricting ALL output to only cached streams regardless of `onlyShowCachedStreams: False`. Every "no streams found" report traced back to this — scrapers found 857+ streams, all passed resolution and language filters, then this ISE reduced the final set to 5 Library cached items only. Removed entirely.
+
+### Changed
+- **`deduplicator`** — Expanded to match working template: `uncached: 'per_service'` (was `disabled`), `p2p: 'per_addon'` (was `disabled`), `smartDetectAttributes` full 14-attribute list added, `smartDetectRounding: 10`, `libraryBehaviour: 'prefer'`.
+- **`preferredResolutions`** — Expanded from 3 items to full 10-item ranked list including 576p, 480p, 360p, 240p, 144p, Unknown, 1440p. Streams at unranked resolutions had no score weighting.
+- **`preferredQualities`** — Expanded from 5 to all 13 qualities ranked. ESEs are the authoritative quality filter — `preferredQualities` is a scoring list only.
+- **`excludedQualities`** — Cleared to empty. Double-filtering (ESEs + hard excludedQualities) was removing valid streams. Tamtaro ESEs handle quality blocking contextually.
+- **Tamtaro synced PSE/ISE URLs added** — `syncedPreferredStreamExpressionUrls` and `syncedIncludedStreamExpressionUrls` pointing to Tamtaro's GitHub repo added as fallback for instances that do load synced URLs.
+- **`tmdbAccessToken`** — Set to `<template_placeholder>` (was `null`). Separate from `tmdbApiKey` — the Access Token is the long JWT-style credential.
+- **Inline audio PSEs removed** — 4–8 inline CB audio PSEs removed per template. Tamtaro's synced PSE stack handles audio scoring with better context-awareness.
+- **`onlyShowCachedStreams` key removed** — Not present in the working template. Defaults correctly to `False` without the explicit key.
+- **`showP2PStreams` and `enhancePosters` removed** — Extra keys not present in working template baseline.
+- **`tmdbApiKey` sentinel** — `<template_placeholder>` confirmed as the correct AIOStreams sentinel value. `null` disables TMDB entirely; placeholder strings other than `<template_placeholder>` are validated against TMDB API causing 401 errors on import.
+
+---
+
+## [2.4.3] - 2026-05-30
+
+### Added
+- **Tamtaro synced PSE URL** — `syncedPreferredStreamExpressionUrls` added pointing to Tamtaro's maintained PSE stack. Replaces 19 inline audio PSEs with a live-maintained source.
+- **Tamtaro synced ISE URL** — `syncedIncludedStreamExpressionUrls` added pointing to Tamtaro's ISE set.
+
+### Changed
+- **`deduplicator`** — Rebuilt to match working template structure with full `smartDetectAttributes` and `libraryBehaviour: 'prefer'`.
+- **`preferredResolutions`** — All 10 resolutions ranked.
+- **`preferredQualities`** — All 13 qualities ranked.
+- **`excludedQualities`** — Cleared (ESEs are authoritative).
+- **`tmdbAccessToken`** — Set to `<template_placeholder>`.
+- **Removed `onlyShowCachedStreams`, `showP2PStreams`, `enhancePosters`** keys from all templates.
+
+---
+
+## [2.4.2] - 2026-05-30
+
+### Fixed
+- **Speed templates missed v2.4.1 hotfix** — All 4 Speed templates (Speed, Speed 4K, Speed+, Speed 4K+) still had `titleMatching: 0.85`, `seasonEpisodeMatching strict: True`, and `digitalReleaseFilter: enabled` from v2.4.0. Applied same fix as v2.4.1 across all 4.
+- **`stremthruTorz` invalid option keys** — `torznabUrl`, `resources`, `mediaTypes` were not valid options for the `stremthruTorz` preset type. On strict AIOStreams instances (especially nightly builds) these caused schema validation failure and the entire addon failed to load.
+- **`tmdbApiKey` 401 error** — Custom placeholder string was being validated against TMDB API on import. `<template_placeholder>` is the AIOStreams-recognised sentinel value that skips validation.
+- **`dynamicAddonFetching` condition** — Tamtaro's `releaseGroup AND` condition leaked into 9/10 templates. Required 2+ cached streams from CtrlHD/Ember/Judas release groups — almost never met, so the condition never fired and all addons were always queried. Replaced with simple resolution-count conditions per tier.
+- **Preset names missing** — `torrent-galaxy` and `eztv` had no `name` in options, appearing as empty required fields during template import. Set to `Torrent Galaxy` and `EZTV`.
+- **MediaFusion disabled** — Developer recoding MediaFusion. Disabled across all 6 quality templates to prevent broken scraper affecting results.
+
+---
+
+## [2.4.1] - 2026-05-30
+
+### Fixed
+- **`titleMatching` threshold 0.85 → 0.75** — AIOStreams recently optimised the title match function, making 0.85 more strictly enforced than on previous versions. Alternate titles, romanization differences, and punctuation variations (e.g. "Gladiator II" vs "Gladiator 2") were failing the match and returning zero results. Relaxed to 0.75 across all quality templates.
+- **`seasonEpisodeMatching strict: True` → `False`** — `strict: True` drops any stream without explicit S/E metadata in the filename. A significant portion of 4K REMUX and BluRay releases don't embed standard S/E naming — these were being silently dropped. Matching still filters by S/E when data is present; `strict: False` stops penalising streams where it's absent.
+- **`digitalReleaseFilter` disabled** — Was blocking entire result sets when TMDB had missing or incorrect digital release date data. The Core Builds ESE set (CAM Kill, TS Kill, SCR Kill) already handles pre-release content. The filter was adding false positives on legitimate releases with bad metadata.
+
+### Context
+Both issues were caught by community members within hours of the v2.4.0 release:
+- **frommypantry** (Reddit) — Speed template showing zero results (separate issue: cached-only design + API key required)
+- **m4rkbr0wn** (Reddit) — 4K Pro showing no results after updating from prior version
+
+Applied across all 6 quality templates: 4K Pro, 4K Essential, Essential, Stream, Hybrid, Anime.
+
+---
+
 ## [2.4.0] - 2026-05-29
 
 ### Added

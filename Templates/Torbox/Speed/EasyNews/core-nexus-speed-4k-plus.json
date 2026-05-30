@@ -5,7 +5,7 @@
     "description": "A speed-optimised 4K build for TorBox Essential and EasyNews users. Lives in Templates/Torbox/Speed/EasyNews/. Library, TorBox Search, Comet, and Zilean only -- the four fastest sources delivering cached results in 2-3 seconds. Targets 2160p with Dolby Vision and HDR10+ priority, TrueHD/Atmos audio, files up to 150 GB. SeaDex best-release enforced for anime. Timeouts at 3500ms, 10 results max, 5-key sort. Requires an active TorBox Essential and EasyNews subscription.",
     "source": "external",
     "author": "Branding-Brevity",
-    "version": "2.4.0",
+    "version": "2.4.1",
     "category": "Debrid",
     "serviceRequired": false,
     "setToSaveInstallMenu": true,
@@ -937,11 +937,8 @@
       ]
     },
     "cacheAndPlay": {
-      "enabled": true,
-      "streamTypes": [
-        "usenet",
-        "torrent"
-      ]
+      "enabled": false,
+      "streamTypes": []
     },
     "statistics": {
       "enabled": false,
@@ -995,7 +992,7 @@
     "showChanges": false,
     "addonName": "Core Nexus Speed 4K+",
     "addonLogo": "https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/main/Assets/core_icon.svg",
-    "addonDescription": "Speed 4K with EasyNews boost. TorBox Essential + EasyNews · DV/HDR · Instant autoplay.",
+    "addonDescription": "Speed 4K + EasyNews — TorBox Essential. Shows CACHED streams only for instant play. Zero results = content not yet cached. Use Core Nexus 4K Essential for full coverage.",
     "appliedTemplates": [
       {
         "id": "core-nexus-dual-core-4k",

@@ -5,7 +5,7 @@
     "description": "A speed-optimised 4K build for TorBox Essential users. Lives in Templates/Torbox/Speed/TorBox/. No secondary service required. Library, TorBox Search, Comet, and Zilean only -- the four fastest sources delivering cached results in 2-3 seconds. Targets 2160p with Dolby Vision and HDR10+ priority, TrueHD/Atmos audio, files up to 150 GB. SeaDex best-release enforced for anime. Timeouts at 3500ms, 10 results max, 5-key sort. A single TorBox Essential subscription is all that is required.",
     "source": "external",
     "author": "Branding-Brevity",
-    "version": "2.4.0",
+    "version": "2.4.1",
     "category": "Debrid",
     "serviceRequired": false,
     "setToSaveInstallMenu": true,
@@ -992,7 +992,7 @@
     "showChanges": false,
     "addonName": "Core Nexus Speed 4K",
     "addonLogo": "https://raw.githubusercontent.com/Branding-Brevity/Core-Builds-By-Brevity/main/Assets/core_icon.svg",
-    "addonDescription": "Speed 4K TorBox Essential. DV/HDR · Instant cache-and-play. No Usenet required.",
+    "addonDescription": "Speed 4K — TorBox Essential. Shows CACHED streams only for instant play. Zero results = content not yet in TorBox cache. Try a popular title first.",
     "appliedTemplates": [
       {
         "id": "core-nexus-dual-core-4k",
